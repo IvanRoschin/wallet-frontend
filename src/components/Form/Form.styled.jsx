@@ -127,8 +127,7 @@ export const LoginButtonRegPage = styled.button`
   }
 `;
 
-export const ErrorText = styled.p`
-  position: absolute;
+export const Errors = styled.p`
   color: ${p => p.theme.colors.error};
   font-family: ${p => p.theme.fonts.baseFont};
   font-weight: ${p => p.theme.fontWeights.regular};

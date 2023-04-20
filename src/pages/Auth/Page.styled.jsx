@@ -162,7 +162,7 @@ export const FormContainerRegsiter = styled.div`
   flex-direction: column;
   align-items: center;
   background: ${p => p.theme.colors.white};
-  width: 380px;
+  width: 320px;
   padding: 20px 32px 36px;
   border-radius: 20px;
   margin-right: auto;

@@ -11,8 +11,7 @@ import {
   LogoContainer,
 } from './Page.styled';
 import { RegisterForm } from 'components/Form';
-
-export const RegisterPage = () => {
+const RegisterPage = () => {
   return (
     <Container>
       <ContainerPage>
@@ -37,3 +36,5 @@ export const RegisterPage = () => {
     </Container>
   );
 };
+
+export default RegisterPage;

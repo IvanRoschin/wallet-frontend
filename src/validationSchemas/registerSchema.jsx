@@ -26,9 +26,7 @@ export const RegisterSchema = Yup.object().shape({
     .min(7, i18n.t('at_least_seven'))
     .max(32, i18n.t('max_tt'))
     .required(i18n.t('required_field')),
-  confirm: Yup.string().oneOf(
-    [Yup.ref('password'), null],
-    i18n.t('Passwords_match')
-  ),
-  // .required(i18n.t('required_field')),
+  confirm: Yup.string()
+    .oneOf([Yup.ref('password'), null], i18n.t('Passwords_match'))
+    .required(i18n.t('required_field')),
 });
