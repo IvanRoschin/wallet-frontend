@@ -1,11 +1,15 @@
-export const theme = {
+import { ThemeProvider } from 'styled-components';
+
+const walletTheme = {
   colors: {
     white: '#fff',
     black: '#000',
     text: '#000000',
+    border: '#e0e0e0',
     secondaryText: '#BDBDBD',
     backgroundFirst: '#E5E5E5',
     backgroundSecond: '#FFFFFF',
+    backgroundLightGrey: 'rgba(255, 255, 255, 0.4)',
     backgroundPurple: '#C5BAFF',
     backgroundPink: '#FFD8D0',
     backgroundBlue: '#4A56E2',
@@ -20,9 +24,8 @@ export const theme = {
   },
   space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
   fonts: {
-    text: 'Circe',
-    textBold: 'Circe Bold',
-    logo: 'Poppins Bold',
+    baseFont: 'Circe',
+    secondaryFont: 'Poppins',
   },
   fontSizes: [
     '12px',
@@ -38,8 +41,7 @@ export const theme = {
     '68px',
   ],
   fontWeights: {
-    normal: 400,
-    medium: 500,
+    regular: 400,
     bold: 700,
   },
   lineHeights: {
@@ -47,6 +49,7 @@ export const theme = {
     text: 1.375,
   },
   letterSpacing: {
+    button: '0.1em',
     logo: '0.07em',
     text: '0.04em',
     title: '-0.01em',
@@ -75,3 +78,7 @@ export const theme = {
   },
   breakpoints: ['320px', '768px', '1280px'],
 };
+
+export function Theme({ children }) {
+  return <ThemeProvider theme={walletTheme}>{children}</ThemeProvider>;
+}

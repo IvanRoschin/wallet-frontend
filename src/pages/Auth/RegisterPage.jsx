@@ -11,6 +11,7 @@ import {
   LogoContainer,
 } from './Page.styled';
 import { RegisterForm } from 'components/Form';
+
 export const RegisterPage = () => {
   return (
     <Container>

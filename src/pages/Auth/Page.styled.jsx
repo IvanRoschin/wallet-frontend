@@ -20,14 +20,14 @@ export const ContainerPage = styled.div`
   top: 0px;
   justify-content: center;
   left: 0px;
-  background-color: var(--white);
+  background-color: ${p => p.theme.colors.white};
 
-  @media (max-width: 767px) {
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
     position: fixed;
   }
 
-  @media (min-width: 768px) {
-    background-color: var(--background-gray);
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    background-color: ${p => p.theme.colors.backgroundLightGrey};
     background-image: url(${eclipseGray}), url(${eclipsePink});
     background-repeat: no-repeat, no-repeat;
     background-position: 0px 100%, right 0px top 0px;
@@ -38,7 +38,7 @@ export const ContainerPage = styled.div`
     height: 100vh;
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
     flex-direction: row;
     padding: 0;
     min-height: 720px;
@@ -46,14 +46,14 @@ export const ContainerPage = styled.div`
 `;
 
 export const ImageSection = styled.div`
-  @media (min-width: 767px) {
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
     display: flex;
     margin-bottom: 50px;
     width: 540px;
     margin-right: auto;
     margin-left: auto;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
     flex-direction: column;
     justify-content: center;
     margin-bottom: 0px;
@@ -61,7 +61,7 @@ export const ImageSection = styled.div`
 `;
 
 export const ImageContainerLog = styled.div`
-  @media (min-width: 768px) {
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
     background-image: url(${LoginImageTab});
     background-repeat: no-repeat;
     background-size: cover;
@@ -71,7 +71,7 @@ export const ImageContainerLog = styled.div`
     width: 260px;
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
     background-image: url(${LoginImage});
     width: 435px;
     height: 419px;
@@ -81,7 +81,7 @@ export const ImageContainerLog = styled.div`
 `;
 
 export const ImageContainerReg = styled.div`
-  @media (min-width: 768px) {
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
     background-image: url(${RegImageTab});
     background-repeat: no-repeat;
     background-size: cover;
@@ -91,7 +91,7 @@ export const ImageContainerReg = styled.div`
     width: 274px;
   }
 
-  @media (min-width: 1280px) {
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
     background-image: url(${RegImage});
     width: 452px;
     height: 412px;
@@ -100,7 +100,7 @@ export const ImageContainerReg = styled.div`
   }
 `;
 export const Text = styled.p`
-  @media (min-width: 768px) {
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
     color: var(--black);
     display: flex;
     margin-right: auto;
@@ -111,7 +111,7 @@ export const Text = styled.p`
     margin-left: 40px;
     align-items: center;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
     margin-left: auto;
     width: 187px;
   }
@@ -120,10 +120,10 @@ export const Text = styled.p`
 export const FormWrapper = styled.div`
   align-items: center;
   display: flex;
-  @media (max-width: 767px) {
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
     height: 100vh;
   }
-  @media (min-width: 1280px) {
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
     width: 57%;
     height: 100%;
     background: hsla(0, 0%, 100%, 0.4);
@@ -136,16 +136,19 @@ export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: var(--white);
-  height: 354px;
+  background: ${p => p.theme.colors.white};
   width: 320px;
-  @media screen and (max-width: 767px) {
-    justify-content: center;
+
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    width: 533px;
+    padding: 40px 65px 60px;
+    border-radius: 20px;
+    margin-right: auto;
+    margin-left: auto;
   }
 
-  @media screen and (min-width: 768px) {
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
     width: 533px;
-    height: 468px;
     padding: 40px 65px 60px;
     border-radius: 20px;
     margin-right: auto;
@@ -158,16 +161,15 @@ export const FormContainerRegsiter = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: var(--white);
-  height: 354px;
-  width: 320px;
-  @media screen and (max-width: 767px) {
-    justify-content: center;
-  }
+  background: ${p => p.theme.colors.white};
+  width: 380px;
+  padding: 20px 32px 36px;
+  border-radius: 20px;
+  margin-right: auto;
+  margin-left: auto;
 
-  @media screen and (min-width: 768px) {
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
     width: 533px;
-    height: 616px;
     padding: 40px 65px 60px;
     border-radius: 20px;
     margin-right: auto;
@@ -175,4 +177,6 @@ export const FormContainerRegsiter = styled.div`
   }
 `;
 
-export const LogoContainer = styled.div``;
+export const LogoContainer = styled.div`
+  margin-bottom: 60px;
+`;

@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 import PoppinsWoff from 'fonts/poppins/poppins-v20-latin-regular.woff';
-
 import PoppinsBoldWoff from 'fonts/poppins/poppins-v20-latin-700.woff';
 
 import CirceWoff from 'fonts/circe/Circe-Regular.woff';

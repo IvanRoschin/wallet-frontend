@@ -1,16 +1,31 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import 'modern-normalize';
+import BackDes from '../assets/images/BackgrDes-min.png';
+import BackTab from '../assets/images/BackgrTablet-min.png';
 
 export const GlobalStyle = createGlobalStyle`
- body {
+body {
     margin: 0;
-
-    font-family: 'Circe', sans-serif;
-    font-size: ${p => p.theme.fontSizes[2]};
-    line-height: ${p => p.theme.lineHeights.text};
-    letter-spacing: ${p => p.theme.letterSpacing.text};
-
-    background-color: ${p => p.theme.colors.background};
+    text-align: center;
+    height: 100vh;
+    background-color: ${prop => prop.theme.colors.backgroundFirst};
+        background-image: linear-gradient( ${prop =>
+          prop.theme.colors.backgroundLightGrey}, ${prop =>
+  prop.theme.colors.backgroundLightGrey} );
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    backdrop-filter: blur(50px);
+   @media (min-width: ${p => p.theme.breakpoints[1]})  {
+    background: url(${BackTab});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+   @media (min-width: ${p => p.theme.breakpoints[2]})  {
+    background: url(${BackDes});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
   }
 
   code {

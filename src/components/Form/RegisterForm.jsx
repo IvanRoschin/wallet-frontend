@@ -34,7 +34,7 @@ export const RegisterForm = () => {
   });
 
   return (
-    <div>
+    <>
       <Form onSubmit={handleSubmit}>
         <InputContainer>
           <Label htmlFor="email">
@@ -88,12 +88,13 @@ export const RegisterForm = () => {
             ></Input>
           </Label>
         </InputContainer>
-
-        <RegisterBtn type="submit">Submit</RegisterBtn>
+        <InputContainer>
+          <RegisterBtn type="submit">Submit</RegisterBtn>
+        </InputContainer>
       </Form>
       {/* <Link to="/wallet_frontend/login"> */}
       <LoginBtn type="button">Log in </LoginBtn>
       {/* </Link> */}
-    </div>
+    </>
   );
 };
