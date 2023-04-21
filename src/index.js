@@ -5,6 +5,7 @@ import { App } from 'components/App';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from 'redux/store';
+import { ToastContainer } from 'react-toastify';
 
 import './index.css';
 import './i18n';
@@ -18,5 +19,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </BrowserRouter>
       </PersistGate>
     </Provider>
+    <ToastContainer />
   </React.StrictMode>
 );

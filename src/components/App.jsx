@@ -22,6 +22,10 @@ const LoginPage = lazy(() =>
   import('../pages/Auth/LoginPage' /* webpackChunkName: "LoginPage" */)
 );
 
+const DashboardPage = lazy(() =>
+  import('../pages/Dashboard/DashboardPage' /* webpackChunkName: "LoginPage" */)
+);
+
 export const App = () => {
   return (
     <Theme>
@@ -44,7 +48,16 @@ export const App = () => {
               </PublickRoute>
             }
           />
+          <Route
+            path="/home"
+            element={
+              <PrivatRoute>
+                <DashboardPage />
+              </PrivatRoute>
+            }
+          />
           <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
       </Suspense>
     </Theme>

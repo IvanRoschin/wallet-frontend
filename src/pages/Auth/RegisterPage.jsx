@@ -1,5 +1,5 @@
 import Media from 'react-media';
-import Logo from '../../components/Logo/Logo';
+import { Logo } from 'components/Logo';
 import {
   ContainerPage,
   FormContainerRegsiter,

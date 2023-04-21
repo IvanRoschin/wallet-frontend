@@ -9,7 +9,7 @@ import { ReactComponent as EyeClose } from '../../assets/images/VectorEyeClose.s
 export const Base = styled.div`
   display: block;
   height: 4px;
-  // box-shadow: 1px -2px 16px #e3e8e3;
+  box-shadow: 1px -2px 16px #e3e8e3;
   margin-top: 1px;
   transition: 1s;
   width: 0%;
@@ -28,27 +28,28 @@ export const Form = styled.form`
 `;
 
 export const Label = styled.label`
+  position: relative;
   display: inline-block;
-  font-weight: ${prop => prop.theme.fontWeights.regular};
-  font-size: ${prop => prop.theme.fontSizes[0]};
-  line-height: ${prop => prop.theme.lineHeights.text};
-  color: ${prop => prop.theme.colors.black};
-  min-width: ${prop => prop.theme.space[5]};
-  @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    width: 100%;
-    font-size: ${prop => prop.theme.fontSizes[3]};
-  }
-  @media (min-width: ${p => p.theme.breakpoints[2]}) {
-    width: 96px;
-  }
+  // font-weight: ${prop => prop.theme.fontWeights.regular};
+  // font-size: ${prop => prop.theme.fontSizes[0]};
+  // line-height: ${prop => prop.theme.lineHeights.text};
+  // color: ${prop => prop.theme.colors.black};
+  // min-width: ${prop => prop.theme.space[5]};
+  // @media (min-width: ${p => p.theme.breakpoints[1]}) {
+  //   width: 100%;
+  //   font-size: ${prop => prop.theme.fontSizes[3]};
+  // }
+  // @media (min-width: ${p => p.theme.breakpoints[2]}) {
+  //   width: 96px;
+  // }
 `;
 
 export const Input = styled.input`
-  padding: 10px 55px;
+  width: 100%;
   border-top: none;
   border-right: none;
   border-left: none;
-  border-image: initial;
+  background-color: ${p => p.theme.colors.transparent};
   outline: ${p => p.theme.colors.transparent};
 
   border-bottom: 1px solid ${p => p.theme.colors.border};
@@ -65,14 +66,12 @@ export const Input = styled.input`
     color: ${p => p.theme.colors.secondaryText};
     font-family: ${p => p.theme.fonts.baseFont};
     font-weight: ${p => p.theme.fontWeights.regular};
-    font-size: ${p => p.theme.fontSizes[3]};
+    font-size: ${p => p.theme.fontSizes[2]};
     line-height: 1;
   }
 `;
 
 export const InputContainer = styled.div`
-  position: relative;
-
   &:not(:last-child) {
     margin-bottom: 40px;
   }
@@ -80,50 +79,37 @@ export const InputContainer = styled.div`
 
 export const SvgEnvelope = styled(Envelope)`
   position: absolute;
-  top: 2px;
-  left: 8px;
+  bottom: 6px;
+  right: 164px;
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    top: 2px;
+    right: 210px;
+  }
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
+    right: 210px;
   }
 `;
 
 export const SvgLock = styled(Lock)`
   position: absolute;
-  top: 2px;
-  left: 8px;
+  bottom: 6px;
+  right: 164px;
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    top: 2px;
+    right: 210px;
+  }
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
+    right: 210px;
   }
 `;
 
 export const SvgAccount = styled(Account)`
   position: absolute;
-  top: 2px;
-  left: 8px;
+  bottom: 6px;
+  right: 164px;
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    top: 2px;
+    right: 210px;
   }
-`;
-
-export const LoginButtonRegPage = styled.button`
-  background-color: ${p => p.theme.colors.white};
-  color: ${p => p.theme.colors.backgroundBlue};
-  width: 280px;
-  border-radius: 50px;
-  height: 50px;
-  border: 1px solid ${p => p.theme.colors.backgroundBlue};
-  font-family: ${p => p.theme.fonts.baseFont};
-  font-weight: ${p => p.theme.fontWeights.regular};
-  font-size: ${p => p.theme.fontSizes[3]};
-  line-height: 1;
-  letter-spacing: ${p => p.theme.letterSpacing.button};
-  text-transform: uppercase;
-  transition: ${p => p.theme.transition.main};
-
-  &:hover,
-  &:focus {
-    transition: 0.7s;
-    transform: scale(1.1);
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
+    right: 210px;
   }
 `;
 
@@ -146,13 +132,13 @@ export const ErrorTextPassword = styled.p`
   }
 `;
 
-export const RegisterButtonRegPage = styled.button`
-  background-color: ${p => p.theme.colors.income};
-  color: ${p => p.theme.colors.white};
+export const RegisterBtnLp = styled.button`
+  background-color: ${p => p.theme.colors.white};
+  color: ${p => p.theme.colors.backgroundBlue};
   width: 280px;
   border-radius: ${p => p.theme.radii.big};
+  border: 1px solid ${p => p.theme.colors.backgroundBlue};
   height: 50px;
-  border: none;
   font-family: ${p => p.theme.fonts.baseFont};
   font-weight: ${p => p.theme.fontWeights.regular};
   font-size: ${p => p.theme.fontSizes[3]};
@@ -161,19 +147,55 @@ export const RegisterButtonRegPage = styled.button`
   text-transform: uppercase;
   transition: ${p => p.theme.transition.main};
 
-  &:hover {
+  &:hover,
+  :active {
     transition: 0.7s;
     transform: scale(1.1);
+    background-color: ${p => p.theme.colors.backgroundBlue};
+    color: ${p => p.theme.colors.white};
+    border: none;
   }
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    font-size: ${p => p.theme.fontSizes[4]};
+    padding: 12px 0 12px 0;
+`;
+
+export const LoginBtnLp = styled.button`
+  background-color: ${p => p.theme.colors.income};
+  color: ${p => p.theme.colors.white};
+  width: 280px;
+  border-radius: ${p => p.theme.radii.big};
+  border: none;
+  border-color: ${p => p.theme.colors.transparent};
+  height: 50px;
+  font-family: ${p => p.theme.fonts.baseFont};
+  font-weight: ${p => p.theme.fontWeights.regular};
+  font-size: ${p => p.theme.fontSizes[3]};
+  line-height: 1;
+  letter-spacing: ${p => p.theme.letterSpacing.button};
+  text-transform: uppercase;
+  transition: ${p => p.theme.transition.main};
+
+  &:hover,
+  :active {
+    transition: 0.7s;
+    transform: scale(1.1);
+    background-color: ${p => p.theme.colors.white};
+    color: ${p => p.theme.colors.income};
+    border: 1px solid ${p => p.theme.colors.income};
+  }
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    font-size: ${p => p.theme.fontSizes[4]};
+    padding: 12px 0 12px 0;
 `;
 
 export const LoginBtn = styled.button`
-  background-color: ${p => p.theme.colors.transparent};
+  background-color: ${p => p.theme.colors.white};
   color: ${p => p.theme.colors.backgroundBlue};
   width: 280px;
   border-radius: ${p => p.theme.radii.big};
-  height: 50px;
   border: 1px solid ${p => p.theme.colors.backgroundBlue};
+  height: 50px;
   font-family: ${p => p.theme.fonts.baseFont};
   font-weight: ${p => p.theme.fontWeights.regular};
   font-size: ${p => p.theme.fontSizes[3]};

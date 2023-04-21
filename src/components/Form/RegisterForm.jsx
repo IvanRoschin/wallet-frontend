@@ -1,8 +1,8 @@
 import { useFormik } from 'formik';
 import { RegisterSchema } from 'validationSchemas';
 import { Link, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
 import { useEffect } from 'react';
+import { toast } from 'react-toastify';
 
 import {
   Input,
@@ -23,8 +23,11 @@ export const RegisterForm = () => {
 
   const [
     signup,
-    { isSuccess: isSignupSucees, isError: isSignupError, error: SignupError },
+    { isSuccess: isSignupSuccess, isError: isSignupError, error: SignupError },
+    // { isSuccess: isSignupSuccess, isError: isSignupError, error: SignupError },
   ] = useSignupMutation();
+  console.log('isSignupSuccess', isSignupSuccess);
+  console.log('SignupError', SignupError);
 
   const { values, errors, handleChange, handleSubmit } = useFormik({
     initialValues: {
@@ -34,9 +37,9 @@ export const RegisterForm = () => {
       name: '',
     },
     validationSchema: RegisterSchema,
-    onSubmit: async ({ name, email, password }) => {
-      if (name && email && password) {
-        await signup({ name, email, password });
+    onSubmit: async ({ name, email, phone, password }) => {
+      if (name && email && phone && password) {
+        await signup({ name, email, phone, password });
       } else {
         toast.error('Please fill all fields');
       }
@@ -44,27 +47,19 @@ export const RegisterForm = () => {
   });
 
   useEffect(() => {
-    if (isSignupSucees) {
+    if (isSignupSuccess) {
+      console.log('isSignupSuccess', isSignupSuccess);
+      toast.success(SignupError?.data.message);
+      console.log('here must been redirect');
       navigate('/login');
     }
     if (isSignupError) {
-      console.log(SignupError.data.message);
-      toast.error(SignupError.data.message);
-    }
-  }, [isSignupSucees, isSignupError, SignupError, navigate]);
+      console.log('SignupError', SignupError?.data.message);
 
-  const validatePassword = values => {
-    let error = '';
-    const passwordRegex = /(?=.*[0-9])/;
-    if (!values) {
-      error = '*Required';
-    } else if (values.length < 8) {
-      error = '*Password must be 8 characters long.';
-    } else if (!passwordRegex.test(values)) {
-      error = '*Invalid password. Must contain one number.';
+      console.log(SignupError?.data.message);
+      toast.error(SignupError?.data.message);
     }
-    return error;
-  };
+  }, [isSignupSuccess, isSignupError, SignupError, navigate]);
 
   const validateConfirmPassword = (pass, value) => {
     let error = '';
@@ -82,87 +77,90 @@ export const RegisterForm = () => {
         <InputContainer>
           <Label htmlFor="email">
             <SvgEnvelope />
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="E-mail"
+              onChange={handleChange}
+              errors={errors}
+              value={values.email}
+            />
           </Label>
-          <Input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="E-mail"
-            onChange={handleChange}
-            errors={errors}
-            value={values.email}
-          />
           {errors.email && <Errors>{errors.email}</Errors>}
         </InputContainer>
+
         <InputContainer>
           <Label htmlFor="phone">
             <SvgLock />
+            <Input
+              id="phone"
+              name="phone"
+              placeholder="Phone number"
+              onChange={handleChange}
+              errors={errors}
+              value={values.phone}
+            />
           </Label>
-          <Input
-            id="phone"
-            name="phone"
-            placeholder="Phone number"
-            onChange={handleChange}
-            errors={errors}
-            value={values.phone}
-          />
           {errors.phone && <Errors>{errors.phone}</Errors>}
         </InputContainer>
 
         <InputContainer>
           <Label htmlFor="password">
             <SvgLock />
+            <Input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="Password"
+              onChange={handleChange}
+              value={values.password}
+              errors={errors}
+            />
           </Label>
-          <Input
-            id="password"
-            name="password"
-            type="password"
-            placeholder="Password"
-            onChange={handleChange}
-            value={values.password}
-            validate={validatePassword}
-            errors={errors}
-          />
           {errors.password && <Errors>{errors.password}</Errors>}
         </InputContainer>
 
         <InputContainer>
           <Label htmlFor="confirm">
             <SvgLock />
+            <Input
+              id="confirm"
+              name="confirm"
+              type="password"
+              placeholder="confirmPassword"
+              onChange={handleChange}
+              validate={value =>
+                validateConfirmPassword(values.password, value)
+              }
+              errors={errors}
+            />
           </Label>
-          <Input
-            id="confirm"
-            name="confirm"
-            type="password"
-            placeholder="confirmPassword"
-            onChange={handleChange}
-            validate={value => validateConfirmPassword(values.password, value)}
-            errors={errors}
-          />
           {errors.confirm && <Errors>{errors.confirm}</Errors>}
         </InputContainer>
 
         <InputContainer>
           <Label htmlFor="name">
             <SvgAccount />
+            <Input
+              id="name"
+              type="text"
+              name="name"
+              placeholder="First name"
+              onChange={handleChange}
+              value={values.name}
+              errors={errors}
+            />
           </Label>
-          <Input
-            id="name"
-            type="text"
-            name="name"
-            placeholder="First name"
-            onChange={handleChange}
-            value={values.name}
-            errors={errors}
-          />
           {errors.name && <Errors>{errors.name}</Errors>}
         </InputContainer>
+
         <InputContainer>
           <RegisterBtn type="submit">Submit</RegisterBtn>
         </InputContainer>
       </Form>
-      <Link to="/wallet_frontend/login">
-        <LoginBtn type="button">Log in </LoginBtn>
+      <Link to="/login">
+        <LoginBtn type="button">Login</LoginBtn>
       </Link>
     </>
   );

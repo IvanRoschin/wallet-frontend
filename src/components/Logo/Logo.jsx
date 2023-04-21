@@ -1,7 +1,7 @@
 import LogoSrc from '../../assets/images/Logo.svg';
 import { LogoText, LogoContainer, LogoImg } from './Logo.styled';
 
-const Logo = () => {
+export const Logo = () => {
   return (
     <LogoContainer>
       <LogoImg src={LogoSrc} alt="Logo" />
@@ -9,5 +9,3 @@ const Logo = () => {
     </LogoContainer>
   );
 };
-
-export default Logo;

@@ -13,6 +13,7 @@ import storage from 'redux-persist/lib/storage';
 import { setupListeners } from '@reduxjs/toolkit/dist/query';
 import { authReducer } from './auth/authSlice';
 import { authApi } from './auth/authApi';
+import { userApi } from './user/userApi';
 
 const persistConfig = {
   key: 'auth',
@@ -22,6 +23,7 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
   [authApi.reducerPath]: authApi.reducer,
+  [userApi.reducerPath]: userApi.reducer,
   auth: authReducer,
 });
 
@@ -36,6 +38,7 @@ export const store = configureStore({
       },
     }),
     authApi.middleware,
+    userApi.middleware,
   ],
 });
 

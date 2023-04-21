@@ -120,12 +120,14 @@ export const Text = styled.p`
 export const FormWrapper = styled.div`
   align-items: center;
   display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 320px;
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    height: 100vh;
+    width: 533px;
   }
   @media (min-width: ${p => p.theme.breakpoints[2]}) {
-    width: 57%;
-    height: 100%;
+    width: 533px;
     background: hsla(0, 0%, 100%, 0.4);
     backdrop-filter: blur(50px);
   }
@@ -136,6 +138,8 @@ export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px 0px 20px;
+
   background: ${p => p.theme.colors.white};
   width: 320px;
 

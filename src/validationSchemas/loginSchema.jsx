@@ -1,7 +1,7 @@
 import * as yup from 'yup';
 import i18n from 'i18n';
 
-export const userLoginSchema = yup.object().shape({
+export const LoginSchema = yup.object().shape({
   email: yup
     .string()
     .min(12, i18n.t('at_least_twelve'))
