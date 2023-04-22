@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import { Loader } from '../components/Loader';
 import { GlobalStyle } from '../globalStyles/globalStyle';
+import FontStyles from 'globalStyles/fontStyles';
 
 const PrivatRoute = lazy(() =>
   import('../routes/PrivateRouter' /* webpackChunkName: "PrivatRoute" */)
@@ -30,6 +31,7 @@ export const App = () => {
   return (
     <Theme>
       <GlobalStyle />
+      <FontStyles />
       <Suspense fallback={<Loader color="#4a56e2" size="100px" />}>
         <Routes>
           <Route

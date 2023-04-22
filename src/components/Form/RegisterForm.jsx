@@ -1,8 +1,9 @@
 import { useFormik } from 'formik';
 import { RegisterSchema } from 'validationSchemas';
 import { Link, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
 
 import {
   Input,
@@ -15,11 +16,27 @@ import {
   LoginBtn,
   Form,
   Errors,
+  OpenEyaIcon,
+  ClosedEyaIcon,
+  ButtonImg,
 } from './Form.styled';
 import { useSignupMutation } from 'redux/auth/authApi';
 
 export const RegisterForm = () => {
+  const { t } = useTranslation();
+
+  const [passwordVisibility, setPasswordVisibility] = useState(false);
+  const [confirmVisibility, setConfirmVisibility] = useState(false);
+
   const navigate = useNavigate();
+
+  const toggleShowPassword = () => {
+    setPasswordVisibility(!passwordVisibility);
+  };
+
+  const toggleShowcConfirm = () => {
+    setConfirmVisibility(!confirmVisibility);
+  };
 
   const [
     signup,
@@ -49,7 +66,7 @@ export const RegisterForm = () => {
   useEffect(() => {
     if (isSignupSuccess) {
       console.log('isSignupSuccess', isSignupSuccess);
-      toast.success(SignupError?.data.message);
+      toast.success('Signup Succes');
       console.log('here must been redirect');
       navigate('/login');
     }
@@ -107,12 +124,15 @@ export const RegisterForm = () => {
 
         <InputContainer>
           <Label htmlFor="password">
+            <ButtonImg type="button" onClick={toggleShowPassword}>
+              {passwordVisibility ? <OpenEyaIcon /> : <ClosedEyaIcon />}
+            </ButtonImg>
             <SvgLock />
             <Input
               id="password"
               name="password"
-              type="password"
-              placeholder="Password"
+              type={passwordVisibility ? 'text' : 'password'}
+              placeholder={t('Password')}
               onChange={handleChange}
               value={values.password}
               errors={errors}
@@ -123,12 +143,15 @@ export const RegisterForm = () => {
 
         <InputContainer>
           <Label htmlFor="confirm">
+            <ButtonImg type="button" onClick={toggleShowcConfirm}>
+              {confirmVisibility ? <OpenEyaIcon /> : <ClosedEyaIcon />}
+            </ButtonImg>
             <SvgLock />
             <Input
               id="confirm"
               name="confirm"
-              type="password"
-              placeholder="confirmPassword"
+              type={confirmVisibility ? 'text' : 'password'}
+              placeholder={t('Confirm_Password')}
               onChange={handleChange}
               validate={value =>
                 validateConfirmPassword(values.password, value)

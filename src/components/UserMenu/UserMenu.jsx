@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useLogoutQuery } from 'redux/auth/authApi';
-import { selectAuth } from 'redux/auth/authSlice';
+import { selectUser } from 'redux/auth/authSlice';
 
 import { toast } from 'react-toastify';
 
@@ -9,10 +9,12 @@ export const UserMenu = () => {
   const { logout } = useLogoutQuery();
 
   const navigate = useNavigate();
+  const { name } = useSelector(selectUser);
+  console.log('name', name);
 
-  const { name } = useSelector(selectAuth);
-  const { avatar } = useSelector(selectAuth);
-  const { id } = useSelector(selectAuth);
+  // const { name } = useSelector(selectUser);
+  const { image } = useSelector(selectUser);
+  const { id } = useSelector(selectUser);
   console.log('id', id);
 
   function handleLogout() {
@@ -24,7 +26,7 @@ export const UserMenu = () => {
   return (
     <div>
       Wellcome
-      <img src={avatar} alt="avatar" /> {name}
+      <img src={image} alt="avatar" /> {name}
       <button type="button" onClick={handleLogout}>
         Logout
       </button>

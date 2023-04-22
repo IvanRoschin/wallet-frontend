@@ -1,8 +1,9 @@
 import { useFormik } from 'formik';
 import { LoginSchema } from 'validationSchemas';
 import { Link, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
 
 import {
   Input,
@@ -14,11 +15,21 @@ import {
   LoginBtnLp,
   Form,
   Errors,
+  OpenEyaIcon,
+  ClosedEyaIcon,
+  ButtonImg,
 } from './Form.styled';
 import { useLoginMutation } from 'redux/auth/authApi';
 
 export const LoginForm = () => {
+  const { t } = useTranslation();
+  const [passwordVisibility, setPasswordVisibility] = useState(false);
+
   const navigate = useNavigate();
+
+  const toggleShowPassword = () => {
+    setPasswordVisibility(!passwordVisibility);
+  };
 
   const [
     login,
@@ -72,12 +83,15 @@ export const LoginForm = () => {
 
         <InputContainer>
           <Label htmlFor="password">
+            <ButtonImg type="button" onClick={toggleShowPassword}>
+              {passwordVisibility ? <OpenEyaIcon /> : <ClosedEyaIcon />}
+            </ButtonImg>
             <SvgLock />
             <Input
               id="password"
               name="password"
-              type="password"
-              placeholder="Password"
+              type={passwordVisibility ? 'text' : 'password'}
+              placeholder={t('Password')}
               onChange={handleChange}
               value={values.password}
               errors={errors}

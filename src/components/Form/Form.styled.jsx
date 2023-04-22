@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { ReactComponent as Envelope } from '../../assets/images/email.svg';
 import { ReactComponent as Lock } from '../../assets/images/lock.svg';
 import { ReactComponent as Account } from '../../assets/images/account.svg';
-import { ReactComponent as Eye } from '../../assets/images/VectorEyes.svg';
-import { ReactComponent as EyeClose } from '../../assets/images/VectorEyeClose.svg';
+import { ReactComponent as Open } from '../../assets/images/eye-password-show.svg';
+import { ReactComponent as Closed } from '../../assets/images/eye-password-hide.svg';
 
 export const Base = styled.div`
   display: block;
@@ -248,28 +248,23 @@ export const RegisterBtn = styled.button`
   }
 `;
 
-export const ButtonShow = styled(Eye)`
+export const ButtonImg = styled.button`
   position: absolute;
-  padding: 7px 7px;
-  right: 0;
-  top: -3px;
-  cursor: pointer;
+  top: 10px;
+  left: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border: none;
+  background-color: inherit;
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    right: 0;
-    top: 0;
+    // left: 300px;
+  }
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
+    // left: 400px;
   }
 `;
 
-export const ButtonHide = styled(EyeClose)`
-  position: absolute;
-  padding: 7px 7px;
-  right: 0;
-  top: -3px;
-  fill: ${p => p.theme.colors.secondaryText};
-  cursor: pointer;
-
-  @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    right: 0;
-    top: 0;
-  }
-`;
+export const OpenEyaIcon = styled(Open)``;
+export const ClosedEyaIcon = styled(Closed)``;
