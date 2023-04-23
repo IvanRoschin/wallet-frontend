@@ -15,7 +15,6 @@ export const AuthSlice = createSlice({
     builder.addMatcher(
       authApi.endpoints.signup.matchFulfilled,
       (state, { payload }) => {
-        console.log('payloadSignup', payload);
         state.user = {
           name: payload.name,
           email: payload.email,
@@ -28,19 +27,34 @@ export const AuthSlice = createSlice({
     builder.addMatcher(
       authApi.endpoints.login.matchFulfilled,
       (state, { payload }) => {
-        console.log('payloadLogin', payload);
+        localStorage.setItem(
+          'user',
+          JSON.stringify({
+            user: payload.user,
+          })
+        );
         state.accessToken = payload.accessToken;
         state.refreshToken = payload.refreshToken;
         state.user = payload.user;
         state.isLoggedIn = true;
       }
     );
+    builder.addMatcher(
+      authApi.endpoints.logout.matchFulfilled,
+      (state, { payload }) => {
+        state.user = null;
+        state.status = null;
+        state.accessToken = null;
+        state.refreshToken = null;
+        state.isLoggedIn = false;
+      }
+    );
   },
 });
 
 // Selectors
-export const selectAuth = state => state.auth;
-export const selectUser = state => state.auth.user;
+// export const selectAuth = state => state.auth;
+// export const selectUser = state => state.auth.user;
 
 // Actions
 // export const { setUser, logout } = AuthSlice.actions;

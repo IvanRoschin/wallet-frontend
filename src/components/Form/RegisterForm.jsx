@@ -67,13 +67,9 @@ export const RegisterForm = () => {
     if (isSignupSuccess) {
       console.log('isSignupSuccess', isSignupSuccess);
       toast.success('Signup Succes');
-      console.log('here must been redirect');
       navigate('/login');
     }
     if (isSignupError) {
-      console.log('SignupError', SignupError?.data.message);
-
-      console.log(SignupError?.data.message);
       toast.error(SignupError?.data.message);
     }
   }, [isSignupSuccess, isSignupError, SignupError, navigate]);

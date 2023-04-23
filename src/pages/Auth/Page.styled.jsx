@@ -6,12 +6,6 @@ import RegImageTab from '../../assets/images/RegistrationPageImage_tablet.png';
 import LoginImage from '../../assets/images/loginPageImage_desktop.png';
 import LoginImageTab from '../../assets/images/loginPageImage_tablet.png';
 
-export const Container = styled.div`
-  display: block;
-  height: 100%;
-  padding: 0;
-`;
-
 export const ContainerPage = styled.div`
   display: flex;
   flex-direction: column;

@@ -30,11 +30,11 @@ export const Form = styled.form`
 export const Label = styled.label`
   position: relative;
   display: inline-block;
-  // font-weight: ${prop => prop.theme.fontWeights.regular};
-  // font-size: ${prop => prop.theme.fontSizes[0]};
-  // line-height: ${prop => prop.theme.lineHeights.text};
-  // color: ${prop => prop.theme.colors.black};
-  // min-width: ${prop => prop.theme.space[5]};
+  // font-weight: ${p => p.theme.fontWeights.regular};
+  // font-size: ${p => p.theme.fontSizes[0]};
+  // line-height: ${p => p.theme.lineHeights.text};
+  // color: ${p => p.theme.colors.black};
+  // min-width: ${p => p.theme.space[5]};
   // @media (min-width: ${p => p.theme.breakpoints[1]}) {
   //   width: 100%;
   //   font-size: ${prop => prop.theme.fontSizes[3]};
@@ -60,7 +60,7 @@ export const Input = styled.input`
   transition: border-bottom 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
     height: 32px;
-    font-size: ${prop => prop.theme.fontSizes[3]};
+    font-size: ${p => p.theme.fontSizes[3]};
   }
   ::placeholder {
     color: ${p => p.theme.colors.secondaryText};

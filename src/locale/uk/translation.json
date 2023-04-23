@@ -1,0 +1,196 @@
+{
+  "noTransactionText": "У вас немає жодних транзакцій. Натисніть кнопку Додати щоб розпочати.",
+  "date": "Дата",
+  "type": "Тип",
+  "category": "Категорія",
+  "comment": "Комментар",
+  "sum": "Сума",
+  "balance": "Баланс",
+
+  "groceries": "Продукти",
+  "work": "Робота",
+  "apartment": "Квартира",
+  "tenats": "Орендарі",
+  "transport": "Транспорт",
+  "farmacy": "Аптека",
+  "restaurant": "Ресторан",
+  "home": "Дім",
+  "other": "Інше",
+  "insurance": "Страхування",
+  "medical": "Лікування",
+  "education": "Освіта",
+  "kids": "Діти",
+  "clothes": "Одяг",
+  "vacation": "Відпустка",
+  "investment": "Вклади",
+  "gifts": "Подарунки",
+  "sports": "Спорт",
+  "sport": "Спорт",
+  "hobby": "Хоббі",
+  "entertainment": "Розваги",
+  "savings": "Заощадження",
+  "basic": "Базові витрати",
+  "main": "Головний",
+  "food": "Їжа",
+  "auto": "Авто",
+  "car": "Авто",
+  "products": "Товари",
+  "reset": "Перезагрузка?",
+  "development": "Розвиток",
+  "children": "Діти",
+  "house": "Будинок",
+  "income": "Дохід",
+  "expense": "Витрати",
+  "salary": "Зарплата",
+  "header": {
+    "name": "Ім'я",
+    "exit": "Вихід"
+  },
+  "currencyPage": {
+    "currency": "Валюта",
+    "purchase": "Купівля",
+    "sale": "Продаж"
+  },
+  "settingsComponent": {
+    "language": "Мова",
+    "exit": "Вихід"
+  },
+  "balanceComponent": {
+    "yourBalance": "Ваш баланс"
+  },
+  "diagramTab": {
+    "reduxData": {
+      "basic": "Базові витрати",
+      "products": "Товари",
+      "car": "Авто",
+      "health": "Здоров'я",
+      "kids": "Діти",
+      "home": "Дім",
+      "education": "Освіта",
+      "leisure": "Відпочинок",
+      "other": "Інше"
+    },
+    "optionData": {
+      "month": "Місяць",
+      "year": "Рік",
+      "jan": "Січень",
+      "feb": "Лютий",
+      "mar": "Березень",
+      "apr": "Квітень",
+      "may": "Травень",
+      "jun": "Червень",
+      "jul": "Липень",
+      "aug": "Серпень",
+      "sep": "Вересень",
+      "oct": "Жовтень",
+      "nov": "Листопад",
+      "dec": "Грудень"
+    }
+  },
+  "table": {
+    "category": "Категорія",
+    "sum": "Сума",
+    "income": "Дохід",
+    "expenses": "Витрати"
+  },
+  "navigation": {
+    "home": "Головна",
+    "statistics": "Статистика"
+  },
+  "registration": {
+    "placeholders": {
+      "e-mail": "Пошта",
+      "firstname": "Ім'я",
+      "password": "Пароль",
+      "confirmpassword": "Підтвердити пароль"
+    },
+    "buttons": {
+      "register": "РЕЄСТРАЦІЯ",
+      "login": "ВХІД"
+    },
+    "password": {
+      "notequal": "паролі повинні співпадати",
+      "short": "пароль має бути не менше 6-ти символів",
+      "required": "це поле не може бути пустим"
+    },
+    "status": {
+      "success": "Реєстрація успішна!",
+      "error": "Користувач з такою поштою вже зареєстрований"
+    },
+    "required": {
+      "name": "це поле не може бути пустим",
+      "repeated_password": "це поле не може бути пустим"
+    }
+  },
+  "login": {
+    "status": {
+      "success": "Ви увійшли!",
+      "error": "Сталася помилка. Спробуйте ще раз"
+    },
+    "buttons": {
+      "register": "РЕЄСТРАЦІЯ",
+      "login": "ВХІД"
+    },
+    "placeholders": {
+      "e-mail": "Пошта",
+      "password": "Пароль"
+    }
+  },
+  "errorPage": {
+    "message": "Такої сторінуи не існує. Повернутися на ",
+    "home": "Головну",
+    "alt": "Нажаль, сталася помилка"
+  },
+  "statistics": {
+    "header": "Статистика"
+  },
+  "addtransaction": {
+    "header": {
+      "title": "Додати транзакцію",
+      "income": "Дохід",
+      "expense": "Витрати"
+    },
+    "buttons": {
+      "add": "Додати",
+      "cancel": "Відмінити"
+    },
+    "options": {
+      "main": "Основні",
+      "basic": "Щоденні витрати",
+      "food": "Їжа",
+      "car": "Авто",
+      "products": "Товари",
+      "development": "Розвиток",
+      "health": "Здоров'я",
+      "children": "Діти",
+      "childrencare": "Здоров'я дітей",
+      "house": "Будинок",
+      "household": "Господарські продукти",
+      "education": "Освіта",
+      "leisure": "Відпочинок",
+      "other": "Інше",
+      "salary": "Зарплата",
+      "bonus": "Бонус"
+    },
+    "notify": {
+      "success": "Операція успішна!",
+      "error": "Сталася помилка. Спробуйте ще раз."
+    },
+    "placeholders": {
+      "comment": "Комментар",
+      "select": "Виберіть категорію"
+    }
+  },
+  "deleteprompt": {
+    "sure": "Ви впевнені?",
+    "irrevertable": "Транзакцію неможливо відновити після видалення",
+    "delete": "Видалити",
+    "cancel": "Відмінити"
+  },
+  "exitprompt": {
+    "wallet": "Wallet підтвердження",
+    "confirm": "Справді хочете вийти?",
+    "cancel": "Відміна",
+    "exit": "Вийти"
+  }
+}

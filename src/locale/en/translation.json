@@ -1,0 +1,199 @@
+{
+  "noTransactionText": "You don't have any transactions. Please use add button below to get started.",
+  "date": "Date",
+  "type": "Type",
+  "category": "Category",
+  "comment": "Comment",
+  "sum": "Sum",
+  "balance": "Balance",
+  "groceries": "Groceries",
+  "work": "Work",
+  "apartment": "Apartment",
+  "tenats": "Tenants",
+  "transport": "Transport",
+  "farmacy": "Farmacy",
+  "restaurant": "Restaurant",
+  "home": "Home",
+  "other": "Other",
+  "insurance": "Insurance",
+  "medical": "Medical care",
+  "education": "Education",
+  "kids": "Kids",
+  "clothes": "Clothes",
+  "vacation": "Vacation",
+  "investment": "Investment",
+  "gifts": "Gifts",
+  "sports": "Sports",
+  "sport": "Sport",
+  "hobby": "Hobby",
+  "entertainment": "Entertainment",
+  "savings": "Savings",
+  "basic": "Basic expenses",
+  "main": "Main",
+  "food": "Food",
+  "auto": "Auto",
+  "car": "Car",
+  "products": "Products",
+  "reset": "Reset",
+  "development": "Development",
+  "children": "Children",
+  "house": "House",
+  "income": "Income",
+  "expense": "Expenses",
+  "salary": "Salary",
+  "header": {
+    "name": "Name",
+    "exit": "Exit"
+  },
+  "currencyPage": {
+    "currency": "Currency",
+    "purchase": "Purchase",
+    "sale": "Sale"
+  },
+  "settingsComponent": {
+    "language": "Language",
+    "exit": "Exit"
+  },
+  "balanceComponent": {
+    "yourBalance": "Your balance"
+  },
+  "diagramTab": {
+    "reduxData": {
+      "basic": "Basic expenses",
+      "products": "Products",
+      "car": "Car",
+      "health": "Health",
+      "kids": "Kids",
+      "home": "Home",
+      "education": "Education",
+      "leisure": "Leisure",
+      "other": "Other"
+    },
+    "optionData": {
+      "month": "Month",
+      "year": "Year",
+      "jan": "January",
+      "feb": "February",
+      "mar": "March",
+      "apr": "April",
+      "may": "May",
+      "jun": "June",
+      "jul": "July",
+      "aug": "August",
+      "sep": "September",
+      "oct": "October",
+      "nov": "November",
+      "dec": "December",
+      "19": "2019",
+      "20": "2020",
+      "21": "2021",
+      "22": "2022"
+    }
+  },
+  "table": {
+    "category": "Category",
+    "sum": "Sum",
+    "income": "Income",
+    "expenses": "Expenses"
+  },
+  "navigation": {
+    "home": "Home",
+    "statistics": "Statistics"
+  },
+  "registration": {
+    "placeholders": {
+      "e-mail": "E-mail",
+      "firstname": "First name",
+      "password": "Password",
+      "confirmpassword": "Confirm password"
+    },
+    "buttons": {
+      "register": "REGISTER",
+      "login": "LOG IN"
+    },
+    "password": {
+      "notequal": "both password need to be the same",
+      "short": "password must be at least 6 charachters",
+      "required": "password is a required field"
+    },
+    "status": {
+      "success": "Success! Please, log in!",
+      "error": "User with this email already exists"
+    },
+    "required": {
+      "name": "name is a required field",
+      "repeated_password": "confirm password can not be empty"
+    }
+  },
+  "login": {
+    "status": {
+      "success": "Success log in!",
+      "error": "Something wrong, try again!"
+    },
+    "buttons": {
+      "register": "REGISTER",
+      "login": "LOG IN"
+    },
+    "placeholders": {
+      "e-mail": "E-mail",
+      "password": "Password"
+    }
+  },
+  "errorPage": {
+    "message": "This page does not exist. Follow link to return to",
+    "home": "Home",
+    "alt": "Ops, something is wrong"
+  },
+  "statistics": {
+    "header": "Statistics"
+  },
+  "addtransaction": {
+    "header": {
+      "title": "Add transaction",
+      "income": "Income",
+      "expense": "Expense"
+    },
+    "buttons": {
+      "add": "Add",
+      "cancel": "Cancel"
+    },
+    "options": {
+      "main": "Main",
+      "basic": "Basic expenses",
+      "food": "Food",
+      "car": "Car",
+      "products": "Products",
+      "development": "Development",
+      "health": "Self care",
+      "children": "Children",
+      "childrencare": "Child care",
+      "house": "House",
+      "household": "Household product",
+      "education": "Education",
+      "leisure": "Leisure",
+      "other": "Other",
+      "salary": "Salary",
+      "bonus": "Bonus"
+    },
+    "notify": {
+      "success": "Transaction successfuly added!",
+      "error": "Something went wrong. Please try again."
+    },
+    "placeholders": {
+      "comment": "Comment",
+      "select": "Select category"
+    }
+  },
+  "deleteprompt": {
+    "sure": "Are you sure?",
+    "irrevertable": "Transaction cannot be restored after deleting",
+    "delete": "Delete",
+    "cancel": "Cancel"
+  },
+  "exitprompt": {
+    "wallet": "Wallet Confirm",
+    "confirm": "Do you really want to exit?",
+    "cancel": "Cancel",
+    "exit": "Exit"
+  }
+}

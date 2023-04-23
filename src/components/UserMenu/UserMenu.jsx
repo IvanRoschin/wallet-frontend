@@ -1,35 +1,42 @@
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { useLogoutQuery } from 'redux/auth/authApi';
-import { selectUser } from 'redux/auth/authSlice';
-
+import { useLogoutMutation } from 'redux/auth/authApi';
+import { authSelectors } from 'redux/selector';
 import { toast } from 'react-toastify';
+import { useTranslation } from 'react-i18next';
+
+import {
+  Container,
+  UserMenuText,
+  LogoutButton,
+  LogoutIcon,
+} from './UserMenu.styled';
 
 export const UserMenu = () => {
-  const { logout } = useLogoutQuery();
+  const { t } = useTranslation();
 
+  const [logout] = useLogoutMutation();
   const navigate = useNavigate();
-  const { name } = useSelector(selectUser);
-  console.log('name', name);
-
-  // const { name } = useSelector(selectUser);
-  const { image } = useSelector(selectUser);
-  const { id } = useSelector(selectUser);
-  console.log('id', id);
+  const { name, image, id } = useSelector(authSelectors.getUser);
 
   function handleLogout() {
     logout(id);
     toast.success('Logout Successfully');
-    navigate('/auth');
+    console.log('Тут має бути редірект на логін');
+    navigate('/login');
   }
 
   return (
-    <div>
-      Wellcome
-      <img src={image} alt="avatar" /> {name}
-      <button type="button" onClick={handleLogout}>
-        Logout
-      </button>
-    </div>
+    <Container>
+      <UserMenuText>Wellcome</UserMenuText>
+      <UserMenuText>
+        <img src={image} alt="avatar" width="24px" height="24px" />
+      </UserMenuText>
+      {name} |
+      <LogoutButton type="button" onClick={handleLogout}>
+        <LogoutIcon />
+        <span>{t('Log_out')}</span>
+      </LogoutButton>
+    </Container>
   );
 };

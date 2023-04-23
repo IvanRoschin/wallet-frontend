@@ -51,13 +51,10 @@ export const LoginForm = () => {
 
   useEffect(() => {
     if (isLoginSuccess) {
-      console.log('isLoginSuccess', isLoginSuccess);
       toast.success(LoginError?.data.message);
-      console.log('here must been redirect');
       navigate('/home');
     }
     if (isLoginError) {
-      console.log(isLoginError?.data.message);
       toast.error(isLoginError?.data.message);
     }
   }, [isLoginSuccess, isLoginError, LoginError, navigate]);

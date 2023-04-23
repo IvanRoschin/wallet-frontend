@@ -1,9 +1,14 @@
 import { AppBar } from 'components/AppBar';
+import { Navigation } from 'components/Navigation';
+import { Container } from 'globalStyles/globalStyle';
 const Dashboard = () => {
   return (
-    <div>
+    <>
       <AppBar />
-    </div>
+      <Container>
+        <Navigation />
+      </Container>
+    </>
   );
 };
 

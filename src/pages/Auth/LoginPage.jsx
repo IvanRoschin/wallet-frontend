@@ -1,12 +1,12 @@
 import Media from 'react-media';
 import { Logo } from 'components/Logo';
+import { Container } from 'globalStyles/globalStyle';
 import {
   ContainerPage,
   FormContainerRegsiter,
   ImageContainerReg,
   Text,
   ImageSection,
-  Container,
   FormWrapper,
   LogoContainer,
 } from './Page.styled';

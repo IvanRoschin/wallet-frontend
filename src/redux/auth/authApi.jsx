@@ -18,35 +18,35 @@ export const authApi = createApi({
   }),
   endpoints: builder => ({
     signup: builder.mutation({
-      query(body) {
-        return {
-          url: `signup`,
-          method: 'POST',
-          body,
-        };
-      },
-
+      query: credentials => ({
+        url: `signup`,
+        method: 'POST',
+        body: credentials,
+      }),
       invalidatesTags: ['auth'],
     }),
 
     login: builder.mutation({
-      query(body) {
-        return {
-          url: `login`,
-          method: 'POST',
-          body,
-        };
-      },
+      query: credentials => ({
+        url: `login`,
+        method: 'POST',
+        body: credentials,
+      }),
       invalidatesTags: ['auth'],
     }),
 
-    logout: builder.query({
-      query: id => 'logout',
-      providesTags: ['auth'],
+    logout: builder.mutation({
+      query: credentials => ({
+        url: 'logout',
+        method: 'POST',
+        body: credentials,
+      }),
+      invalidatesTags: ['auth'],
     }),
   }),
 });
 
-export const { useSignupMutation, useLoginMutation, useLogoutQuery } = authApi;
+export const { useSignupMutation, useLoginMutation, useLogoutMutation } =
+  authApi;
 
 export const authApiReducer = authApi.reducer;
