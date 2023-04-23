@@ -43,7 +43,6 @@ export const LoginForm = () => {
     },
     validationSchema: LoginSchema,
     onSubmit: async values => {
-      console.log('values', values);
       await login(values);
       toast.error('Please fill all fields');
     },

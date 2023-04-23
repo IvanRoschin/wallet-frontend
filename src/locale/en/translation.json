@@ -103,19 +103,31 @@
   "registration": {
     "placeholders": {
       "e-mail": "E-mail",
+      "phone": "Phone number",
       "firstname": "First name",
       "password": "Password",
       "confirmpassword": "Confirm password"
     },
     "buttons": {
       "register": "REGISTER",
-      "login": "LOG IN"
+      "login": "LOGIN"
     },
     "password": {
       "notequal": "both password need to be the same",
       "short": "password must be at least 6 charachters",
-      "required": "password is a required field"
+      "required": "password is a required field",
+      "no_space": "space is not allowed",
+      "at_least_seven": "at least 7 symbols",
+      "max_tt": "maximum 32 symbols",
+      "passwords_match": "Passwords must match"
     },
+
+    "email": {
+      "email_match": "Email must be in format mail@mail.com",
+      "at_least_five": "At least 5 symbols",
+      "required_field": "email is a required field"
+    },
+
     "status": {
       "success": "Success! Please, log in!",
       "error": "User with this email already exists"

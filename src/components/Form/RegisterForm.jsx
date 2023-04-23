@@ -4,6 +4,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
 import { useTranslation } from 'react-i18next';
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
+import css from './UserPhoneInput.css';
 
 import {
   Input,
@@ -12,6 +15,7 @@ import {
   SvgAccount,
   SvgEnvelope,
   SvgLock,
+  SvgPhone,
   RegisterBtn,
   LoginBtn,
   Form,
@@ -41,7 +45,6 @@ export const RegisterForm = () => {
   const [
     signup,
     { isSuccess: isSignupSuccess, isError: isSignupError, error: SignupError },
-    // { isSuccess: isSignupSuccess, isError: isSignupError, error: SignupError },
   ] = useSignupMutation();
   console.log('isSignupSuccess', isSignupSuccess);
   console.log('SignupError', SignupError);
@@ -94,7 +97,7 @@ export const RegisterForm = () => {
               id="email"
               name="email"
               type="email"
-              placeholder="E-mail"
+              placeholder={t('registration.placeholders.e-mail')}
               onChange={handleChange}
               errors={errors}
               value={values.email}
@@ -105,7 +108,21 @@ export const RegisterForm = () => {
 
         <InputContainer>
           <Label htmlFor="phone">
-            <SvgLock />
+            <SvgPhone />
+            <PhoneInput
+              id="phone"
+              name="phone"
+              type="tel"
+              className={css}
+              placeholder={t('registration.placeholders.phone')}
+              onlyCountries={['ua']}
+              country={'ua'}
+              countryCodeEditable={false}
+              errors={errors}
+              value={values.phone}
+              onChange={handleChange}
+            />
+            {/* 
             <Input
               id="phone"
               name="phone"
@@ -113,7 +130,7 @@ export const RegisterForm = () => {
               onChange={handleChange}
               errors={errors}
               value={values.phone}
-            />
+            /> */}
           </Label>
           {errors.phone && <Errors>{errors.phone}</Errors>}
         </InputContainer>
@@ -128,7 +145,7 @@ export const RegisterForm = () => {
               id="password"
               name="password"
               type={passwordVisibility ? 'text' : 'password'}
-              placeholder={t('Password')}
+              placeholder={t('registration.placeholders.password')}
               onChange={handleChange}
               value={values.password}
               errors={errors}
@@ -147,7 +164,7 @@ export const RegisterForm = () => {
               id="confirm"
               name="confirm"
               type={confirmVisibility ? 'text' : 'password'}
-              placeholder={t('Confirm_Password')}
+              placeholder={t('registration.placeholders.confirmpassword')}
               onChange={handleChange}
               validate={value =>
                 validateConfirmPassword(values.password, value)
@@ -165,7 +182,7 @@ export const RegisterForm = () => {
               id="name"
               type="text"
               name="name"
-              placeholder="First name"
+              placeholder={t('registration.placeholders.firstname')}
               onChange={handleChange}
               value={values.name}
               errors={errors}

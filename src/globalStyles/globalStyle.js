@@ -4,6 +4,8 @@ import BackTab from '../assets/images/BackgrTablet-min.png';
 
 export const GlobalStyle = createGlobalStyle`
 body {
+  font-family: font-family: 'Circle', sans-serif;
+
     margin: 0;
     text-align: center;
     height: 100vh;

@@ -35,7 +35,7 @@ export const UserMenu = () => {
       {name} |
       <LogoutButton type="button" onClick={handleLogout}>
         <LogoutIcon />
-        <span>{t('Log_out')}</span>
+        <span>{t('exitprompt.exit')}</span>
       </LogoutButton>
     </Container>
   );

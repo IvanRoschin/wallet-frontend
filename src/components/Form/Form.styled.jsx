@@ -5,6 +5,7 @@ import { ReactComponent as Lock } from '../../assets/images/lock.svg';
 import { ReactComponent as Account } from '../../assets/images/account.svg';
 import { ReactComponent as Open } from '../../assets/images/eye-password-show.svg';
 import { ReactComponent as Closed } from '../../assets/images/eye-password-hide.svg';
+import { ReactComponent as Phone } from '../../assets/images/phone.svg';
 
 export const Base = styled.div`
   display: block;
@@ -74,42 +75,6 @@ export const Input = styled.input`
 export const InputContainer = styled.div`
   &:not(:last-child) {
     margin-bottom: 40px;
-  }
-`;
-
-export const SvgEnvelope = styled(Envelope)`
-  position: absolute;
-  bottom: 6px;
-  right: 164px;
-  @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    right: 210px;
-  }
-  @media (min-width: ${p => p.theme.breakpoints[2]}) {
-    right: 210px;
-  }
-`;
-
-export const SvgLock = styled(Lock)`
-  position: absolute;
-  bottom: 6px;
-  right: 164px;
-  @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    right: 210px;
-  }
-  @media (min-width: ${p => p.theme.breakpoints[2]}) {
-    right: 210px;
-  }
-`;
-
-export const SvgAccount = styled(Account)`
-  position: absolute;
-  bottom: 6px;
-  right: 164px;
-  @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    right: 210px;
-  }
-  @media (min-width: ${p => p.theme.breakpoints[2]}) {
-    right: 210px;
   }
 `;
 
@@ -268,3 +233,51 @@ export const ButtonImg = styled.button`
 
 export const OpenEyaIcon = styled(Open)``;
 export const ClosedEyaIcon = styled(Closed)``;
+export const SvgPhone = styled(Phone)`
+  fill: rgb(224, 224, 224);
+  position: absolute;
+  bottom: 6px;
+  right: 172px;
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    right: 210px;
+  }
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
+    right: 215px;
+  }
+`;
+
+export const SvgEnvelope = styled(Envelope)`
+  position: absolute;
+  bottom: 6px;
+  right: 164px;
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    right: 210px;
+  }
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
+    right: 210px;
+  }
+`;
+
+export const SvgLock = styled(Lock)`
+  position: absolute;
+  bottom: 6px;
+  right: 164px;
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    right: 210px;
+  }
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
+    right: 210px;
+  }
+`;
+
+export const SvgAccount = styled(Account)`
+  position: absolute;
+  bottom: 6px;
+  right: 164px;
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    right: 210px;
+  }
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
+    right: 210px;
+  }
+`;
