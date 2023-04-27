@@ -6,7 +6,7 @@ export const GoogleAuth = () => {
   const { t } = useTranslation();
   return (
     <>
-      <GoogleLoginButton href="https://petly-backend-flax.vercel.app/api/users/google">
+      <GoogleLoginButton href="https://wallet-backend-mu.vercel.app/api/auth/google">
         <GoogleImg src={GooglePic} alt="Google" />
         {t('registration.Signup_with_Google')}
       </GoogleLoginButton>
