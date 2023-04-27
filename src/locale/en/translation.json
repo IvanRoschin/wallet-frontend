@@ -116,7 +116,6 @@
     "password": {
       "notequal": "both password need to be the same",
       "short": "password must be at least 6 charachters",
-      "required": "password is a required field",
       "no_space": "space is not allowed",
       "at_least_seven": "at least 7 symbols",
       "max_tt": "maximum 32 symbols",
@@ -129,12 +128,22 @@
       "required_field": "email is a required field"
     },
 
+    "phone": {
+      "invalid_phone_number": "Invalid phone number(+380111111111)"
+    },
+
+    "name": {
+      "only_cyrillic_latin": "Only cyrillic latin"
+    },
+
     "status": {
       "success": "Success! Please, log in!",
       "error": "User with this email already exists"
     },
     "required": {
       "name": "name is a required field",
+      "phone": "phone is a required field",
+      "password": "password is a required field",
       "repeated_password": "confirm password can not be empty"
     }
   },

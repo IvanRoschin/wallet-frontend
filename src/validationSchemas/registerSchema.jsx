@@ -6,7 +6,7 @@ export const RegisterSchema = yup.object().shape({
     .string()
     .matches(
       /^[a-zA-Zа-яА-ЯіІїЇґҐ]+(?: [a-zA-Zа-яА-ЯіІїЇґҐ]+)*$/,
-      i18n.t('Only_cyrillic_latin')
+      i18n.t('registration.name.only_cyrillic_latin')
     )
     .required(i18n.t('registration.required.name')),
   email: yup
@@ -19,16 +19,16 @@ export const RegisterSchema = yup.object().shape({
     .required(i18n.t('registration.email.required_field')),
   phone: yup
     .string()
-    .matches(/^\+380\d{9}$/, 'Invalid phone number(+380111111111)')
+    .matches(/^\+380\d{9}$/, i18n.t('registration.phone.invalid_phone_number'))
     .min(13)
-    .max(13),
-  // .required('Required field'),
+    .max(13)
+    .required(i18n.t('registration.required.phone')),
   password: yup
     .string()
     .matches(/^\S+$/, i18n.t('registration.password.no_space'))
     .min(7, i18n.t('registration.password.at_least_seven'))
     .max(32, i18n.t('registration.password.max_tt'))
-    .required(i18n.t('registration.password.required')),
+    .required(i18n.t('registration.required.password')),
   confirm: yup
     .string()
     .oneOf(

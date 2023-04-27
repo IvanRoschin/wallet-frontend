@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { privateRoutes } from 'baseSettings/baseSettings';
+// import { privateRoutes } from 'baseSettings/baseSettings';
 
 const HOST_NAME = 'http://localhost:3030/api/auth';
 

@@ -24,7 +24,6 @@ import {
   ClosedEyaIcon,
   ButtonImg,
 } from './Form.styled';
-import { Container } from 'globalStyles/globalStyle';
 
 export const RegisterForm = () => {
   const { t } = useTranslation();
@@ -112,14 +111,14 @@ export const RegisterForm = () => {
             <SvgPhone />
             <PhoneInput
               id="phone"
-              // name="phone"
-              // type="tel"
-              // className={css}
-              // placeholder={t('registration.placeholders.phone')}
+              name="phone"
+              type="tel"
+              className={css}
+              placeholder={t('registration.placeholders.phone')}
               onlyCountries={['ua']}
               country={'ua'}
-              // countryCodeEditable={false}
-              // errors={errors}
+              countryCodeEditable={false}
+              errors={errors}
               value={values.phone}
               onChange={() => {
                 console.log(values.phone);

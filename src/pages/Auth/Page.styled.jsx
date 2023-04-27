@@ -130,20 +130,16 @@ export const FormContainer = styled.div`
 
 export const LeftSide = styled.div`
   @media (min-width: ${p => p.theme.breakpoints[2]}) {
-    padding: 150px 76px;
+    padding: 150px, 76px;
+    height: 100vh;
   }
 `;
 
 export const RightSide = styled.div`
   @media (min-width: ${p => p.theme.breakpoints[2]}) {
     display: block;
-
-
-    width: 50%
-    position: absolute;
-    top: 0;
-    right: 20px;
-    padding: 136px 107px 60px;
+    height: 100vh;
+    padding: 136px;
     background: hsla(0, 0%, 100%, 0.4);
   }
 `;

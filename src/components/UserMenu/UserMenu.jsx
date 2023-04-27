@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useLogoutMutation } from 'redux/auth/authApi';
 import { authSelectors } from 'redux/selector';
-import { toast } from 'react-toastify';
+import toast from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
 
 import {
