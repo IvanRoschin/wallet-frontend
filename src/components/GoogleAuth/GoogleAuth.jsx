@@ -1,4 +1,4 @@
-import GooglePic from 'assets/images/svg/google-color-svgrepo-com.svg';
+import GooglePic from 'images/svg/google.svg';
 import { GoogleLoginButton, GoogleImg } from './GoogleAuth.styled';
 import { useTranslation } from 'react-i18next';
 

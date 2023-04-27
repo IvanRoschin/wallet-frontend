@@ -24,6 +24,7 @@ import {
   ClosedEyaIcon,
   ButtonImg,
 } from './Form.styled';
+import { GoogleAuth } from 'components/GoogleAuth';
 
 export const RegisterForm = () => {
   const { t } = useTranslation();
@@ -191,6 +192,7 @@ export const RegisterForm = () => {
       <Link to="/login">
         <LoginBtn type="button">Login</LoginBtn>
       </Link>
+      <GoogleAuth />
     </>
   );
 };
