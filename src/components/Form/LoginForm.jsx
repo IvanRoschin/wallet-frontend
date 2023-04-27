@@ -2,7 +2,7 @@ import { useFormik } from 'formik';
 import { LoginSchema } from 'validationSchemas';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { toast } from 'react-toastify';
+import toast from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
 
 import {
@@ -43,19 +43,18 @@ export const LoginForm = () => {
     },
     validationSchema: LoginSchema,
     onSubmit: async values => {
-      console.log('values', values);
       await login(values);
-      toast.error('Please fill all fields');
     },
   });
 
   useEffect(() => {
     if (isLoginSuccess) {
-      toast.success(LoginError?.data.message);
+      toast.success('Login success');
       navigate('/home');
     }
     if (isLoginError) {
-      toast.error(isLoginError?.data.message);
+      console.log('LoginError', LoginError.data.message);
+      toast.error(LoginError?.data.message);
     }
   }, [isLoginSuccess, isLoginError, LoginError, navigate]);
 
@@ -69,7 +68,7 @@ export const LoginForm = () => {
               id="email"
               name="email"
               type="email"
-              placeholder="E-mail"
+              placeholder={t('registration.placeholders.e-mail')}
               onChange={handleChange}
               errors={errors}
               value={values.email}
@@ -88,7 +87,7 @@ export const LoginForm = () => {
               id="password"
               name="password"
               type={passwordVisibility ? 'text' : 'password'}
-              placeholder={t('Password')}
+              placeholder={t('registration.placeholders.password')}
               onChange={handleChange}
               value={values.password}
               errors={errors}

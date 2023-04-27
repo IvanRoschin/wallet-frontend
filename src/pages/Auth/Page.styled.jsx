@@ -1,41 +1,35 @@
 import styled from 'styled-components';
-import eclipseGray from '../../assets/images/EllipseGray.png';
-import eclipsePink from '../../assets/images/EllipsePink.png';
-import RegImage from '../../assets/images/RegistrationPageImage.png';
-import RegImageTab from '../../assets/images/RegistrationPageImage_tablet.png';
-import LoginImage from '../../assets/images/loginPageImage_desktop.png';
-import LoginImageTab from '../../assets/images/loginPageImage_tablet.png';
+import eclipseGray from 'images/ellipses/bottomEllipse.png';
+import eclipsePink from 'images/ellipses/topEllipse.png';
+import RegImage from 'images/hero/registrPageImage.png';
+import RegImageTab from 'images/hero/registrPageImage_tablet.png';
+import LoginImage from 'images/hero/loginPageImage_desktop.png';
+import LoginImageTab from 'images/hero/loginPageImage_tablet.png';
 
-export const ContainerPage = styled.div`
+export const PageContainer = styled.div`
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
   top: 0px;
   justify-content: center;
   left: 0px;
   background-color: ${p => p.theme.colors.white};
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    position: fixed;
-  }
-
-  @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    background-color: ${p => p.theme.colors.backgroundLightGrey};
+    background-color: ${p => p.theme.colors.backgroundTablet};
     background-image: url(${eclipseGray}), url(${eclipsePink});
     background-repeat: no-repeat, no-repeat;
     background-position: 0px 100%, right 0px top 0px;
     padding: 60px 114px 48px;
-    width: 100vw;
-    min-height: 1024px;
     text-align: center;
-    height: 100vh;
   }
 
   @media (min-width: ${p => p.theme.breakpoints[2]}) {
-    flex-direction: row;
     padding: 0;
-    min-height: 720px;
+    flex-direction: row;
+    background-image: url(${eclipseGray}), url(${eclipsePink});
   }
 `;
 
@@ -95,11 +89,12 @@ export const ImageContainerReg = styled.div`
 `;
 export const Text = styled.p`
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    color: var(--black);
     display: flex;
     margin-right: auto;
-    font-family: var(--secondaryFont);
-    font-weight: var(--regular);
+    color: ${p => p.theme.colors.black};
+    font-family: ${p => p.theme.fonts.baseFont};
+    font-weight: ${p => p.theme.fontWeights.regular};
+    font-size: ${p => p.theme.fontSizes[2]};
     font-size: 30px;
     line-height: 45px;
     margin-left: 40px;
@@ -111,70 +106,44 @@ export const Text = styled.p`
   }
 `;
 
-export const FormWrapper = styled.div`
-  align-items: center;
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  width: 320px;
-  @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    width: 533px;
-  }
-  @media (min-width: ${p => p.theme.breakpoints[2]}) {
-    width: 533px;
-    background: hsla(0, 0%, 100%, 0.4);
-    backdrop-filter: blur(50px);
-  }
-`;
-
 export const FormContainer = styled.div`
-  position: relative;
-  display: flex;
+  background: ${p => p.theme.colors.white};
+
   flex-direction: column;
   align-items: center;
-  padding: 20px 0px 20px;
-
-  background: ${p => p.theme.colors.white};
-  width: 320px;
-
-  @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    width: 533px;
-    padding: 40px 65px 60px;
-    border-radius: 20px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  @media (min-width: ${p => p.theme.breakpoints[2]}) {
-    width: 533px;
-    padding: 40px 65px 60px;
-    border-radius: 20px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-`;
-
-export const FormContainerRegsiter = styled.div`
-  position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: ${p => p.theme.colors.white};
-  width: 320px;
-  padding: 20px 32px 36px;
-  border-radius: 20px;
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
+  padding: 107px 20px;
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    width: 533px;
+    width: 403px;
     padding: 40px 65px 60px;
     border-radius: 20px;
-    margin-right: auto;
-    margin-left: auto;
+  }
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
+    width: 403px;
+    padding: 40px 65px 60px;
+    border-radius: 20px;
   }
 `;
 
-export const LogoContainer = styled.div`
-  margin-bottom: 60px;
+export const LeftSide = styled.div`
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
+    padding: 150px 76px;
+  }
+`;
+
+export const RightSide = styled.div`
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
+    display: block;
+
+
+    width: 50%
+    position: absolute;
+    top: 0;
+    right: 20px;
+    padding: 136px 107px 60px;
+    background: hsla(0, 0%, 100%, 0.4);
+  }
 `;

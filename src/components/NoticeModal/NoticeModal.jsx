@@ -6,7 +6,7 @@ import { Status } from 'constants/status';
 // import { useAuth } from 'hooks';
 import { ReactComponent as Cross } from '../../images/svg/cross.svg';
 import { ModalButton } from 'components/commonComponents';
-import { DEFAULT_IMAGE } from 'constants/urls';
+import { DEFAULT_IMAGE } from 'baseSettings/constants/urls';
 import {
   ModalContainer,
   ModalTitle,

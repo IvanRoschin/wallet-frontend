@@ -98,8 +98,10 @@
     "statistics": "Статистика"
   },
   "registration": {
+    "Signup_with_Google": "Зареєструйтесь з Google",
     "placeholders": {
       "e-mail": "Пошта",
+      "phone": "Номер телефона",
       "firstname": "Ім'я",
       "password": "Пароль",
       "confirmpassword": "Підтвердити пароль"
@@ -111,8 +113,19 @@
     "password": {
       "notequal": "паролі повинні співпадати",
       "short": "пароль має бути не менше 6-ти символів",
-      "required": "це поле не може бути пустим"
+      "required": "це поле не може бути пустим",
+      "no_space": "пробіли не дозволяються",
+      "at_least_seven": "щонайменше 7 символів",
+      "max_tt": "максимум 32 символи",
+      "passwords_match": "паролі повінні співпадати"
     },
+
+    "email": {
+      "email_match": "пошта повинна бути в форматі mail@mail.com",
+      "at_least_five": "щонайменше 5 символів",
+      "required_field": "email обов'язкове поле"
+    },
+
     "status": {
       "success": "Реєстрація успішна!",
       "error": "Користувач з такою поштою вже зареєстрований"
@@ -123,6 +136,7 @@
     }
   },
   "login": {
+    "Login_with_Google": "Увійдіть з Google",
     "status": {
       "success": "Ви увійшли!",
       "error": "Сталася помилка. Спробуйте ще раз"

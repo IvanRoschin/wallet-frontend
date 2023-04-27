@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { ReactComponent as HomeLink } from 'assets/images/home.svg';
-import { ReactComponent as StatisticsLink } from 'assets/images/Statistics.svg';
+import { ReactComponent as HomeLink } from 'images/svg/home.svg';
+import { ReactComponent as StatisticsLink } from 'images/svg/statistics.svg';
 
 export const HomeIcon = styled(HomeLink)`
   fill: currentColor;

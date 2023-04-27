@@ -15,6 +15,9 @@ import { authReducer } from './auth/authSlice';
 import { authApi } from './auth/authApi';
 import { userApi } from './user/userApi';
 
+import { transReducer } from './transactions/transactionsSlice';
+import { transApi } from './transactions/transactionsApi';
+
 const persistConfig = {
   key: 'auth',
   storage,
@@ -24,6 +27,9 @@ const persistConfig = {
 const rootReducer = combineReducers({
   [authApi.reducerPath]: authApi.reducer,
   [userApi.reducerPath]: userApi.reducer,
+  [transApi.reducerPath]: transApi.reducer,
+
+  trans: transReducer,
   auth: authReducer,
 });
 
@@ -39,6 +45,7 @@ export const store = configureStore({
     }),
     authApi.middleware,
     userApi.middleware,
+    transApi.middleware,
   ],
 });
 

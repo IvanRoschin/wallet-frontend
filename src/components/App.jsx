@@ -1,9 +1,9 @@
-import { Theme } from 'globalStyles/theme';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import { Loader } from '../components/Loader';
 import { GlobalStyle } from '../globalStyles/globalStyle';
 import FontStyles from 'globalStyles/fontStyles';
+import { Toaster } from 'react-hot-toast';
 
 const PrivatRoute = lazy(() =>
   import('../routes/PrivateRouter' /* webpackChunkName: "PrivatRoute" */)
@@ -29,9 +29,10 @@ const DashboardPage = lazy(() =>
 
 export const App = () => {
   return (
-    <Theme>
+    <>
       <GlobalStyle />
       <FontStyles />
+      <Toaster position="top-right" reverseOrder={false} />
       <Suspense fallback={<Loader color="#4a56e2" size="100px" />}>
         <Routes>
           <Route
@@ -62,6 +63,6 @@ export const App = () => {
           <Route path="*" element={<Navigate to="/login" />} />
         </Routes>
       </Suspense>
-    </Theme>
+    </>
   );
 };
