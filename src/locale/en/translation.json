@@ -101,6 +101,7 @@
     "statistics": "Statistics"
   },
   "registration": {
+    "Signup_with_Google": "Signup with Google",
     "placeholders": {
       "e-mail": "E-mail",
       "phone": "Phone number",
@@ -138,6 +139,7 @@
     }
   },
   "login": {
+    "Login_with_Google": "Login with Google",
     "status": {
       "success": "Success log in!",
       "error": "Something wrong, try again!"

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ReactComponent as Icon } from 'assets/images/logout.svg';
+import { ReactComponent as Icon } from 'images/svg/lock.svg';
 
 export const LogoutButton = styled.button`
   display: flex;

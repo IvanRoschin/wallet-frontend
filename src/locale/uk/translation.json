@@ -98,6 +98,7 @@
     "statistics": "Статистика"
   },
   "registration": {
+    "Signup_with_Google": "Зареєструйтесь з Google",
     "placeholders": {
       "e-mail": "Пошта",
       "phone": "Номер телефона",
@@ -135,6 +136,7 @@
     }
   },
   "login": {
+    "Login_with_Google": "Увійдіть з Google",
     "status": {
       "success": "Ви увійшли!",
       "error": "Сталася помилка. Спробуйте ще раз"

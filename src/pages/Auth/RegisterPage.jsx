@@ -1,38 +1,39 @@
 import Media from 'react-media';
 import { Logo } from 'components/Logo';
 import { Container } from 'globalStyles/globalStyle';
+
 import {
-  ContainerPage,
-  FormContainerRegsiter,
   ImageContainerReg,
   Text,
   ImageSection,
-  FormWrapper,
-  LogoContainer,
+  FormContainer,
+  PageContainer,
+  LeftSide,
+  RightSide,
 } from './Page.styled';
 import { RegisterForm } from 'components/Form';
 const RegisterPage = () => {
   return (
     <Container>
-      <ContainerPage>
-        <Media
-          query="(min-width: 768px)"
-          render={() => (
-            <ImageSection>
-              <ImageContainerReg />
-              <Text>Finance App</Text>
-            </ImageSection>
-          )}
-        />
-        <FormWrapper>
-          <FormContainerRegsiter>
-            <LogoContainer>
-              <Logo />
-            </LogoContainer>
+      <PageContainer>
+        <LeftSide>
+          <Media
+            query="(min-width: 768px)"
+            render={() => (
+              <ImageSection>
+                <ImageContainerReg />
+                <Text>Finance App</Text>
+              </ImageSection>
+            )}
+          />
+        </LeftSide>
+        <RightSide>
+          <FormContainer>
+            <Logo />
             <RegisterForm />
-          </FormContainerRegsiter>
-        </FormWrapper>
-      </ContainerPage>
+          </FormContainer>
+        </RightSide>
+      </PageContainer>
     </Container>
   );
 };

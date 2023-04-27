@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-import { ReactComponent as Envelope } from '../../assets/images/email.svg';
-import { ReactComponent as Lock } from '../../assets/images/lock.svg';
-import { ReactComponent as Account } from '../../assets/images/account.svg';
-import { ReactComponent as Open } from '../../assets/images/eye-password-show.svg';
-import { ReactComponent as Closed } from '../../assets/images/eye-password-hide.svg';
-import { ReactComponent as Phone } from '../../assets/images/phone.svg';
+import { ReactComponent as Envelope } from 'images/svg/email.svg';
+import { ReactComponent as Lock } from 'images/svg/lock.svg';
+import { ReactComponent as Account } from 'images/svg/account.svg';
+import { ReactComponent as Open } from 'images/svg/eye-password-show.svg';
+import { ReactComponent as Closed } from 'images/svg/eye-password-hide.svg';
+import { ReactComponent as Phone } from 'images/svg/phone.svg';
 
 export const Base = styled.div`
   display: block;
@@ -29,57 +29,65 @@ export const Form = styled.form`
 `;
 
 export const Label = styled.label`
+  width: 180px;
   position: relative;
   display: inline-block;
-  // font-weight: ${p => p.theme.fontWeights.regular};
-  // font-size: ${p => p.theme.fontSizes[0]};
-  // line-height: ${p => p.theme.lineHeights.text};
-  // color: ${p => p.theme.colors.black};
-  // min-width: ${p => p.theme.space[5]};
-  // @media (min-width: ${p => p.theme.breakpoints[1]}) {
-  //   width: 100%;
-  //   font-size: ${prop => prop.theme.fontSizes[3]};
-  // }
-  // @media (min-width: ${p => p.theme.breakpoints[2]}) {
-  //   width: 96px;
-  // }
-`;
-
-export const Input = styled.input`
-  width: 100%;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  background-color: ${p => p.theme.colors.transparent};
-  outline: ${p => p.theme.colors.transparent};
-
-  border-bottom: 1px solid ${p => p.theme.colors.border};
-  outline: none;
-  font-family: ${p => p.theme.fonts.baseFont};
   font-weight: ${p => p.theme.fontWeights.regular};
-
-  transition: border-bottom 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  font-size: ${p => p.theme.fontSizes[0]};
+  line-height: ${p => p.theme.lineHeights.text};
+  color: ${p => p.theme.colors.black};
+  min-width: ${p => p.theme.space[5]};
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    height: 32px;
-    font-size: ${p => p.theme.fontSizes[3]};
+    width: 280px;
+    font-size: ${prop => prop.theme.fontSizes[3]};
   }
-  ::placeholder {
-    color: ${p => p.theme.colors.secondaryText};
-    font-family: ${p => p.theme.fonts.baseFont};
-    font-weight: ${p => p.theme.fontWeights.regular};
-    font-size: ${p => p.theme.fontSizes[2]};
-    line-height: 1;
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
   }
 `;
 
 export const InputContainer = styled.div`
+  
+
+  border-bottom: 1px solid ${p => p.theme.colors.icons};
+  outline: none;
+
+  }
   &:not(:last-child) {
     margin-bottom: 40px;
   }
 `;
 
+export const Input = styled.input`
+  width: 190px;
+  height: 30px;
+  margin-right: -10px;
+  border: none;
+  // border-right: none;
+  // border-left: none;
+  background-color: ${p => p.theme.colors.transparent};
+  outline: ${p => p.theme.colors.transparent};
+
+  outline: none;
+  font-family: ${p => p.theme.fonts.baseFont};
+  font-weight: ${p => p.theme.fontWeights.regular};
+  font-size: ${p => p.theme.fontSizes[1]};
+
+  transition: border-bottom 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    width: 260px;
+    font-size: ${p => p.theme.fontSizes[2]};
+  }
+  ::placeholder {
+    color: ${p => p.theme.colors.secondaryText};
+    font-family: ${p => p.theme.fonts.baseFont};
+    font-weight: ${p => p.theme.fontWeights.regular};
+    font-size: ${p => p.theme.fontSizes[1]};
+    line-height: 1;
+  }
+`;
+
 export const Errors = styled.p`
-  color: ${p => p.theme.colors.error};
+  color: ${p => p.theme.colors.expense};
   font-family: ${p => p.theme.fonts.baseFont};
   font-weight: ${p => p.theme.fontWeights.regular};
   font-size: ${p => p.theme.fontSizes[2]};
@@ -101,7 +109,7 @@ export const RegisterBtnLp = styled.button`
   background-color: ${p => p.theme.colors.white};
   color: ${p => p.theme.colors.backgroundBlue};
   width: 280px;
-  border-radius: ${p => p.theme.radii.big};
+  border-radius: ${p => p.theme.radii.button};
   border: 1px solid ${p => p.theme.colors.backgroundBlue};
   height: 50px;
   font-family: ${p => p.theme.fonts.baseFont};
@@ -129,7 +137,7 @@ export const LoginBtnLp = styled.button`
   background-color: ${p => p.theme.colors.income};
   color: ${p => p.theme.colors.white};
   width: 280px;
-  border-radius: ${p => p.theme.radii.big};
+  border-radius: ${p => p.theme.radii.button};
   border: none;
   border-color: ${p => p.theme.colors.transparent};
   height: 50px;
@@ -158,7 +166,7 @@ export const LoginBtn = styled.button`
   background-color: ${p => p.theme.colors.white};
   color: ${p => p.theme.colors.backgroundBlue};
   width: 280px;
-  border-radius: ${p => p.theme.radii.big};
+  border-radius: ${p => p.theme.radii.button};
   border: 1px solid ${p => p.theme.colors.backgroundBlue};
   height: 50px;
   font-family: ${p => p.theme.fonts.baseFont};
@@ -187,7 +195,7 @@ export const RegisterBtn = styled.button`
   background-color: ${p => p.theme.colors.income};
   color: ${p => p.theme.colors.white};
   width: 280px;
-  border-radius: ${p => p.theme.radii.big};
+  border-radius: ${p => p.theme.radii.button};
   border: none;
   border-color: ${p => p.theme.colors.transparent};
   height: 50px;
@@ -215,8 +223,8 @@ export const RegisterBtn = styled.button`
 
 export const ButtonImg = styled.button`
   position: absolute;
-  top: 10px;
-  left: 200px;
+  top: 0px;
+  left: 160px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -224,7 +232,7 @@ export const ButtonImg = styled.button`
   border: none;
   background-color: inherit;
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    // left: 300px;
+    left: 270px;
   }
   @media (min-width: ${p => p.theme.breakpoints[2]}) {
     // left: 400px;
@@ -237,47 +245,35 @@ export const SvgPhone = styled(Phone)`
   fill: rgb(224, 224, 224);
   position: absolute;
   bottom: 6px;
-  right: 172px;
+  right: 180px;
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    right: 210px;
-  }
-  @media (min-width: ${p => p.theme.breakpoints[2]}) {
-    right: 215px;
+    right: 280px;
   }
 `;
 
 export const SvgEnvelope = styled(Envelope)`
   position: absolute;
   bottom: 6px;
-  right: 164px;
+  right: 180px;
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    right: 210px;
-  }
-  @media (min-width: ${p => p.theme.breakpoints[2]}) {
-    right: 210px;
+    right: 270px;
   }
 `;
 
 export const SvgLock = styled(Lock)`
   position: absolute;
   bottom: 6px;
-  right: 164px;
+  right: 180px;
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    right: 210px;
-  }
-  @media (min-width: ${p => p.theme.breakpoints[2]}) {
-    right: 210px;
+    right: 270px;
   }
 `;
 
 export const SvgAccount = styled(Account)`
   position: absolute;
   bottom: 6px;
-  right: 164px;
+  right: 180px;
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    right: 210px;
-  }
-  @media (min-width: ${p => p.theme.breakpoints[2]}) {
-    right: 210px;
+    right: 270px;
   }
 `;

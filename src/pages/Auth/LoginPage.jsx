@@ -2,37 +2,28 @@ import Media from 'react-media';
 import { Logo } from 'components/Logo';
 import { Container } from 'globalStyles/globalStyle';
 import {
-  ContainerPage,
-  FormContainerRegsiter,
   ImageContainerReg,
   Text,
   ImageSection,
-  FormWrapper,
-  LogoContainer,
+  FormContainer,
 } from './Page.styled';
 import { LoginForm } from 'components/Form';
 const LoginPage = () => {
   return (
     <Container>
-      <ContainerPage>
-        <Media
-          query="(min-width: 768px)"
-          render={() => (
-            <ImageSection>
-              <ImageContainerReg />
-              <Text>Finance App</Text>
-            </ImageSection>
-          )}
-        />
-        <FormWrapper>
-          <FormContainerRegsiter>
-            <LogoContainer>
-              <Logo />
-            </LogoContainer>
-            <LoginForm />
-          </FormContainerRegsiter>
-        </FormWrapper>
-      </ContainerPage>
+      <Media
+        query="(min-width: 768px)"
+        render={() => (
+          <ImageSection>
+            <ImageContainerReg />
+            <Text>Finance App</Text>
+          </ImageSection>
+        )}
+      />
+      <FormContainer>
+        <Logo />
+        <LoginForm />
+      </FormContainer>
     </Container>
   );
 };

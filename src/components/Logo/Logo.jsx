@@ -1,4 +1,4 @@
-import LogoSrc from '../../assets/images/Logo.svg';
+import LogoSrc from 'images/svg/logo.svg';
 import { LogoText, LogoContainer, LogoImg } from './Logo.styled';
 
 export const Logo = () => {
