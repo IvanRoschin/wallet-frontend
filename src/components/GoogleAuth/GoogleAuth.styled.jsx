@@ -6,26 +6,26 @@ export const GoogleLoginButton = styled.a`
   justify-content: center;
   padding: 7px 0 7px 0;
   /* margin-bottom: 40px; */
-  font-family: ${p => p.theme.fonts.text};
+  font-family: ${p => p.theme.fonts.baseFont};
   font-size: ${p => p.theme.fontSizes[4]};
   text-decoration: none;
 
-  border: ${p => p.theme.borders.normal}${p => p.theme.colors.accent};
+  border: ${p => p.theme.borders.normal}${p => p.theme.colors.income};
 
-  border-radius: ${p => p.theme.radii.small};
+  border-radius: ${p => p.theme.radii.button};
   cursor: pointer;
 
   color: ${p => p.theme.colors.black};
-  background-color: ${p => p.theme.colors.background};
+  background-color: ${p => p.theme.colors.white};
 
   transition: ${p => p.theme.transition.main};
 
   &:hover,
   :active {
-    background-color: ${p => p.theme.colors.accent};
+    background-color: ${p => p.theme.colors.income};
     color: ${p => p.theme.colors.white};
     transition: color ${p => p.theme.transition.main},
-      background-color ${p => p.theme.colors.accent};
+      background-color ${p => p.theme.colors.income};
   }
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
     font-size: ${p => p.theme.fontSizes[4]};
