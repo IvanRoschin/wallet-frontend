@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
+import { useLoginMutation } from 'redux/auth/authApi';
 
 import {
   Input,
@@ -19,7 +20,7 @@ import {
   ClosedEyaIcon,
   ButtonImg,
 } from './Form.styled';
-import { useLoginMutation } from 'redux/auth/authApi';
+import { GoogleAuth } from 'components/GoogleAuth';
 
 export const LoginForm = () => {
   const { t } = useTranslation();
@@ -103,6 +104,8 @@ export const LoginForm = () => {
       <Link to="/register">
         <RegisterBtnLp type="button">Register</RegisterBtnLp>
       </Link>
+
+      <GoogleAuth />
     </>
   );
 };

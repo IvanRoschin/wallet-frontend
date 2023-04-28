@@ -47,26 +47,23 @@ export const RegisterForm = () => {
     { isSuccess: isSignupSuccess, isError: isSignupError, error: SignupError },
   ] = useSignupMutation();
 
-  const { values, errors, handleChange, handleSubmit } = useFormik({
-    initialValues: {
-      email: '',
-      phone: '',
-      password: '',
-      name: '',
-    },
-    validationSchema: RegisterSchema,
-    onSubmit: async ({ name, email, phone, password }) => {
-      console.log('name', name);
-      console.log('email', email);
-      console.log('phone', phone);
-      console.log('password', password);
-      if (name && email && phone && password) {
-        await signup({ name, email, phone, password });
-      } else {
-        toast.error('Please fill all fields');
-      }
-    },
-  });
+  const { values, errors, handleChange, handleSubmit, setFieldValue } =
+    useFormik({
+      initialValues: {
+        email: '',
+        phone: '',
+        password: '',
+        name: '',
+      },
+      validationSchema: RegisterSchema,
+      onSubmit: async ({ name, email, phone, password }) => {
+        if (name && email && phone && password) {
+          await signup({ name, email, phone, password });
+        } else {
+          toast.error('Please fill all fields');
+        }
+      },
+    });
 
   useEffect(() => {
     if (isSignupSuccess) {
@@ -121,8 +118,8 @@ export const RegisterForm = () => {
               countryCodeEditable={false}
               errors={errors}
               value={values.phone}
-              onChange={() => {
-                console.log(values.phone);
+              onChange={phone => {
+                setFieldValue('phone', `+${phone}`);
               }}
             />
           </Label>
@@ -192,6 +189,7 @@ export const RegisterForm = () => {
       <Link to="/login">
         <LoginBtn type="button">Login</LoginBtn>
       </Link>
+
       <GoogleAuth />
     </>
   );

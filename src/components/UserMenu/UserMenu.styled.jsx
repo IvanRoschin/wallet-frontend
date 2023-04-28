@@ -8,25 +8,25 @@ export const LogoutButton = styled.button`
   padding: 4px 10px;
   gap: 8px;
   border: inherit;
-  border-radius: ${p => p.theme.radii.small};
+  border-radius: ${p => p.theme.radii.button};
   cursor: pointer;
 
   font-size: ${p => p.theme.fontSizes[3]};
-  font-weight: ${p => p.theme.fontWeights.medium};
+  font-weight: ${p => p.theme.fontWeights.regular};
 
-  color: ${p => p.theme.colors.accent};
+  color: ${p => p.theme.colors.backgroundBlue};
   background-color: ${p => p.theme.colors.transparent};
 
   transition: ${p => p.theme.transition.main};
 
   span {
-    color: ${p => p.theme.colors.modalBackdrop};
+    color: ${p => p.theme.colors.backgroundDesk};
     transition: ${p => p.theme.transition.main};
   }
 
   &:hover,
   :active {
-    background-color: ${p => p.theme.colors.accent};
+    background-color: ${p => p.theme.colors.backgroundBlue};
     color: ${p => p.theme.colors.white};
 
     span {

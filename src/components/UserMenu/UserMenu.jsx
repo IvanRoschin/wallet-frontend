@@ -17,7 +17,8 @@ export const UserMenu = () => {
 
   const [logout] = useLogoutMutation();
   const navigate = useNavigate();
-  const { name, image, id } = useSelector(authSelectors.getUser);
+  const { name, photoURL, id } = useSelector(authSelectors.getUser);
+  console.log('photoURL', photoURL);
 
   function handleLogout() {
     logout(id);
@@ -30,7 +31,7 @@ export const UserMenu = () => {
     <Container>
       <UserMenuText>Wellcome</UserMenuText>
       <UserMenuText>
-        <img src={image} alt="avatar" width="24px" height="24px" />
+        <img src={photoURL} alt="avatar" width="24px" height="24px" />
       </UserMenuText>
       {name} |
       <LogoutButton type="button" onClick={handleLogout}>

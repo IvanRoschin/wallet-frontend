@@ -1,17 +1,13 @@
 import GooglePic from 'images/svg/google.svg';
 import { GoogleLoginButton, GoogleImg } from './GoogleAuth.styled';
-import { useTranslation } from 'react-i18next';
 
 export const GoogleAuth = () => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   return (
-    <>
-      <GoogleLoginButton href="https://wallet-backend-mu.vercel.app/api/auth/google">
-        <GoogleImg src={GooglePic} alt="Google" />
-        {t('registration.Signup_with_Google')}
-      </GoogleLoginButton>
-      ;
-    </>
+    <GoogleLoginButton href="https://wallet-backend-mu.vercel.app/api/auth/google">
+      <GoogleImg src={GooglePic} alt="Google" />
+      Google
+    </GoogleLoginButton>
   );
 };
 

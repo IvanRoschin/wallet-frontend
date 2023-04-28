@@ -23,7 +23,6 @@ export const Form = styled.form`
   position: relative;
   margin: 10px 0px 10px;
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    margin-bottom: 20px;
     margin-top: 60px;
   }
 `;
@@ -75,7 +74,7 @@ export const Input = styled.input`
   transition: border-bottom 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
     width: 260px;
-    font-size: ${p => p.theme.fontSizes[2]};
+    font-size: ${p => p.theme.fontSizes[1]};
   }
   ::placeholder {
     color: ${p => p.theme.colors.secondaryText};
@@ -137,10 +136,11 @@ export const LoginBtnLp = styled.button`
   background-color: ${p => p.theme.colors.income};
   color: ${p => p.theme.colors.white};
   width: 280px;
+    height: 50px;
+
   border-radius: ${p => p.theme.radii.button};
   border: none;
   border-color: ${p => p.theme.colors.transparent};
-  height: 50px;
   font-family: ${p => p.theme.fonts.baseFont};
   font-weight: ${p => p.theme.fontWeights.regular};
   font-size: ${p => p.theme.fontSizes[3]};
@@ -158,8 +158,9 @@ export const LoginBtnLp = styled.button`
     border: 1px solid ${p => p.theme.colors.income};
   }
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    font-size: ${p => p.theme.fontSizes[4]};
+    font-size: ${p => p.theme.fontSizes[3]};
     padding: 12px 0 12px 0;
+    
 `;
 
 export const LoginBtn = styled.button`
@@ -176,7 +177,6 @@ export const LoginBtn = styled.button`
   letter-spacing: ${p => p.theme.letterSpacing.button};
   text-transform: uppercase;
   transition: ${p => p.theme.transition.main};
-
   &:hover,
   :active {
     transition: 0.7s;
