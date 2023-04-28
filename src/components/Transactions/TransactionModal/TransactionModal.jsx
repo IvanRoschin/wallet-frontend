@@ -25,7 +25,7 @@ import {
   RecordName,
   RecordContent,
   ContactButton,
-} from './NoticeModal.styled';
+} from './TransactionModal.styled';
 import { useTranslation } from 'react-i18next';
 import i18n from 'i18n';
 
@@ -33,7 +33,7 @@ import { ModalCloseButton } from 'components/commonComponents';
 import toast from 'react-hot-toast';
 import { useAuth } from 'hooks';
 
-export const NoticeModal = ({
+export const TransactionModal = ({
   id,
   label,
   onClose,
@@ -194,4 +194,4 @@ export const NoticeModal = ({
   );
 };
 
-export default NoticeModal;
+export default TransactionModal;

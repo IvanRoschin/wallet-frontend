@@ -1,20 +1,22 @@
 import { useBalanceQuery } from '../../redux/transactions/transactionsApi';
 import { useState, useEffect } from 'react';
-import { Box, BoxText, BalanceText } from './Balance.styled';
 import { useTranslation } from 'react-i18next';
+import { Box, BoxText, BalanceText } from './Balance.styled';
 
 export const Balance = () => {
   const { t } = useTranslation();
 
-  const [balance, setBalance] = useState(null);
-  const { data } = useBalanceQuery();
+  const [balance, setBalance] = useState('0.00');
+  const { data = [], error, isError } = useBalanceQuery();
   console.log('data', data);
+  console.log('error', error);
+  console.log('isError', isError);
 
   useEffect(() => {
-    let balance = '0.00';
-    if (data === 0) {
-      setBalance(balance);
-    } else if (data) {
+    let balance;
+    if (!data.length) {
+      return;
+    } else {
       balance = data[0].balance.toFixed(2);
       setBalance(balance);
     }

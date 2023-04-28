@@ -10,7 +10,6 @@ export const UserSlice = createSlice({
     builder.addMatcher(
       userApi.endpoints.current.matchFulfilled,
       (state, { payload }) => {
-        console.log('payloadCurrent', payload);
         state.currentUser = payload.user;
         state.status = payload.status;
       }

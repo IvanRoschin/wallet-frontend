@@ -4,7 +4,15 @@ import { authApi } from './authApi';
 export const AuthSlice = createSlice({
   name: 'authSlice',
   initialState: {
-    user: { name: null, email: null, photoURL: null },
+    user: {
+      name: null,
+      email: null,
+      photoURL: null,
+      phone: null,
+      balance: null,
+      category: [],
+      transactions: [],
+    },
     status: null,
     accessToken: null,
     refreshToken: null,
@@ -19,6 +27,10 @@ export const AuthSlice = createSlice({
           name: payload.name,
           email: payload.email,
           photoURL: payload.photoURL,
+          phone: payload.phone,
+          balance: payload.balance,
+          category: payload.category,
+          transactions: payload.transactions,
         };
         state.isLoggedIn = true;
         state.status = payload.status;

@@ -5,6 +5,7 @@ export const Box = styled.div`
   height: 80px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 32px;
 
   border: ${p => p.theme.borders.transparent};
   border-radius: ${p => p.theme.radii.button};
