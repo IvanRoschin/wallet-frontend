@@ -1,5 +1,39 @@
 import styled from 'styled-components';
-import { ReactComponent as Icon } from 'images/svg/lock.svg';
+import { Link } from 'react-router-dom';
+import { ReactComponent as Icon } from 'images/svg/exit.svg';
+
+export const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 5px;
+`;
+
+export const NavLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+`;
+
+export const MenuText = styled.p`
+  color: ${p => p.theme.colors.secondaryText};
+
+  font-size: ${p => p.theme.fontSizes[0]};
+  font-weight: ${p => p.theme.fontWeights.bold};
+  font-family: ${p => p.theme.fonts.accentText};
+
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    margin-left: 0;
+    padding: 3px 9px;
+    font-size: ${p => p.theme.fontSizes[2]};
+  }
+
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
+    margin-left: 0;
+    padding: 3px 9px;
+    font-size: ${p => p.theme.fontSizes[2]};
+  }
+`;
 
 export const LogoutButton = styled.button`
   display: flex;
@@ -28,10 +62,6 @@ export const LogoutButton = styled.button`
   :active {
     background-color: ${p => p.theme.colors.backgroundBlue};
     color: ${p => p.theme.colors.white};
-
-    span {
-      color: ${p => p.theme.colors.white};
-    }
   }
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
@@ -42,8 +72,8 @@ export const LogoutButton = styled.button`
 `;
 
 export const LogoutIcon = styled(Icon)`
-  fill: currentColor;
-  stroke: currentColor;
+  fill: ${p => p.theme.colors.menuText};
+  // stroke: currentColor;
 `;
 
 export const Container = styled.div`
@@ -55,6 +85,8 @@ export const Container = styled.div`
 export const UserMenuText = styled.p`
   margin-right: 20px;
   font-size: 18px;
+
+  color: ${p => p.theme.colors.menuText};
 `;
 
 // export const Button = styled.button`

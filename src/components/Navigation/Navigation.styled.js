@@ -2,24 +2,37 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { ReactComponent as HomeLink } from 'images/svg/home.svg';
 import { ReactComponent as StatisticsLink } from 'images/svg/statistics.svg';
+import { ReactComponent as CurrencyLink } from 'images/svg/currency.svg';
 
 export const HomeIcon = styled(HomeLink)`
-  fill: currentColor;
-  stroke: currentColor;
+  fill: 6e78E8;
+  // stroke: currentColor;
   width: 24px;
   height: 24px;
 `;
 export const StatisticsIcon = styled(StatisticsLink)`
-  fill: currentColor;
-  stroke: currentColor;
+  fill: 6e78E8;
+  // stroke: currentColor;
+  width: 24px;
+  height: 24px;
+`;
+
+export const CurrencyIcon = styled(CurrencyLink)`
+  fill: 6e78E8;
+  // stroke: currentColor;
   width: 24px;
   height: 24px;
 `;
 
 export const NavWrapper = styled.nav`
   display: flex;
+  flex-direction: wrap;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+
+  padding-top: 12px;
+  padding-bottom: 12px;
+
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
     align-items: flex-start;
     flex-direction: column;
@@ -63,8 +76,8 @@ export const Link = styled(NavLink)`
     color: ${p => p.theme.colors.black};
   }
   & > svg {
-    width: 38px;
-    height: 38px;
+    width: 24px;
+    height: 24px;
     fill: ${p => p.theme.colors.backgroundBlue};
   }
   &.active {

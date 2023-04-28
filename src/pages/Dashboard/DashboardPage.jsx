@@ -3,6 +3,8 @@ import { Navigation } from 'components/Navigation';
 import { Balance } from 'components/Balance';
 import { Currency } from 'components/Currency';
 import { Transactions } from 'components/Transactions';
+import Media from 'react-media';
+
 // import { Container } from 'globalStyles/globalStyle';
 
 import {
@@ -17,6 +19,16 @@ const Dashboard = () => {
     <>
       <AppBar />
       <PageContainer>
+        <Media
+          query="(max-width: 767px)"
+          render={() => (
+            <>
+              <Navigation />
+              <Balance />
+              <Transactions />
+            </>
+          )}
+        />
         <Wrapper>
           <LeftSide>
             <Navigation />

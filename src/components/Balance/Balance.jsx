@@ -1,7 +1,11 @@
 import { useBalanceQuery } from '../../redux/transactions/transactionsApi';
 import { useState, useEffect } from 'react';
+import { Box, BoxText, BalanceText } from './Balance.styled';
+import { useTranslation } from 'react-i18next';
 
 export const Balance = () => {
+  const { t } = useTranslation();
+
   const [balance, setBalance] = useState(null);
   const { data } = useBalanceQuery();
   console.log('data', data);
@@ -16,5 +20,10 @@ export const Balance = () => {
     }
   }, [data]);
 
-  return <div>Balance: ₴ {balance}</div>;
+  return (
+    <Box>
+      <BoxText>{t('balanceComponent.yourBalance')}</BoxText>
+      <BalanceText>₴ {balance}</BalanceText>
+    </Box>
+  );
 };

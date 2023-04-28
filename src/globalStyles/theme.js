@@ -2,7 +2,9 @@ export const theme = {
   colors: {
     white: '#ffffff',
     text: '#000000',
+    menuText: '#A6A6A6',
     backgroundLightGrey: '#ffffff66',
+    backgroundMobile: '#f1f2f7',
     backgroundDesk: 'hsla(0, 0%, 100%, 0.4)',
     backgroundTablet: '#E5E5E5',
     secondaryText: '#bdbdbd',

@@ -162,6 +162,17 @@
       "password": "Password"
     }
   },
+
+  "logout": {
+    "status": {
+      "success": "Logout Successfully!",
+      "error": "Something wrong, try again!"
+    },
+    "buttons": {
+      "logout": "Logout"
+    }
+  },
+
   "errorPage": {
     "message": "This page does not exist. Follow link to return to",
     "home": "Home",
@@ -217,6 +228,7 @@
     "wallet": "Wallet Confirm",
     "confirm": "Do you really want to exit?",
     "cancel": "Cancel",
-    "exit": "Exit"
+    "exit": "Exit",
+    "accaunt": "Accaunt"
   }
 }

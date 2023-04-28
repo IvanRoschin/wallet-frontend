@@ -24,7 +24,13 @@ const LoginPage = lazy(() =>
 );
 
 const DashboardPage = lazy(() =>
-  import('../pages/Dashboard/DashboardPage' /* webpackChunkName: "LoginPage" */)
+  import(
+    '../pages/Dashboard/DashboardPage' /* webpackChunkName: "DashboardPage" */
+  )
+);
+
+const UserPage = lazy(() =>
+  import('../pages/UserPage/UserPage' /* webpackChunkName: "UserPage" */)
 );
 
 export const App = () => {
@@ -56,6 +62,14 @@ export const App = () => {
             element={
               <PrivatRoute>
                 <DashboardPage />
+              </PrivatRoute>
+            }
+          />
+          <Route
+            path="/account"
+            element={
+              <PrivatRoute>
+                <UserPage />
               </PrivatRoute>
             }
           />

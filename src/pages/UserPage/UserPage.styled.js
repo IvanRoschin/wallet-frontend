@@ -7,7 +7,7 @@ export const PageContainer = styled.div`
   margin-left: auto;
   margin-right: auto;
 
-  background-color: ${p => p.theme.colors.backgroundMobile};
+  background-color: ${p => p.theme.colors.white};
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
     background-color: ${p => p.theme.colors.backgroundTablet};

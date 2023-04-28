@@ -5,6 +5,7 @@ import {
   Link,
   HomeIcon,
   StatisticsIcon,
+  CurrencyIcon,
   NavigationButton,
   LinkName,
 } from './Navigation.styled';
@@ -15,14 +16,20 @@ const Navigation = () => {
   return (
     <NavWrapper>
       <NavigationButton>
-        <Link to="/">
+        <Link to="/home">
           <HomeIcon alt="Link to home page" />
           <LinkName>{t('navigation.home')}</LinkName>
         </Link>
       </NavigationButton>
       <NavigationButton>
         <Link to="/">
-          <StatisticsIcon alt="Link to home page" />
+          <StatisticsIcon alt="Link statistic page" />
+          <LinkName>{t('navigation.statistics')}</LinkName>
+        </Link>
+      </NavigationButton>
+      <NavigationButton>
+        <Link to="/">
+          <CurrencyIcon alt="Link currency page" />
           <LinkName>{t('navigation.statistics')}</LinkName>
         </Link>
       </NavigationButton>
