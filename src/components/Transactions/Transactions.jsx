@@ -18,7 +18,7 @@ export const Transactions = () => {
 
   return (
     <>
-      <div>Transactions </div>
+      <div>Transactions</div>
     </>
   );
 };

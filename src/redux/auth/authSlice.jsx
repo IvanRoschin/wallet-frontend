@@ -1,6 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { authApi } from './authApi';
 
+// const handlePending = state => {
+//   state.isRefreshing = true;
+// };
+
+// const handleRejected = (state, action) => {
+//   state.isRefreshing = false;
+//   state.error = action.payload.message || false;
+// };
+
 export const AuthSlice = createSlice({
   name: 'authSlice',
   initialState: {
@@ -10,8 +19,8 @@ export const AuthSlice = createSlice({
       photoURL: null,
       phone: null,
       balance: null,
-      category: [],
-      transactions: [],
+      categories: '',
+      transactions: '',
     },
     status: null,
     accessToken: null,
@@ -29,26 +38,23 @@ export const AuthSlice = createSlice({
           photoURL: payload.photoURL,
           phone: payload.phone,
           balance: payload.balance,
-          category: payload.category,
+          categories: payload.categories,
           transactions: payload.transactions,
         };
-        state.isLoggedIn = true;
         state.status = payload.status;
+        state.isRefreshing = false;
+        state.error = false;
       }
     );
     builder.addMatcher(
       authApi.endpoints.login.matchFulfilled,
       (state, { payload }) => {
-        localStorage.setItem(
-          'user',
-          JSON.stringify({
-            user: payload.user,
-          })
-        );
         state.accessToken = payload.accessToken;
         state.refreshToken = payload.refreshToken;
         state.user = payload.user;
         state.isLoggedIn = true;
+        state.isRefreshing = false;
+        state.error = false;
       }
     );
     builder.addMatcher(
@@ -59,6 +65,7 @@ export const AuthSlice = createSlice({
         state.accessToken = null;
         state.refreshToken = null;
         state.isLoggedIn = false;
+        state.error = false;
       }
     );
   },

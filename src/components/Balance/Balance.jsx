@@ -7,10 +7,7 @@ export const Balance = () => {
   const { t } = useTranslation();
 
   const [balance, setBalance] = useState('0.00');
-  const { data = [], error, isError } = useBalanceQuery();
-  console.log('data', data);
-  console.log('error', error);
-  console.log('isError', isError);
+  const { data = [] } = useBalanceQuery();
 
   useEffect(() => {
     let balance;

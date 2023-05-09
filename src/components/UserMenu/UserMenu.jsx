@@ -1,10 +1,9 @@
-import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Media from 'react-media';
 import { useLogoutMutation } from 'redux/auth/authApi';
-import { authSelectors } from 'redux/selector';
 import toast from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
+import { useAuth } from 'hooks/useAuth';
 
 import {
   Container,
@@ -18,16 +17,16 @@ import {
 
 export const UserMenu = () => {
   const { t } = useTranslation();
+  const { user } = useAuth();
 
   const [logout] = useLogoutMutation();
   const navigate = useNavigate();
-  const { name, photoURL, id } = useSelector(authSelectors.getUser);
-  console.log('photoURL', photoURL);
+  const { name, photoURL, id } = user;
 
   function handleLogout() {
     logout(id);
-    toast.success(t('logout.status.success'));
     navigate('/login');
+    toast.success(t('logout.status.success'));
   }
 
   return (

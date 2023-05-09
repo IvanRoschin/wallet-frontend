@@ -1,8 +1,8 @@
-import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
-import { authSelectors } from 'redux/selector';
+import { useAuth } from 'hooks/useAuth';
 
 export default function PublickRoute({ children }) {
-  const isToken = useSelector(authSelectors.getToken);
-  return <>{isToken ? <Navigate to="/home" /> : children}</>;
+  const { isLoggedIn } = useAuth();
+
+  return <>{isLoggedIn ? <Navigate to="/home" /> : children}</>;
 }

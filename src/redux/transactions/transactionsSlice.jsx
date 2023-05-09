@@ -4,7 +4,11 @@ import { transApi } from './transactionsApi';
 export const TransSlice = createSlice({
   name: 'transSlice',
   initialState: {
-    transactions: null,
+    date: null,
+    type: '',
+    category: 'income',
+    comment: '',
+    sum: null,
     balance: null,
   },
   extraReducers: builder => {
@@ -12,13 +16,20 @@ export const TransSlice = createSlice({
       transApi.endpoints.balance.matchFulfilled,
       (state, { payload }) => {
         console.log('payload balance', payload);
-
         state.balance = payload;
         state.status = payload.status;
       }
     );
     builder.addMatcher(
       transApi.endpoints.getAll.matchFulfilled,
+      (state, { payload }) => {
+        console.log('payload trans', payload);
+        state.balance = payload;
+        state.status = payload.status;
+      }
+    );
+    builder.addMatcher(
+      transApi.endpoints.add.matchFulfilled,
       (state, { payload }) => {
         console.log('payload trans', payload);
         state.balance = payload;

@@ -1,6 +1,28 @@
 import styled from 'styled-components';
 import eclipseGray from 'images/ellipses/bottomEllipse.png';
 import eclipsePink from 'images/ellipses/topEllipse.png';
+import { ReactComponent as AddBtn } from 'images/svg/plus-btn.svg';
+
+export const SvgAddBtn = styled(AddBtn)`
+  position: absolute;
+
+  position: absolute;
+  bottom: 35px;
+  right: 0;
+  cursor: pointer;
+
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+  }
+`;
+
+export const AddTransButton = styled.button``;
+
+export const Wrap = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+`;
 
 export const PageContainer = styled.div`
   outline: 1px solid tomato;
