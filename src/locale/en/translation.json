@@ -119,7 +119,8 @@
       "no_space": "space is not allowed",
       "at_least_seven": "at least 7 symbols",
       "max_tt": "maximum 32 symbols",
-      "passwords_match": "Passwords must match"
+      "passwords_match": "Passwords must match",
+      "required": "Field Password is required"
     },
 
     "email": {

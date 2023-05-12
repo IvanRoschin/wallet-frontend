@@ -17,7 +17,7 @@ export const userApi = createApi({
   }),
   endpoints: builder => ({
     current: builder.query({
-      query: id => '/',
+      query: () => '/',
       providesTags: ['user'],
     }),
 

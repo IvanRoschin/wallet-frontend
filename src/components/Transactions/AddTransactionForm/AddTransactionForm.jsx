@@ -34,9 +34,10 @@ import { useAuth } from 'hooks/useAuth';
 
 export const AddTransactionForm = () => {
   const [addTransaction] = useAddMutation();
-  const [categoryValue, setCategoryValue] = useState(null);
+  // const [categoryValue, setCategoryValue] = useState(null);
   const [results, setResults] = useState({});
   const [isChecked, setIsChecked] = useState(false);
+  const [formValues, setFormValues] = useState({});
 
   const type = isChecked ? 'income' : 'expense';
 
@@ -98,12 +99,11 @@ export const AddTransactionForm = () => {
       category: '',
       sum: '' || '0,00',
       date: new Date() || '00.00.0000',
-      comment: '' || '-',
+      comment: '',
     },
     // validationSchema: userUpdateSchema,
 
     onSubmit: async values => {
-      console.log('values', values);
       await addTransaction(values);
     },
   });
@@ -155,9 +155,9 @@ export const AddTransactionForm = () => {
           <SelectInput
             styles={css}
             placeholder={t('addtransaction.placeholders.select')}
-            onInputChange={value => {
-              setCategoryValue(value);
-            }}
+            // onInputChange={value => {
+            //   setCategoryValue(value);
+            // }}
             options={results}
             onChange={categoryValue => {
               setFieldValue('category', categoryValue);

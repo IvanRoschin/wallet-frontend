@@ -154,17 +154,23 @@ export const FlatpickrStyled = styled(Flatpickr)`
 /*Coment*/
 
 export const InputComment = styled.input`
+  width: 100%;
+
   height: 44px;
   margin-top: 40px;
+  margin-bottom: 40px;
+
+  border-bottom: ${p => p.theme.borders.normal} ${p => p.theme.colors.menuText};
+
   font-size: ${p => p.theme.fontSizes[0]};
   color: ${p => p.theme.colors.text};
 
   ::placeholder {
     color: ${p => p.theme.colors.menuText};
 
-    // padding-left: 20px;
-    // font-size: 18px;
-    // line-height: 27px;
+    padding-left: 20px;
+    font-size: 18px;
+    line-height: 27px;
   }
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
     width: 394px;

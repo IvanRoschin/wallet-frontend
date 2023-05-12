@@ -28,6 +28,13 @@ export const AuthSlice = createSlice({
     isLoggedIn: false,
     isRefreshing: false,
   },
+  reducers: {
+    addCurrent(state, action) {
+      console.log('action.payload', action.payload);
+      state.user = action.payload;
+    },
+  },
+
   extraReducers: builder => {
     builder.addMatcher(
       authApi.endpoints.signup.matchFulfilled,
@@ -76,7 +83,7 @@ export const AuthSlice = createSlice({
 // export const selectUser = state => state.auth.user;
 
 // Actions
-// export const { setUser, logout } = AuthSlice.actions;
+export const { addCurrent } = AuthSlice.actions;
 
 // Reducer
 export const authReducer = AuthSlice.reducer;

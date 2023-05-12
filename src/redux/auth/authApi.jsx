@@ -61,6 +61,17 @@ export const authApi = createApi({
       }),
       invalidatesTags: ['auth'],
     }),
+
+    refresh: builder.mutation({
+      query(id) {
+        return {
+          url: `/refresh`,
+          method: 'POST',
+          id,
+        };
+      },
+      invalidatesTags: ['auth'],
+    }),
   }),
 });
 
@@ -69,6 +80,7 @@ export const {
   useGoogleMutation,
   useLoginMutation,
   useLogoutMutation,
+  useRefreshMutation,
 } = authApi;
 
 export const authApiReducer = authApi.reducer;
