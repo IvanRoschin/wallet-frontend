@@ -14,6 +14,7 @@ export const Transactions = () => {
       setTransaction(transaction);
     }
   }, [data]);
+  console.log('transaction', transaction);
 
   return (
     <>
