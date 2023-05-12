@@ -9,7 +9,6 @@ import { Currency } from 'components/Currency';
 import { Transactions } from 'components/Transactions';
 import Media from 'react-media';
 // import { Container } from 'globalStyles/globalStyle';
-
 import {
   // Wrapper,
   // LeftSide,

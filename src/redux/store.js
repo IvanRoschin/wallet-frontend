@@ -11,8 +11,11 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { setupListeners } from '@reduxjs/toolkit/dist/query';
+
 import { authReducer } from './auth/authSlice';
 import { authApi } from './auth/authApi';
+
+import { userReducer } from './user/userSlice';
 import { userApi } from './user/userApi';
 
 import { transReducer } from './transactions/transactionsSlice';
@@ -29,8 +32,9 @@ const rootReducer = combineReducers({
   [userApi.reducerPath]: userApi.reducer,
   [transApi.reducerPath]: transApi.reducer,
 
-  trans: transReducer,
   auth: authReducer,
+  user: userReducer,
+  trans: transReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

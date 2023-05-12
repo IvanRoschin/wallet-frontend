@@ -17,7 +17,7 @@ export const AddTransactionModal = ({ handleButtonToggle }) => {
     <Modal onClose={handleModalToggle}>
       <Container>
         <ModalName>Add Transaction</ModalName>
-        <AddTransactionForm />
+        <AddTransactionForm closeModal={handleModalToggle} />
         <BtnClose onClick={handleModalToggle}>
           {t('addtransaction.buttons.cancel')}
         </BtnClose>

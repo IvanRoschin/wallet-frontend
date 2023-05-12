@@ -65,7 +65,7 @@ export const DataInputWrapp = styled.div`
   flex-direction: column;
 `;
 
-/*Category*/
+/*Select*/
 export const SelectInput = styled(Select)`
   width: 100%;
   margin-bottom: 40px;

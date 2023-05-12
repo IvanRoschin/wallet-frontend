@@ -4,8 +4,6 @@ import { Loader } from '../components/Loader';
 import { GlobalStyle } from '../globalStyles/globalStyle';
 import FontStyles from 'globalStyles/fontStyles';
 import { Toaster } from 'react-hot-toast';
-import { useCurrentQuery } from 'redux/user/userApi';
-// import { useEffect } from 'react';
 const PrivatRoute = lazy(() =>
   import('../routes/PrivateRouter' /* webpackChunkName: "PrivatRoute" */)
 );
@@ -35,9 +33,6 @@ const UserPage = lazy(() =>
 );
 
 export const App = () => {
-  const data = useCurrentQuery();
-  console.log('data', data);
-
   return (
     <>
       <GlobalStyle />

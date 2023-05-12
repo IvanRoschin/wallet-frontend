@@ -4,13 +4,31 @@ import { userApi } from './userApi';
 export const UserSlice = createSlice({
   name: 'userSlice',
   initialState: {
-    currentUser: null,
+    currentUser: {
+      name: null,
+      email: null,
+      photoURL: null,
+      phone: null,
+      balance: null,
+      categories: '',
+      transactions: '',
+    },
+    status: null,
   },
   extraReducers: builder => {
     builder.addMatcher(
       userApi.endpoints.current.matchFulfilled,
       (state, { payload }) => {
-        state.currentUser = payload.user;
+        console.log('currentPayload', payload.user);
+        state.currentUser = {
+          name: payload.name,
+          email: payload.email,
+          photoURL: payload.photoURL,
+          phone: payload.phone,
+          balance: payload.balance,
+          categories: payload.categories,
+          transactions: payload.transactions,
+        };
         state.status = payload.status;
       }
     );
@@ -18,7 +36,6 @@ export const UserSlice = createSlice({
 });
 
 // Selectors
-export const selectUserAuth = state => state.user;
 
 // Actions
 

@@ -1,16 +1,12 @@
 import { useFormik } from 'formik';
 import { useState, useEffect } from 'react';
-import css from './SelectStyle.css';
 import Switch from 'react-switch';
-
+import toast from 'react-hot-toast';
 import { useAddMutation } from 'redux/transactions/transactionsApi';
 import { Ukrainian } from 'flatpickr/dist/l10n/uk.js';
 import { English } from 'flatpickr/dist/l10n/default.js';
-import { getCategories, getCategoriesUk } from 'helpers/getCategories';
+import { getCategoriesUk } from 'helpers/getCategories';
 import { useTranslation } from 'react-i18next';
-// import LanguageDetector from 'i18next-browser-languagedetector';
-
-//
 
 import {
   DataInputWrapp,
@@ -32,12 +28,10 @@ import {
 } from './AddTransactionForm.styled';
 import { useAuth } from 'hooks/useAuth';
 
-export const AddTransactionForm = () => {
-  const [addTransaction] = useAddMutation();
-  // const [categoryValue, setCategoryValue] = useState(null);
+export const AddTransactionForm = ({ closeModal }) => {
+  const [addTransaction, { isError, isSuccess, error }] = useAddMutation();
   const [results, setResults] = useState({});
   const [isChecked, setIsChecked] = useState(false);
-  const [formValues, setFormValues] = useState({});
 
   const type = isChecked ? 'income' : 'expense';
 
@@ -95,7 +89,7 @@ export const AddTransactionForm = () => {
     setFieldValue,
   } = useFormik({
     initialValues: {
-      type: '',
+      type: 'income',
       category: '',
       sum: '' || '0,00',
       date: new Date() || '00.00.0000',
@@ -108,10 +102,20 @@ export const AddTransactionForm = () => {
     },
   });
 
+  useEffect(() => {
+    if (isError) {
+      toast.error(`${error.data.message}`);
+    }
+    if (isSuccess) {
+      toast.success('Successfully added!');
+      // closeModal();
+    }
+  }, [isError, isSuccess, error]);
+
   return (
     <DataInputWrapp>
       <Form onSubmit={handleSubmit}>
-        {/* Type */}
+        {/* Switch */}
         <SwitchBox>
           <SwitchIncome type={type}>
             {t('addtransaction.header.income')}
@@ -150,14 +154,17 @@ export const AddTransactionForm = () => {
           </SwitchExpence>
         </SwitchBox>
 
-        {/* category */}
+        {/* Select */}
         <InputWrapper>
           <SelectInput
-            styles={css}
+            styles={{
+              control: (baseStyles, state) => ({
+                ...baseStyles,
+                borderColor: 'transparent',
+                color: state.isFocused ? 'grey' : 'red',
+              }),
+            }}
             placeholder={t('addtransaction.placeholders.select')}
-            // onInputChange={value => {
-            //   setCategoryValue(value);
-            // }}
             options={results}
             onChange={categoryValue => {
               setFieldValue('category', categoryValue);

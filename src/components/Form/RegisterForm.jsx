@@ -68,7 +68,7 @@ export const RegisterForm = () => {
   useEffect(() => {
     if (isSignupSuccess) {
       toast.success('Signup Succes');
-      navigate('/login');
+      navigate('/home');
     }
     if (isSignupError) {
       toast.error(SignupError?.data.message);

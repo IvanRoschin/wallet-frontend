@@ -15,7 +15,6 @@ export const TransSlice = createSlice({
     builder.addMatcher(
       transApi.endpoints.balance.matchFulfilled,
       (state, { payload }) => {
-        console.log('payload balance', payload);
         state.balance = payload;
         state.status = payload.status;
       }
@@ -23,7 +22,6 @@ export const TransSlice = createSlice({
     builder.addMatcher(
       transApi.endpoints.getAll.matchFulfilled,
       (state, { payload }) => {
-        console.log('payload trans', payload);
         state.balance = payload;
         state.status = payload.status;
       }
@@ -31,7 +29,6 @@ export const TransSlice = createSlice({
     builder.addMatcher(
       transApi.endpoints.add.matchFulfilled,
       (state, { payload }) => {
-        console.log('payload trans', payload);
         state.balance = payload;
         state.status = payload.status;
       }
@@ -40,7 +37,6 @@ export const TransSlice = createSlice({
 });
 
 // Selectors
-// export const selectUserBalance = state => state.user;
 
 // Actions
 

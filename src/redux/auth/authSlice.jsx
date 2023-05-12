@@ -1,15 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { authApi } from './authApi';
 
-// const handlePending = state => {
-//   state.isRefreshing = true;
-// };
-
-// const handleRejected = (state, action) => {
-//   state.isRefreshing = false;
-//   state.error = action.payload.message || false;
-// };
-
 export const AuthSlice = createSlice({
   name: 'authSlice',
   initialState: {
@@ -27,12 +18,6 @@ export const AuthSlice = createSlice({
     refreshToken: null,
     isLoggedIn: false,
     isRefreshing: false,
-  },
-  reducers: {
-    addCurrent(state, action) {
-      console.log('action.payload', action.payload);
-      state.user = action.payload;
-    },
   },
 
   extraReducers: builder => {
@@ -79,11 +64,8 @@ export const AuthSlice = createSlice({
 });
 
 // Selectors
-// export const selectAuth = state => state.auth;
-// export const selectUser = state => state.auth.user;
 
 // Actions
-export const { addCurrent } = AuthSlice.actions;
 
 // Reducer
 export const authReducer = AuthSlice.reducer;

@@ -15,15 +15,6 @@ export const authApi = createApi({
       }
       return headers;
     },
-    // baseUrl: HOST_NAME,
-    // prepareHeaders: (headers, { getState }) => {
-    //   const token = getState().auth.accessToken;
-    //   console.log(token);
-    //   if (token) {
-    //     headers.set('authorization', `Bearer ${token}`);
-    //   }
-    //   return headers;
-    // },
   }),
   endpoints: builder => ({
     signup: builder.mutation({

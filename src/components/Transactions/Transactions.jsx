@@ -3,19 +3,17 @@ import { useState, useEffect } from 'react';
 
 export const Transactions = () => {
   const [transaction, setTransaction] = useState({});
-  const { data, isFetching } = useGetAllQuery();
+  const { data } = useGetAllQuery();
 
   useEffect(() => {
-    if (data !== undefined && data.length > 0) {
-      let transaction = {};
+    let transaction;
+    if (data === undefined || !data.length) {
+      return;
+    } else {
       transaction = data[0].transaction;
       setTransaction(transaction);
-    } else {
-      console.log('no transactions');
-      return;
     }
   }, [data]);
-  console.log(transaction);
 
   return (
     <>
