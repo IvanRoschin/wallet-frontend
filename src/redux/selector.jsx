@@ -4,7 +4,3 @@ export const selectUser = state => state.auth.user;
 export const selectBalance = state => state.trans.balance;
 export const selectError = state => state.auth.error;
 export const selectIsLoggedIn = state => state.auth.isLoggedIn;
-
-// export const authSelectors = { getToken, getStatus, getUser };
-
-// export const transSelectors = { getBalance };

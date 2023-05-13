@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { authApi } from './authApi';
+import { userApi } from 'redux/user/userApi';
 
 export const AuthSlice = createSlice({
-  name: 'authSlice',
+  name: 'auth',
   initialState: {
     user: {
       name: null,
@@ -11,7 +12,6 @@ export const AuthSlice = createSlice({
       phone: null,
       balance: null,
       categories: '',
-      transactions: '',
     },
     status: null,
     accessToken: null,
@@ -24,16 +24,9 @@ export const AuthSlice = createSlice({
     builder.addMatcher(
       authApi.endpoints.signup.matchFulfilled,
       (state, { payload }) => {
-        state.user = {
-          name: payload.name,
-          email: payload.email,
-          photoURL: payload.photoURL,
-          phone: payload.phone,
-          balance: payload.balance,
-          categories: payload.categories,
-          transactions: payload.transactions,
-        };
+        state.user = payload.user;
         state.status = payload.status;
+        state.isLoggedIn = true;
         state.isRefreshing = false;
         state.error = false;
       }
@@ -57,6 +50,15 @@ export const AuthSlice = createSlice({
         state.accessToken = null;
         state.refreshToken = null;
         state.isLoggedIn = false;
+        state.error = false;
+      }
+    );
+    builder.addMatcher(
+      userApi.endpoints.current.matchFulfilled,
+      (state, { payload }) => {
+        state.user = payload;
+        state.isLoggedIn = true;
+        state.status = payload.status;
         state.error = false;
       }
     );

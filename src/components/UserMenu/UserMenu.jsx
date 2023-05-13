@@ -26,6 +26,7 @@ export const UserMenu = () => {
   function handleLogout() {
     logout(id);
     navigate('/login');
+    localStorage.clear();
     toast.success(t('logout.status.success'));
   }
 
