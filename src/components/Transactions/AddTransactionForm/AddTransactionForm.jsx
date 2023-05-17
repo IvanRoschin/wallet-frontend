@@ -29,13 +29,13 @@ import {
 import { useAuth } from 'hooks/useAuth';
 
 export const AddTransactionForm = ({ closeModal }) => {
+  const { t } = useTranslation();
+
   const [addTransaction, { isError, isSuccess, error }] = useAddMutation();
   const [results, setResults] = useState({});
   const [isChecked, setIsChecked] = useState(false);
 
   const type = isChecked ? 'income' : 'expense';
-
-  const { t } = useTranslation();
 
   const language = localStorage.getItem('i18nextLng');
   let locale = English;
@@ -53,7 +53,6 @@ export const AddTransactionForm = ({ closeModal }) => {
         const data = user.categories;
         const expense = data.filter(item => item.type === 'expense');
         const income = data.filter(item => item.type === 'income');
-        console.log('isChecked', isChecked);
         if (!isChecked && lang === 'uk') {
           setResults(getCategoriesUk(income));
         }
@@ -107,10 +106,11 @@ export const AddTransactionForm = ({ closeModal }) => {
       toast.error(`${error.data.message}`);
     }
     if (isSuccess) {
-      toast.success('Successfully added!');
+      toast.success(t('addtransaction.notify.success'));
+
       // closeModal();
     }
-  }, [isError, isSuccess, error]);
+  }, [isError, isSuccess, error, t]);
 
   return (
     <DataInputWrapp>
@@ -161,7 +161,15 @@ export const AddTransactionForm = ({ closeModal }) => {
               control: (baseStyles, state) => ({
                 ...baseStyles,
                 borderColor: 'transparent',
-                color: state.isFocused ? 'grey' : 'red',
+                color: state.isFocused ? 'blue' : 'red',
+              }),
+              option: (baseStyles, state) => ({
+                ...baseStyles,
+                fontSize: '12px',
+                backgroundColor: 'transparent',
+                backdropFilter: 'blur(5px)',
+                borderRadius: '20px',
+                color: state.isFocused ? 'green' : 'grey',
               }),
             }}
             placeholder={t('addtransaction.placeholders.select')}
@@ -191,24 +199,23 @@ export const AddTransactionForm = ({ closeModal }) => {
         </InputWrapper>
 
         {/* Date */}
-        <InputWrapper>
-          <InputFlatpickrWrapp>
-            <FlatpickrStyled
-              data-enable-time
-              name="date"
-              value={values?.date}
-              options={{
-                maxDate: 'today',
-                enableTime: false,
-                dateFormat: 'd.m.Y',
-                locale: locale,
-              }}
-              onChange={date => {
-                setFieldValue('date', date[0]);
-              }}
-            />
-          </InputFlatpickrWrapp>
-        </InputWrapper>
+        <InputFlatpickrWrapp>
+          <FlatpickrStyled
+            data-enable-time
+            value={values?.date}
+            options={{
+              disableMobile: false,
+              defaultDate: 'today',
+              enableTime: false,
+              dateFormat: 'd.m.Y',
+              locale: locale,
+              maxDate: 'today',
+            }}
+            onChange={date => {
+              setFieldValue('date', date[0]);
+            }}
+          />
+        </InputFlatpickrWrapp>
 
         {/* Comment */}
         <InputWrapper>

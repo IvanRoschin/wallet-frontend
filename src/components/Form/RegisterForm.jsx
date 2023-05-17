@@ -67,13 +67,14 @@ export const RegisterForm = () => {
 
   useEffect(() => {
     if (isSignupSuccess) {
-      toast.success('Signup Succes');
+      toast.success(t('registration.status.success'));
+
       navigate('/home');
     }
     if (isSignupError) {
       toast.error(SignupError?.data.message);
     }
-  }, [isSignupSuccess, isSignupError, SignupError, navigate]);
+  }, [isSignupSuccess, isSignupError, SignupError, navigate, t]);
 
   const validateConfirmPassword = (pass, value) => {
     let error = '';

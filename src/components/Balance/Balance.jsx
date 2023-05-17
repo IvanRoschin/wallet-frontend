@@ -6,18 +6,17 @@ import { Box, BoxText, BalanceText } from './Balance.styled';
 export const Balance = () => {
   const { t } = useTranslation();
 
-  const [balance, setBalance] = useState('0.00');
-  const { data = [] } = useBalanceQuery();
+  const [balance, setBalance] = useState();
+  const { data } = useBalanceQuery();
+  console.log('balance', data);
 
   useEffect(() => {
-    let balance;
-    if (!data.length) {
+    if (data === 'undefind') {
       return;
-    } else {
-      balance = data[0].balance.toFixed(2);
-      setBalance(balance);
-    }
-  }, [data]);
+    } else if (!data?.length) {
+      setBalance('0.00');
+    } else setBalance(data[0]?.balance.toFixed(2));
+  }, [data, data?.length]);
 
   return (
     <Box>

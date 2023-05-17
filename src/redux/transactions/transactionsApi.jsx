@@ -4,7 +4,7 @@ const HOST_NAME = 'http://localhost:3030/api/transactions';
 
 export const transApi = createApi({
   reducerPath: 'transApi',
-  tagTypes: ['trans'],
+  tagTypes: ['transactions'],
   baseQuery: fetchBaseQuery({
     baseUrl: HOST_NAME,
     prepareHeaders: (headers, { getState }) => {
@@ -18,22 +18,27 @@ export const transApi = createApi({
   endpoints: builder => ({
     getAll: builder.query({
       query: id => '/',
-      providesTags: ['trans'],
+      providesTags: ['transactions'],
     }),
 
     getPerMounth: builder.query({
       query: id => '/month',
-      providesTags: ['trans'],
+      providesTags: ['transactions'],
     }),
 
     getPerYear: builder.query({
       query: id => '/year',
-      providesTags: ['trans'],
+      providesTags: ['transactions'],
+    }),
+
+    getByCategory: builder.query({
+      query: id => '/category',
+      providesTags: ['transactions'],
     }),
 
     balance: builder.query({
       query: id => '/balance',
-      providesTags: ['trans'],
+      providesTags: ['transactions'],
     }),
 
     add: builder.mutation({
@@ -44,7 +49,16 @@ export const transApi = createApi({
           body: credentials,
         };
       },
-      invalidatesTags: ['trans'],
+      invalidatesTags: ['transactions'],
+    }),
+    delete: builder.mutation({
+      query(id) {
+        return {
+          url: `/${id}`,
+          method: 'DELETE',
+        };
+      },
+      invalidatesTags: ['transactions'],
     }),
   }),
 });
@@ -53,9 +67,10 @@ export const {
   useGetAllQuery,
   useGetPerMounthQuery,
   useGetPerYearQuery,
+  useGetByCategoryQuery,
   useBalanceQuery,
   useAddMutation,
-  // useDeleteMutation,
+  useDeleteMutation,
   // useEditMutation,
   // useAvatarMutation,
 } = transApi;

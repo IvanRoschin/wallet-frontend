@@ -1,13 +1,13 @@
-import { useState } from 'react';
-// import toast from 'react-hot-toast';
-// import i18n from 'i18n';
-
 import { AppBar } from 'components/AppBar';
 import { Navigation } from 'components/Navigation';
 import { Balance } from 'components/Balance';
 import { Currency } from 'components/Currency';
 import { Transactions } from 'components/Transactions';
+import { Statistics } from 'pages/Statistics/Statistics';
 import Media from 'react-media';
+
+import { useState } from 'react';
+
 // import { Container } from 'globalStyles/globalStyle';
 import {
   // Wrapper,
@@ -40,8 +40,12 @@ const Dashboard = () => {
           render={() => (
             <>
               <Navigation />
+              <Statistics />
               <Balance />
-              <Transactions />
+              <Transactions
+              // transactions={transactions}
+              // onDelete={handleDelete}
+              />
               <Currency />
               {open ? (
                 <AddTransactionModal handleButtonToggle={handleButtonToggle} />

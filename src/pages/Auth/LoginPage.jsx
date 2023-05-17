@@ -11,6 +11,7 @@ import {
   RightSide,
 } from './Page.styled';
 import { LoginForm } from 'components/Form';
+
 const LoginPage = () => {
   return (
     <Container>

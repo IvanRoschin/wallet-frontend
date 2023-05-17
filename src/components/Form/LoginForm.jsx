@@ -50,14 +50,14 @@ export const LoginForm = () => {
 
   useEffect(() => {
     if (isLoginSuccess) {
-      toast.success('Login success');
+      toast.success(t('login.status.success'));
+
       navigate('/home');
     }
     if (isLoginError) {
-      console.log('LoginError', LoginError.data.message);
       toast.error(LoginError?.data.message);
     }
-  }, [isLoginSuccess, isLoginError, LoginError, navigate]);
+  }, [isLoginSuccess, isLoginError, LoginError, navigate, t]);
 
   return (
     <>

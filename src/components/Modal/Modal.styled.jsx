@@ -20,15 +20,13 @@ export const Backdrop = styled.div`
 `;
 
 export const ModalWindow = styled.div`
-  // overflow: auto;
+  overflow: auto;
   // width: 280px;
   min-width: 360px;
   position: absolute;
-  top: 60%;
+  top: 67%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-height: 100%;
-  max-height: 95%;
   border-radius: ${p => p.theme.radii.small};
   background-color: ${p => p.theme.colors.white};
   /* &::-webkit-scrollbar {

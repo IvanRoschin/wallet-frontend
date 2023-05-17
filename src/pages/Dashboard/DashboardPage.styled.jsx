@@ -6,7 +6,6 @@ import { ReactComponent as AddBtn } from 'images/svg/plus-btn.svg';
 export const SvgAddBtn = styled(AddBtn)`
   position: absolute;
 
-  position: absolute;
   bottom: 35px;
   right: 0;
   cursor: pointer;
@@ -19,7 +18,7 @@ export const AddTransButton = styled.button``;
 
 export const Wrap = styled.div`
   position: absolute;
-  top: 50%;
+  top: 100%;
   left: 100%;
   transform: translate(-50%, -50%);
 `;

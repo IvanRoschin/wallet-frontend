@@ -1,44 +1,56 @@
-import { useGetAllQuery } from 'redux/transactions/transactionsApi';
+import { useTranslation } from 'react-i18next';
 import { useState, useEffect } from 'react';
 
+import { TransactionItem } from './TransactionItem';
+import { Text } from './TransactionItem.styled';
+
+import { useGetAllQuery } from 'redux/transactions/transactionsApi';
+import { useDeleteMutation } from 'redux/transactions/transactionsApi';
+
+import toast from 'react-hot-toast';
+
 export const Transactions = () => {
-  const [transaction, setTransaction] = useState({});
+  const [transactions, setTransactions] = useState([]);
+  const [deleteTransaction, { isError, error }] = useDeleteMutation();
   const { data } = useGetAllQuery();
 
+  const { t } = useTranslation();
+
+  const handleDelete = async id => {
+    if (id && !isError) {
+      await deleteTransaction(id);
+      setTransactions(transactions =>
+        transactions.filter(transaction => transaction.id !== id)
+      );
+      toast.success(`Transaction is deleted`);
+    } else {
+      toast.error(error.data.message);
+    }
+  };
+
   useEffect(() => {
-    let transaction;
-    if (data === undefined || !data.length) {
+    if (data === 'undefind') {
       return;
     } else {
-      transaction = data[0].transaction;
-      setTransaction(transaction);
+      setTransactions(data);
     }
-  }, [data]);
-  console.log('transaction', transaction);
+  }, [data, setTransactions]);
 
   return (
     <>
-      {/* {transaction?.length === 0 ? (
-        <p>Your contactlist is empty</p>
+      {transactions?.length === 0 ? (
+        <Text>{t('noTransactionText')}</Text>
       ) : (
-        <table>
-          <head>
-            <tr>
-              <td>Date</td>
-              <td>Type</td>
-              <td>Comment</td>
-              <td>Sum</td>
-              <td>Balance</td>
-              <td>Delete</td>
-            </tr>
-          </head>
-          <tbody>
-            {transactions.map(transaction => (
-              <td key={transaction._id} {...transaction} />
-            ))}
-          </tbody>
-        </table>
-      )} */}
+        <>
+          {transactions?.map(transaction => (
+            <TransactionItem
+              key={transaction._id}
+              {...transaction}
+              onDelete={handleDelete}
+            />
+          ))}
+        </>
+      )}
     </>
   );
 };

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import Flatpickr from 'react-flatpickr';
-import 'flatpickr/dist/themes/material_orange.css';
 
+import Flatpickr from 'react-flatpickr';
+import 'flatpickr/dist/themes/material_green.css';
 import Select from 'react-select';
 
 /*Switch*/
