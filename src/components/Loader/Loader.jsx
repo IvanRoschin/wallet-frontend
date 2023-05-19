@@ -1,9 +1,10 @@
-import { HashLoader } from 'react-spinners';
+import { BeatLoader } from 'react-spinners';
 import { LoaderContainer } from './Loader.styled';
-export const Loader = ({ color, size }) => {
+// { color, size }
+export const Loader = ({ color }) => {
   return (
     <LoaderContainer>
-      <HashLoader color={color} size={size} />
+      <BeatLoader color={color} />
     </LoaderContainer>
   );
 };

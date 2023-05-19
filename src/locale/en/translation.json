@@ -1,4 +1,5 @@
 {
+  "wellcome": "Wellcome,",
   "noTransactionText": "You don't have any transactions. Please use add button below to get started.",
   "date": "Date",
   "type": "Type",
@@ -139,7 +140,7 @@
 
     "status": {
       "success": "Success! Please, log in!",
-      "error": "User with this email already exists"
+      "error": "Please fill all fields"
     },
     "required": {
       "name": "name is a required field",

@@ -7,8 +7,11 @@ import { store, persistor } from 'redux/store';
 import { ThemeProvider } from 'styled-components';
 import { theme } from 'globalStyles/theme';
 import { App } from 'components/App';
+// import { transApi } from 'redux/transactions/transactionsApi';
 import './index.css';
 import './i18n';
+
+// store.dispatch(transApi.endpoints.getByCategory.initiate());
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

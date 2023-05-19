@@ -60,7 +60,7 @@ export const RegisterForm = () => {
         if (name && email && phone && password) {
           await signup({ name, email, phone, password });
         } else {
-          toast.error('Please fill all fields');
+          toast.success(t('registration.status.error'));
         }
       },
     });
@@ -69,7 +69,7 @@ export const RegisterForm = () => {
     if (isSignupSuccess) {
       toast.success(t('registration.status.success'));
 
-      navigate('/home');
+      navigate('/login');
     }
     if (isSignupError) {
       toast.error(SignupError?.data.message);

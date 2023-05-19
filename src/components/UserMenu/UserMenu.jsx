@@ -50,13 +50,13 @@ export const UserMenu = () => {
             </>
           ) : (
             <>
-              <UserMenuText>Wellcome</UserMenuText>
+              <UserMenuText>{t('wellcome')}</UserMenuText>
 
               <NavLink to={'/account'}>
                 <UserMenuText>
                   <img src={photoURL} alt="avatar" width="24px" height="24px" />
                 </UserMenuText>
-                {name} |
+                {name ? name : 'user'}
               </NavLink>
               <LogoutButton type="button" onClick={handleLogout}>
                 <LogoutIcon />

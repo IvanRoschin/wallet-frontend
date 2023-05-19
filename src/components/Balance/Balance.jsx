@@ -8,7 +8,6 @@ export const Balance = () => {
 
   const [balance, setBalance] = useState();
   const { data } = useBalanceQuery();
-  console.log('balance', data);
 
   useEffect(() => {
     if (data === 'undefind') {

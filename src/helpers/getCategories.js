@@ -8,12 +8,13 @@ export const getCategories = array => {
 };
 
 export const getCategoriesUk = array => {
-  return array.map(({ nameUk, nameEn, type }) => ({
+  return array.map(({ nameUk, nameEn, type, color }) => ({
     label: nameUk,
     value: nameUk,
     nameUk,
     nameEn,
     type,
+    color,
   }));
 };
 

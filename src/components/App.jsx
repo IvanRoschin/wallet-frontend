@@ -37,7 +37,7 @@ const UserPage = lazy(() =>
 
 const fetchData = async () => {
   try {
-    await fetch('http://localhost:3030/api');
+    await fetch('http://localhost:3030/api/auth/check');
   } catch (err) {
     if (err.message === 'net::ERR_CONNECTION_REFUSED') {
       console.log('Connection refused. Please check your network connection.');
