@@ -87,6 +87,22 @@ export const App = () => {
             }
           />
           <Route
+            path="/statistic"
+            element={
+              <PrivatRoute>
+                <DashboardPage />
+              </PrivatRoute>
+            }
+          />
+          <Route
+            path="/currency"
+            element={
+              <PrivatRoute>
+                <DashboardPage />
+              </PrivatRoute>
+            }
+          />
+          <Route
             path="/account"
             element={
               <PrivatRoute>

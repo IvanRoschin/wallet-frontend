@@ -22,6 +22,8 @@ export const Form = styled.form`
   flex-direction: column;
   position: relative;
   margin: 10px 0px 10px;
+  margin-top: 60px;
+
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
     margin-top: 60px;
   }

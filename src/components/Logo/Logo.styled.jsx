@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const LogoImg = styled.img`
   margin-right: 15px;
@@ -14,12 +15,27 @@ export const LogoImg = styled.img`
     margin-right: 20px;
   }
 `;
+export const HomeLink = styled(NavLink)`
+  text-decoration: none;
+  //  z-index: 100;
 
+  &:hover,
+  &:focus {
+  }
+
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    margin-right: auto;
+  }
+
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
+    margin-rigth: 80px;
+  }
+`;
 export const LogoText = styled.p`
-  font-family: ${p => p.theme.fonts.secondaryFont};
-  font-size: ${p => p.theme.fontSizes[1]};
-  font-weight: ${p => p.theme.fontWeights.bold};
-  font-family: ${p => p.theme.fonts.accentText};
+  font-family: ${p => p.theme.fonts.accentTextBold};
+  font-size: ${p => p.theme.fontSizes[4]};
+  color: ${p => p.theme.colors.text};
+
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
     font-size: ${p => p.theme.fontSizes[4]};
   }

@@ -17,20 +17,24 @@ import { userApi } from './user/userApi';
 import { transApi } from './transactions/transactionsApi';
 
 import { authReducer } from './auth/authSlice';
-import { transReducer } from './transactions/transactionsSlice';
+import { transactionReducer } from './transactions/transactionsSlice';
 
-const persistConfig = {
+const authPersistConfig = {
   key: 'auth',
   storage,
   whitelist: ['accessToken', 'refreshToken'],
 };
 
-const persistedReducer = persistReducer(persistConfig, authReducer);
+const transactionPersistConfig = {
+  key: 'trans',
+  storage,
+  whitelist: [''],
+};
 
 export const store = configureStore({
   reducer: {
-    auth: persistedReducer,
-    trans: transReducer,
+    auth: persistReducer(authPersistConfig, authReducer),
+    transactions: persistReducer(transactionPersistConfig, transactionReducer),
     [authApi.reducerPath]: authApi.reducer,
     [transApi.reducerPath]: transApi.reducer,
     [userApi.reducerPath]: userApi.reducer,

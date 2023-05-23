@@ -5,14 +5,7 @@ import { userApi } from 'redux/user/userApi';
 export const AuthSlice = createSlice({
   name: 'auth',
   initialState: {
-    user: {
-      name: null,
-      email: null,
-      photoURL: null,
-      phone: null,
-      balance: null,
-      categories: '',
-    },
+    user: {},
     status: null,
     accessToken: null,
     refreshToken: null,

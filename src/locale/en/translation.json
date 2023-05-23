@@ -224,7 +224,8 @@
     "sure": "Are you sure?",
     "irrevertable": "Transaction cannot be restored after deleting",
     "delete": "Delete",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "notify": "Transaction deleted"
   },
   "exitprompt": {
     "wallet": "Wallet Confirm",

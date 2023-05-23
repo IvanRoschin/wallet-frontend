@@ -22,13 +22,13 @@ const Navigation = () => {
         </Link>
       </NavigationButton>
       <NavigationButton>
-        <Link to="/">
+        <Link to="/statistic">
           <StatisticsIcon alt="Link statistic page" />
           <LinkName>{t('navigation.statistics')}</LinkName>
         </Link>
       </NavigationButton>
       <NavigationButton>
-        <Link to="/">
+        <Link to="/currency">
           <CurrencyIcon alt="Link currency page" />
           <LinkName>{t('navigation.statistics')}</LinkName>
         </Link>

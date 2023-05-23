@@ -51,7 +51,6 @@ export const LoginForm = () => {
   useEffect(() => {
     if (isLoginSuccess) {
       toast.success(t('login.status.success'));
-
       navigate('/home');
     }
     if (isLoginError) {

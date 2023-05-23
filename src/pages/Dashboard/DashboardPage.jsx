@@ -5,9 +5,8 @@ import { Currency } from 'components/Currency';
 import { Transactions } from 'components/Transactions';
 import { Statistics } from 'pages/Statistics/Statistics';
 import Media from 'react-media';
-
 import { useState } from 'react';
-
+import { useLocation } from 'react-router-dom';
 // import { Container } from 'globalStyles/globalStyle';
 import {
   // Wrapper,
@@ -17,10 +16,12 @@ import {
   Wrap,
   AddTransButton,
   SvgAddBtn,
+  DashboardSeparator,
 } from './DashboardPage.styled';
 import AddTransactionModal from 'components/Transactions/AddTransactionModal/AddTransactionModal';
 
 const Dashboard = () => {
+  const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
 
   const handleModalToggle = () => {
@@ -40,25 +41,31 @@ const Dashboard = () => {
           render={() => (
             <>
               <Navigation />
-              <Statistics />
-              <Balance />
-              <Transactions
-              // transactions={transactions}
-              // onDelete={handleDelete}
-              />
-              <Currency />
-              {open ? (
-                <AddTransactionModal handleButtonToggle={handleButtonToggle} />
-              ) : (
-                <Wrap>
-                  <AddTransButton type="button" onClick={handleModalToggle}>
-                    <SvgAddBtn />
-                  </AddTransButton>
-                </Wrap>
-              )}
             </>
           )}
         />
+        <DashboardSeparator pathname={pathname}></DashboardSeparator>
+        {pathname === '/statistic' && <Statistics />}
+        {pathname === '/home' && (
+          <>
+            {open ? (
+              <AddTransactionModal handleButtonToggle={handleButtonToggle} />
+            ) : (
+              <Wrap>
+                <AddTransButton type="button" onClick={handleModalToggle}>
+                  <SvgAddBtn />
+                </AddTransButton>
+              </Wrap>
+            )}
+            <Balance />
+
+            <Transactions
+            // onDelete={handleDelete}
+            />
+          </>
+        )}
+        {pathname === '/currency' && <Currency />}
+
         {/* <Wrapper>
           <LeftSide>
             <Navigation />

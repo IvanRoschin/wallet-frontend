@@ -52,7 +52,7 @@ export const TransactionItem = ({
         </TableLine>
         <TableLine>
           <TableColumA>{t('sum')}</TableColumA>
-          <TableColumSum type={type}>{sum}</TableColumSum>
+          <TableColumSum type={type}>{getFormatedSum(sum)}</TableColumSum>
         </TableLine>
         <TableLine>
           <TableColumA>{t('balance')}</TableColumA>

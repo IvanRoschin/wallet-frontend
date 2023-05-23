@@ -21,23 +21,25 @@ export const transApi = createApi({
       providesTags: ['transactions'],
     }),
 
-    getPerMounth: builder.query({
-      query: id => '/month',
-      providesTags: ['transactions'],
-    }),
-
-    getPerYear: builder.query({
-      query: id => '/year',
-      providesTags: ['transactions'],
-    }),
-
-    getByCategory: builder.query({
-      query: id => '/category',
-      providesTags: ['transactions'],
+    getPeriod: builder.query({
+      query(credentials) {
+        return {
+          url: `/period`,
+          method: 'GET',
+          params: credentials,
+        };
+      },
+      invalidatesTags: ['transactions'],
     }),
 
     balance: builder.query({
-      query: id => '/balance',
+      query(credentials) {
+        return {
+          url: `/balance`,
+          method: 'GET',
+          params: credentials,
+        };
+      },
       providesTags: ['transactions'],
     }),
 
@@ -65,9 +67,7 @@ export const transApi = createApi({
 
 export const {
   useGetAllQuery,
-  useGetPerMounthQuery,
-  useGetPerYearQuery,
-  useGetByCategoryQuery,
+  useGetPeriodQuery,
   useBalanceQuery,
   useAddMutation,
   useDeleteMutation,

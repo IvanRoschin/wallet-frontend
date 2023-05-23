@@ -60,7 +60,7 @@ export const Table = styled.table`
   padding-top: 12px;
   padding-left: 20px;
 
-  border-left: ${p => p.theme.borders.normal}
+  border-left: ${p => p.theme.borders.bold}
     ${({ type }) => (type === 'income' ? '#24CCA7' : '#FF6596')};
   border-radius: ${p => p.theme.radii.transaction};
   background-color: ${p => p.theme.colors.white};

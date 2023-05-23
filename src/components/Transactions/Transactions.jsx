@@ -22,7 +22,7 @@ export const Transactions = () => {
       setTransactions(transactions =>
         transactions.filter(transaction => transaction.id !== id)
       );
-      toast.success(`Transaction is deleted`);
+      toast.success(t('deleteprompt.notify'));
     } else {
       toast.error(error.data.message);
     }
