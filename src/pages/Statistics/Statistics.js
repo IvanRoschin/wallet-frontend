@@ -64,30 +64,27 @@ export const Statistics = () => {
   const [expense, setExpense] = useState();
   const [income, setIncome] = useState();
 
-  useGetPeriodQuery(period);
-  useBalanceQuery(period);
-
-  const { periodCategory, periodBalance } = useTrans();
+  const { data: periodCategory } = useGetPeriodQuery(period);
+  const { data: periodBalance } = useBalanceQuery(period);
+  console.log('periodCategory', periodCategory);
 
   useEffect(() => {
-    if (!periodBalance?.length) {
-      setBalance('0.00');
-      setIncome('0.00');
-      setExpense('0.00');
-    } else if (periodBalance[0].balance === 'undefind') {
-      return;
-    } else if (periodBalance[0].expense === 'undefind') {
-      return;
-    } else if (periodBalance[0].income === 'undefind') {
-      return;
-    } else {
+    if (periodBalance?.length > 0) {
       setBalance(getFormatedSum(periodBalance[0].balance));
       setIncome(getFormatedSum(periodBalance[0].income));
       setExpense(getFormatedSum(periodBalance[0].expense));
+    } else if (periodBalance?.balance === 'undefind') {
+      return;
+    } else if (periodBalance?.expense === 'undefind') {
+      return;
+    } else if (periodBalance?.income === 'undefind') {
+      return;
+    } else {
+      setBalance('0.00');
+      setIncome('0.00');
+      setExpense('0.00');
     }
-    if (periodCategory !== undefined && periodCategory?.length > 0) {
-      setCategory(periodCategory);
-    }
+
     return;
   }, [
     period,
@@ -105,22 +102,21 @@ export const Statistics = () => {
     onSubmit: async values => {
       console.log('values', values);
       setPeriod(values);
-      console.log('period', period);
       localStorage.clear();
     },
   });
-  const [chartData] = useState({
+  const chartData = {
     // labels: data?.map(({ _id }) => _id),
     datasets: [
       {
         // label: 'Category',
-        data: category?.map(({ summ }) => summ),
-        backgroundColor: category?.map(({ color }) => color),
+        data: periodCategory?.map(({ summ }) => summ),
+        backgroundColor: periodCategory?.map(({ color }) => color),
         cutout: '70%',
         radius: '95%',
       },
     ],
-  });
+  };
 
   return (
     <div>

@@ -25,16 +25,16 @@ const authPersistConfig = {
   whitelist: ['accessToken', 'refreshToken'],
 };
 
-const transactionPersistConfig = {
-  key: 'trans',
-  storage,
-  whitelist: [''],
-};
+// const transactionPersistConfig = {
+//   key: 'trans',
+//   storage,
+//   whitelist: [''],
+// };
 
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
-    transactions: persistReducer(transactionPersistConfig, transactionReducer),
+    // transactions: persistReducer(transactionPersistConfig, transactionReducer),
     [authApi.reducerPath]: authApi.reducer,
     [transApi.reducerPath]: transApi.reducer,
     [userApi.reducerPath]: userApi.reducer,
