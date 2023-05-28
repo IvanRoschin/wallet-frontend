@@ -7,7 +7,6 @@ import { DoughnutChart } from './Chart';
 import { getFormatedSum } from 'helpers/getFormatedSum';
 import { useFormik } from 'formik';
 import { month, year } from 'helpers/getCurrentPeriod';
-import { useTrans } from 'hooks/useTrans';
 
 import {
   Title,
@@ -59,14 +58,12 @@ export const Statistics = () => {
   };
 
   const [period, setPeriod] = useState();
-  const [category, setCategory] = useState();
   const [balance, setBalance] = useState();
   const [expense, setExpense] = useState();
   const [income, setIncome] = useState();
 
   const { data: periodCategory } = useGetPeriodQuery(period);
   const { data: periodBalance } = useBalanceQuery(period);
-  console.log('periodCategory', periodCategory);
 
   useEffect(() => {
     if (periodBalance?.length > 0) {
@@ -100,16 +97,13 @@ export const Statistics = () => {
       year,
     },
     onSubmit: async values => {
-      console.log('values', values);
       setPeriod(values);
       localStorage.clear();
     },
   });
   const chartData = {
-    // labels: data?.map(({ _id }) => _id),
     datasets: [
       {
-        // label: 'Category',
         data: periodCategory?.map(({ summ }) => summ),
         backgroundColor: periodCategory?.map(({ color }) => color),
         cutout: '70%',

@@ -29,11 +29,9 @@ export const Transactions = () => {
   };
 
   useEffect(() => {
-    if (data === 'undefind') {
+    if (data === 'undefined' || data?.length === 0) {
       return;
-    } else {
-      setTransactions(data);
-    }
+    } else setTransactions(data);
   }, [data, setTransactions]);
 
   return (
