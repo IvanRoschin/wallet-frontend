@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkwallet_frontend=self.webpackChunkwallet_frontend||[]).push([[719],{6598:function(n,e,t){t.r(e),t.d(e,{default:function(){return a}});var r=t(7689),l=t(9665),u=t(3329);function a(n){var e=n.children,t=(0,l.a)().isLoggedIn;return(0,u.jsx)(u.Fragment,{children:t?e:(0,u.jsx)(r.Fg,{to:"/login"})})}}}]);
+//# sourceMappingURL=PrivatRoute.7dd9ac20.chunk.js.map
