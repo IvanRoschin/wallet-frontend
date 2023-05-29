@@ -159,20 +159,33 @@ export const AddTransactionForm = ({ closeModal }) => {
         {/* Select */}
         <InputWrapper>
           <SelectInput
+            type={type}
             styles={{
               control: (baseStyles, state) => ({
                 ...baseStyles,
                 borderColor: 'transparent',
                 color: state.isFocused ? 'blue' : 'red',
               }),
-              option: (baseStyles, state) => ({
-                ...baseStyles,
-                fontSize: '12px',
-                backgroundColor: 'transparent',
-                backdropFilter: 'blur(5px)',
-                // borderRadius: '20px',
-                color: state.isFocused ? 'green' : 'grey',
-              }),
+              option: (baseStyles, state) => {
+                let color = 'grey';
+
+                if (!isChecked && state.isFocused) {
+                  color = 'green';
+                } else if (isChecked && state.isFocused) {
+                  color = 'red';
+                }
+
+                return {
+                  ...baseStyles,
+                  fontSize: '12px',
+                  textAlign: 'start',
+                  borderRadius: '20px',
+                  backgroundColor: 'transparent',
+                  backdropFilter: 'blur(5px)',
+                  color: color,
+                  width: '60px',
+                };
+              },
             }}
             placeholder={t('addtransaction.placeholders.select')}
             options={results}

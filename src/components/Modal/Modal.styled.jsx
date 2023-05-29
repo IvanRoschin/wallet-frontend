@@ -21,10 +21,9 @@ export const Backdrop = styled.div`
 
 export const ModalWindow = styled.div`
   overflow: auto;
-  // width: 280px;
   min-width: 320px;
   position: absolute;
-  top: 75%;
+  top: 67%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: ${p => p.theme.radii.small};

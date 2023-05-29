@@ -29,9 +29,7 @@ export const ModalName = styled.p`
   line-height: 36px;
   @media screen (min-width: ${p => p.theme.breakpoints[1]}) {
     margin-top: 40px;
-    text-shadow: 0px 4px 4px var(--backdrop);
     line-height: 45px;
-    font-family: ${p => p.theme.fonts.baseFontBold};
     margin-bottom: 40px;
     font-size: ${p => p.theme.fontSizes[4]};
   }

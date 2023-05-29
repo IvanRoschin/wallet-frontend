@@ -1,6 +1,25 @@
 import styled from 'styled-components';
 import Select from 'react-select';
 
+/*Wrapper */
+export const Wrapper = styled.div`
+  display: flex;
+  margin-top: 40px;
+  margin-left: 20px;
+  margin-bottom: 8px;
+
+  font-family: ${p => p.theme.fonts.accentText};
+  // font-size: ${p => p.theme.fontSizes[4]};
+`;
+
+export const LeftSide = styled.div`
+  width: 50%;
+`;
+
+export const RightSide = styled.div`
+  width: 50%;
+`;
+
 /*DoughnutChart*/
 
 export const Title = styled.p`
@@ -11,6 +30,10 @@ export const Title = styled.p`
 
   font-family: ${p => p.theme.fonts.accentText};
   font-size: ${p => p.theme.fontSizes[4]};
+
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    margin-left: 0;
+  }
 `;
 
 export const Text = styled.p`
@@ -24,6 +47,10 @@ export const Text = styled.p`
 
   font-size: ${p => p.theme.fontSizes[3]};
   line-height: 27px;
+
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    top: 43%;
+  }
 `;
 
 export const ChartWrapper = styled.div`
@@ -33,12 +60,11 @@ export const ChartWrapper = styled.div`
   margin-right: auto;
   margin-left: auto;
 
-  @media screen and (min-width: 768px) {
-    margin-right: 32px;
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
     width: 336px;
     height: 336px;
   }
-  @media screen and (min-width: 1280px) {
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
     margin-right: 32px;
     width: 288px;
     height: 288px;
@@ -47,6 +73,14 @@ export const ChartWrapper = styled.div`
 
 /*DateForm*/
 /*Select*/
+
+export const Form = styled.form`
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    display: flex;
+    width: 336px;
+  }
+`;
+
 export const SelectInput = styled(Select)`
   width: 280px;
   height: 50px;
@@ -68,9 +102,9 @@ export const SelectInput = styled(Select)`
   }
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    width: 100%;
-    padding: 3px 12px 4px 12px;
-    font-size: ${p => p.theme.fontSizes[3]};
+    width: 150px;
+    height: 50px;
+    font-size: ${p => p.theme.fontSizes[2]};
   }
   @media (min-width: ${p => p.theme.breakpoints[2]}) {
     width: 100%;
@@ -92,6 +126,11 @@ export const Head = styled.ul`
   border-radius: ${p => p.theme.radii.button};
 
   background-color: ${p => p.theme.colors.white};
+
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    width: 336px;
+    margin: 0;
+  }
 `;
 
 export const HeadItem = styled.li`
@@ -110,6 +149,11 @@ export const Body = styled.ul`
   flex: 1;
   justify-content: normal;
   border-bottom: 1px solid #ddd;
+
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    width: 336px;
+    margin: 0;
+  }
 `;
 export const BodyItemColor = styled.li`
   width: 24px;
@@ -138,6 +182,11 @@ export const Footer = styled.ul`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    width: 336px;
+    margin: 0;
+  }
 `;
 
 export const FooterItem = styled.li`

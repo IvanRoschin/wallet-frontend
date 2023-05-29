@@ -7,10 +7,15 @@ import { DoughnutChart } from './Chart';
 import { getFormatedSum } from 'helpers/getFormatedSum';
 import { useFormik } from 'formik';
 import { month, year } from 'helpers/getCurrentPeriod';
+import Media from 'react-media';
 
 import {
+  Wrapper,
+  LeftSide,
+  RightSide,
   Title,
   ChartWrapper,
+  Form,
   Text,
   Head,
   HeadItem,
@@ -113,91 +118,193 @@ export const Statistics = () => {
   };
 
   return (
-    <div>
-      <Title>{t('statistics.header')}</Title>
-      <ChartWrapper style={{ width: 280 }}>
-        <DoughnutChart chartData={chartData} />
-        <Text>₴ {balance}</Text>
-      </ChartWrapper>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <SelectInput
-            styles={{
-              control: (baseStyles, state) => ({
-                ...baseStyles,
-                marginTop: '5px',
-                backgroundColor: 'transparent',
-                borderColor: 'transparent',
-                boxShadow: 'none',
-                color: 'black',
-              }),
-              option: (baseStyles, state) => ({
-                ...baseStyles,
-                fontSize: '12px',
-                backgroundColor: 'transparent',
-                backdropFilter: 'blur(5px)',
-                borderRadius: '20px',
-                color: state.isFocused ? 'green' : 'grey',
-              }),
-            }}
-            placeholder={t('diagramTab.optionData.month')}
-            options={monthDataSet.data}
-            name="month"
-            onChange={monthValue => {
-              setFieldValue('month', monthValue.value);
-              submitForm();
-            }}
-          />
-          <SelectInput
-            styles={{
-              control: (baseStyles, state) => ({
-                ...baseStyles,
-                marginTop: '5px',
-                backgroundColor: 'transparent',
-                borderColor: 'transparent',
-                boxShadow: 'none',
-                color: 'black',
-              }),
-              option: (baseStyles, state) => ({
-                ...baseStyles,
-                fontSize: '12px',
-                backgroundColor: 'transparent',
-                backdropFilter: 'blur(5px)',
-                borderRadius: '20px',
-                color: state.isFocused ? 'green' : 'grey',
-              }),
-            }}
-            placeholder={t('diagramTab.optionData.year')}
-            options={yearDataSet.data}
-            name="year"
-            onChange={yearValue => {
-              setFieldValue('year', yearValue.value);
-              submitForm();
-            }}
-          />
-        </form>
-      </div>
-      <Head>
-        <HeadItem>{t('category')}</HeadItem>
-        <HeadItem>{t('sum')}</HeadItem>
-      </Head>
-      {periodCategory?.map(({ _id, summ, color }) => {
-        return (
-          <Body key={uuidv4()}>
-            <BodyItemColor color={color}></BodyItemColor>
-            <BodyItemCategory>{_id} </BodyItemCategory>
-            <BodyItemSum>{getFormatedSum(summ)}</BodyItemSum>
-          </Body>
-        );
-      })}
-      <Footer>
-        <FooterItem>{t('expense')}:</FooterItem>
-        <FooterExpense>{expense}</FooterExpense>
-      </Footer>
-      <Footer>
-        <FooterItem>{t('income')}:</FooterItem>
-        <FooterIncome>{income}</FooterIncome>
-      </Footer>
-    </div>
+    <>
+      <Media
+        query="(max-width: 767px)"
+        render={() => (
+          <>
+            <Title>{t('statistics.header')}</Title>
+            <ChartWrapper style={{ width: 280 }}>
+              <DoughnutChart chartData={chartData} />
+              <Text>₴ {balance}</Text>
+            </ChartWrapper>
+            <div>
+              <form onSubmit={handleSubmit}>
+                <SelectInput
+                  styles={{
+                    control: (baseStyles, state) => ({
+                      ...baseStyles,
+                      marginTop: '5px',
+                      backgroundColor: 'transparent',
+                      borderColor: 'transparent',
+                      boxShadow: 'none',
+                      color: 'black',
+                    }),
+                    option: (baseStyles, state) => ({
+                      ...baseStyles,
+                      fontSize: '12px',
+                      backgroundColor: 'transparent',
+                      backdropFilter: 'blur(5px)',
+                      borderRadius: '20px',
+                      color: state.isFocused ? 'green' : 'grey',
+                    }),
+                  }}
+                  placeholder={t('diagramTab.optionData.month')}
+                  options={monthDataSet.data}
+                  name="month"
+                  onChange={monthValue => {
+                    setFieldValue('month', monthValue.value);
+                    submitForm();
+                  }}
+                />
+                <SelectInput
+                  styles={{
+                    control: (baseStyles, state) => ({
+                      ...baseStyles,
+                      marginTop: '5px',
+                      backgroundColor: 'transparent',
+                      borderColor: 'transparent',
+                      boxShadow: 'none',
+                      color: 'black',
+                    }),
+                    option: (baseStyles, state) => ({
+                      ...baseStyles,
+                      fontSize: '12px',
+                      backgroundColor: 'transparent',
+                      backdropFilter: 'blur(5px)',
+                      borderRadius: '20px',
+                      color: state.isFocused ? 'green' : 'grey',
+                    }),
+                  }}
+                  placeholder={t('diagramTab.optionData.year')}
+                  options={yearDataSet.data}
+                  name="year"
+                  onChange={yearValue => {
+                    setFieldValue('year', yearValue.value);
+                    submitForm();
+                  }}
+                />
+              </form>
+            </div>
+            <Head>
+              <HeadItem>{t('category')}</HeadItem>
+              <HeadItem>{t('sum')}</HeadItem>
+            </Head>
+            {periodCategory?.map(({ _id, summ, color }) => {
+              return (
+                <Body key={uuidv4()}>
+                  <BodyItemColor color={color}></BodyItemColor>
+                  <BodyItemCategory>{_id} </BodyItemCategory>
+                  <BodyItemSum>{getFormatedSum(summ)}</BodyItemSum>
+                </Body>
+              );
+            })}
+            <Footer>
+              <FooterItem>{t('expense')}:</FooterItem>
+              <FooterExpense>{expense}</FooterExpense>
+            </Footer>
+            <Footer>
+              <FooterItem>{t('income')}:</FooterItem>
+              <FooterIncome>{income}</FooterIncome>
+            </Footer>
+          </>
+        )}
+      />
+      <Media
+        query="(min-width: 768px)"
+        render={() => (
+          <>
+            <Title>{t('statistics.header')}</Title>
+            <Wrapper>
+              <LeftSide>
+                <ChartWrapper style={{ width: 280 }}>
+                  <DoughnutChart chartData={chartData} />
+                  <Text>₴ {balance}</Text>
+                </ChartWrapper>
+              </LeftSide>
+              <RightSide>
+                <Form onSubmit={handleSubmit}>
+                  <SelectInput
+                    styles={{
+                      control: (baseStyles, state) => ({
+                        ...baseStyles,
+                        marginTop: '5px',
+                        backgroundColor: 'transparent',
+                        borderColor: 'transparent',
+                        boxShadow: 'none',
+                        color: 'black',
+                      }),
+                      option: (baseStyles, state) => ({
+                        ...baseStyles,
+                        fontSize: '12px',
+                        backgroundColor: 'transparent',
+                        backdropFilter: 'blur(5px)',
+                        borderRadius: '20px',
+                        color: state.isFocused ? 'green' : 'grey',
+                      }),
+                    }}
+                    placeholder={t('diagramTab.optionData.month')}
+                    options={monthDataSet.data}
+                    name="month"
+                    onChange={monthValue => {
+                      setFieldValue('month', monthValue.value);
+                      submitForm();
+                    }}
+                  />
+                  <SelectInput
+                    styles={{
+                      control: (baseStyles, state) => ({
+                        ...baseStyles,
+                        marginTop: '5px',
+                        backgroundColor: 'transparent',
+                        borderColor: 'transparent',
+                        boxShadow: 'none',
+                        color: 'black',
+                      }),
+                      option: (baseStyles, state) => ({
+                        ...baseStyles,
+                        fontSize: '12px',
+                        backgroundColor: 'transparent',
+                        backdropFilter: 'blur(5px)',
+                        borderRadius: '20px',
+                        color: state.isFocused ? 'green' : 'grey',
+                      }),
+                    }}
+                    placeholder={t('diagramTab.optionData.year')}
+                    options={yearDataSet.data}
+                    name="year"
+                    onChange={yearValue => {
+                      setFieldValue('year', yearValue.value);
+                      submitForm();
+                    }}
+                  />
+                </Form>
+                <Head>
+                  <HeadItem>{t('category')}</HeadItem>
+                  <HeadItem>{t('sum')}</HeadItem>
+                </Head>
+                {periodCategory?.map(({ _id, summ, color }) => {
+                  return (
+                    <Body key={uuidv4()}>
+                      <BodyItemColor color={color}></BodyItemColor>
+                      <BodyItemCategory>{_id} </BodyItemCategory>
+                      <BodyItemSum>{getFormatedSum(summ)}</BodyItemSum>
+                    </Body>
+                  );
+                })}
+                <Footer>
+                  <FooterItem>{t('expense')}:</FooterItem>
+                  <FooterExpense>{expense}</FooterExpense>
+                </Footer>
+                <Footer>
+                  <FooterItem>{t('income')}:</FooterItem>
+                  <FooterIncome>{income}</FooterIncome>
+                </Footer>
+              </RightSide>
+            </Wrapper>
+          </>
+        )}
+      />
+    </>
   );
 };

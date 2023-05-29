@@ -55,15 +55,15 @@ export const NavigationButton = styled.button`
     &:not(:last-child) {
       margin-right: 38px;
     }
-  }
-
-  @media (min-width: ${p => p.theme.breakpoints[2]}) {
     &:last-child {
       display: none;
     }
     &:nth-child(1) {
-      margin-bottom: 21px;
+      margin-bottom: 12px;
     }
+  }
+
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
   }
 `;
 

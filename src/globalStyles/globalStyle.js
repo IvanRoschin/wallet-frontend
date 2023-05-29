@@ -75,24 +75,26 @@ export const Container = styled.div`
 
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 60px;
 
   outline: 1px solid red;
 
-  padding: 0 ${p => p.theme.space[5]}px;
+  background-color: ${p => p.theme.colors.backgroundMobile};
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
     width: 768px;
     height: 994px;
+    background-color: transparent;
 
     outline: 1px solid red;
   }
 
   @media (min-width: ${p => p.theme.breakpoints[2]}) {
     width: 1280px;
+    background-color: transparent;
 
     outline: 1px solid red;
 
-    width: ${p => (p.header ? '100%' : p.theme.breakpoints[2])};
     padding: 0 ${p => p.theme.space[4]}px;
   }
 `;

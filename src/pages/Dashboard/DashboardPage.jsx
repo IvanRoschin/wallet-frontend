@@ -12,11 +12,9 @@ import {
   Wrapper,
   LeftSide,
   RightSide,
-  PageContainer,
   Wrap,
   AddTransButton,
   SvgAddBtn,
-  // DashboardSeparator,
 } from './DashboardPage.styled';
 import AddTransactionModal from 'components/Transactions/AddTransactionModal/AddTransactionModal';
 
@@ -35,60 +33,116 @@ const Dashboard = () => {
   return (
     <>
       <AppBar />
-      <PageContainer>
-        <Media
-          query="(max-width: 767px)"
-          render={() => (
-            <>
-              <Navigation />
-              {pathname === '/statistic' && <Statistics />}
-              {pathname === '/home' && (
-                <>
-                  <Balance />
-                  <Transactions />
-                </>
-              )}
-              {pathname === '/currency' && <Currency />}
-            </>
-          )}
-        />
-        {open ? (
-          <AddTransactionModal handleButtonToggle={handleButtonToggle} />
-        ) : (
-          <Wrap>
-            <AddTransButton type="button" onClick={handleModalToggle}>
-              <SvgAddBtn />
-            </AddTransButton>
-          </Wrap>
-        )}
-      </PageContainer>
-
       <Media
-        query="(min-width: 768px)"
-        render={() => (
-          <Container>
-            <Wrapper>
-              <LeftSide>
-                <Navigation />
-                <Balance />
-              </LeftSide>
-              <RightSide>
-                <Currency />
-              </RightSide>
-            </Wrapper>
-            <Transactions />
-            {open ? (
-              <AddTransactionModal handleButtonToggle={handleButtonToggle} />
-            ) : (
-              <Wrap>
-                <AddTransButton type="button" onClick={handleModalToggle}>
-                  <SvgAddBtn />
-                </AddTransButton>
-              </Wrap>
+        queries={{
+          mobile: '(max-width: 767px)',
+          tablet: '(min-width: 768px) and (max-width: 1279px)',
+          desktop: '(min-width: 1280px)',
+        }}
+      >
+        {matches => (
+          <>
+            {matches.mobile && (
+              <>
+                <Container>
+                  <Navigation />
+                  {pathname === '/home' && (
+                    <>
+                      <Balance /> <Transactions />
+                      {open ? (
+                        <AddTransactionModal
+                          handleButtonToggle={handleButtonToggle}
+                        />
+                      ) : (
+                        <Wrap>
+                          <AddTransButton
+                            type="button"
+                            onClick={handleModalToggle}
+                          >
+                            <SvgAddBtn />
+                          </AddTransButton>
+                        </Wrap>
+                      )}
+                    </>
+                  )}
+                  {pathname === '/statistic' && <Statistics />}
+                  {pathname === '/currency' && <Currency />}
+                </Container>
+              </>
             )}
-          </Container>
+            {matches.tablet && (
+              <>
+                <Container>
+                  <Wrapper>
+                    <LeftSide>
+                      <Navigation />
+                      <Balance />
+                    </LeftSide>
+                    <RightSide>
+                      <Currency />
+                    </RightSide>
+                  </Wrapper>
+                  {pathname === '/home' && (
+                    <>
+                      <Transactions />
+                      {open ? (
+                        <AddTransactionModal
+                          handleButtonToggle={handleButtonToggle}
+                        />
+                      ) : (
+                        <Wrap>
+                          <AddTransButton
+                            type="button"
+                            onClick={handleModalToggle}
+                          >
+                            <SvgAddBtn />
+                          </AddTransButton>
+                        </Wrap>
+                      )}
+                    </>
+                  )}
+                  {pathname === '/statistic' && <Statistics />}
+                </Container>
+              </>
+            )}
+            {matches.desktop && (
+              <>
+                <Container>
+                  <Wrapper>
+                    <LeftSide>
+                      <Navigation />
+                      <Balance />
+                      <Currency />
+                    </LeftSide>
+                    <RightSide>
+                      {pathname === '/home' && (
+                        <>
+                          <Transactions />
+                          {open ? (
+                            <AddTransactionModal
+                              handleButtonToggle={handleButtonToggle}
+                            />
+                          ) : (
+                            <Wrap>
+                              <AddTransButton
+                                type="button"
+                                onClick={handleModalToggle}
+                              >
+                                <SvgAddBtn />
+                              </AddTransButton>
+                            </Wrap>
+                          )}
+                        </>
+                      )}
+                      {pathname === '/statistic' && <Statistics />}
+                    </RightSide>
+                  </Wrapper>
+                </Container>
+              </>
+            )}
+          </>
         )}
-      />
+      </Media>
     </>
   );
 };

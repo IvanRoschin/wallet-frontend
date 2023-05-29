@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import eclipseGray from 'images/ellipses/bottomEllipse.png';
-import eclipsePink from 'images/ellipses/topEllipse.png';
 import { ReactComponent as AddBtn } from 'images/svg/plus-btn.svg';
 
 export const SvgAddBtn = styled(AddBtn)`
@@ -25,26 +23,6 @@ export const Wrap = styled.div`
   }
 `;
 
-export const PageContainer = styled.div`
-  outline: 1px solid tomato;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 60px;
-
-  // height: 100vh;
-
-  background-color: ${p => p.theme.colors.backgroundMobile};
-
-  @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    display: none;
-  }
-
-  @media (min-width: ${p => p.theme.breakpoints[2]}) {
-    padding: 0;
-    flex-direction: row;
-    background-image: url(${eclipseGray}), url(${eclipsePink});
-  }
-`;
 export const Wrapper = styled.div`
   display: flex;
 `;
