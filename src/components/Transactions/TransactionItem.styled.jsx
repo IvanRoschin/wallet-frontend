@@ -48,7 +48,22 @@ export const Text = styled.p`
   font: ${p => p.theme.fonts.baseFontBold};
   font-size: 18px;
   line-height: 27px;
-  background-color: '#fff';
+
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+  }
+`;
+
+export const TableHead = styled.table`
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    width: 94%;
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
+    box-shadow: none;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+  }
 `;
 
 export const Table = styled.table`
@@ -56,42 +71,64 @@ export const Table = styled.table`
 
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 8px;
+  margin-bottom: 20px;
   padding-top: 12px;
-  padding-left: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
 
   border-left: ${p => p.theme.borders.bold}
     ${({ type }) => (type === 'income' ? '#24CCA7' : '#FF6596')};
   border-radius: ${p => p.theme.radii.transaction};
   background-color: ${p => p.theme.colors.white};
+  box-shadow: 1px 0px 1px
+    ${({ type }) => (type === 'income' ? '#24CCA7' : '#FF6596')};
 
-  box-swadow: ${p => p.theme.shadows.menu};
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    width: 94%;
+    margin-left: 0;
+
+    padding-left: 0;
+    border-left: none;
+    box-shadow: none;
+    background-color: transparent;
+  }
 `;
 
-export const TableLine = styled.tr`
-  // border-bottom: 1px solid #ddd;
-`;
+export const TableLine = styled.tr``;
 
 export const TableColumA = styled.th`
   width: 10%;
   padding: 10px;
   text-align: start;
-  border-bottom: 1px solid #ddd;
 
   font-family: ${p => p.theme.fonts.baseFontBold};
   font-size: ${p => p.theme.fontSizes[2]};
+
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    width: 15%;
+    text-align: center;
+  }
 `;
 
 export const TableColumB = styled.th`
-  width: 70%;
+  width: 20%;
+  text-align: end;
 
   border-bottom: 1px solid #ddd;
 
   font-size: ${p => p.theme.fontSizes[1]};
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    width: 15%;
+    text-align: center;
+  }
 `;
 
 export const TableColumSum = styled.th`
+  text-align: end;
   border-bottom: 1px solid #ddd;
 
   color: ${({ type }) => (type === 'income' ? '#24CCA7' : '#FF6596')};
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    text-align: end;
+  }
 `;

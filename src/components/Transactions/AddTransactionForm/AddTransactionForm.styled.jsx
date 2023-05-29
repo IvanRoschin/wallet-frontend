@@ -4,6 +4,16 @@ import Flatpickr from 'react-flatpickr';
 import 'flatpickr/dist/themes/material_green.css';
 import Select from 'react-select';
 
+/*Wrapper*/
+export const Wrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+  height: 44px;
+  cursor: pointer;
+`;
+
 /*Switch*/
 
 export const SwitchBox = styled.div`
@@ -108,8 +118,10 @@ export const Input = styled.input`
   }
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    width: 100%;
+    width: 50%;
     padding: 3px 12px 4px 12px;
+    margin-bottom: 0;
+
     font-size: ${p => p.theme.fontSizes[3]};
   }
   @media (min-width: ${p => p.theme.breakpoints[2]}) {
@@ -127,7 +139,7 @@ export const InputFlatpickrWrapp = styled.div`
   border-bottom: ${p => p.theme.borders.normal} ${p => p.theme.colors.menuText};
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    width: 100%;
+    width: 50%;
   }
   @media (min-width: ${p => p.theme.breakpoints[2]}) {
     width: 100%;
@@ -173,7 +185,6 @@ export const InputComment = styled.input`
     line-height: 27px;
   }
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    width: 394px;
     margin-top: 0;
     height: 29px;
 

@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useGetCurrencyQuery } from 'redux/currency/currencyApi';
 import { getFormatedSum } from 'helpers/getFormatedSum';
+import { useTranslation } from 'react-i18next';
 
 import { Table, Thead, TheadLine, TableColum, Tbody } from './Currency.styled';
 
 export const Currency = () => {
   const [currencyData, setCurrencyData] = useState([]);
   const { data } = useGetCurrencyQuery();
+  const { t } = useTranslation();
 
   useEffect(() => {
     let result = [];
@@ -27,9 +29,9 @@ export const Currency = () => {
     <Table>
       <Thead>
         <TheadLine>
-          <TableColum>Currency</TableColum>
-          <TableColum>Purchase</TableColum>
-          <TableColum>Sale</TableColum>
+          <TableColum> {t('currencyPage.currency')}</TableColum>
+          <TableColum> {t('currencyPage.purchase')}</TableColum>
+          <TableColum> {t('currencyPage.sale')}</TableColum>
         </TheadLine>
       </Thead>
       <Tbody>

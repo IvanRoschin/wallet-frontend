@@ -33,7 +33,7 @@ export const HomeLink = styled(NavLink)`
 `;
 export const LogoText = styled.p`
   font-family: ${p => p.theme.fonts.accentTextBold};
-  font-size: ${p => p.theme.fontSizes[4]};
+  font-size: ${p => p.theme.fontSizes[3]};
   color: ${p => p.theme.colors.text};
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {

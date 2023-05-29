@@ -8,6 +8,8 @@ export const Table = styled.table`
   margin-right: auto;
   margin-top: 28px;
   margin-bottom: 32px;
+  overflow: hidden;
+
   color: ${p => p.theme.colors.white};
 
   border-radius: ${p => p.theme.radii.button};
@@ -15,6 +17,8 @@ export const Table = styled.table`
   background-color: ${p => p.theme.colors.backgroundBlue};
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    width: 336px;
+    margin: 0;
   }
 
   @media (min-width: ${p => p.theme.breakpoints[2]}) {
@@ -47,6 +51,8 @@ export const TheadLine = styled.tr`
 
 export const TableColum = styled.th`
   padding: 12px;
+  border-bottom: 1px solid #ddd;
+
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
   }
 

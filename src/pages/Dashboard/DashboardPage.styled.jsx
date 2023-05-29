@@ -17,24 +17,26 @@ export const SvgAddBtn = styled(AddBtn)`
 export const AddTransButton = styled.button``;
 
 export const Wrap = styled.div`
-  position: sticky;
+  position: static;
   top: 100%;
+
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    position: sticky;
+  }
 `;
 
 export const PageContainer = styled.div`
   outline: 1px solid tomato;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 60px;
+
+  // height: 100vh;
 
   background-color: ${p => p.theme.colors.backgroundMobile};
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    background-color: ${p => p.theme.colors.backgroundTablet};
-    background-image: url(${eclipseGray}), url(${eclipsePink});
-    background-repeat: no-repeat, no-repeat;
-    background-position: 0px 100%, right 0px top 0px;
-    padding: 60px 114px 48px;
-    text-align: center;
+    display: none;
   }
 
   @media (min-width: ${p => p.theme.breakpoints[2]}) {
@@ -44,18 +46,17 @@ export const PageContainer = styled.div`
   }
 `;
 export const Wrapper = styled.div`
-display: flex;
-  }
+  display: flex;
 `;
 
 export const LeftSide = styled.div`
-display: flex;
-flex-direction:column;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-
-
-width: 50%
+  width: 50%;
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    align-items: flex-start;
   }
 `;
 

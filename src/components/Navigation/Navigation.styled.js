@@ -36,6 +36,7 @@ export const NavWrapper = styled.nav`
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
     align-items: flex-start;
     flex-direction: column;
+    margin-bottom: 32px;
   }
 `;
 
@@ -68,12 +69,18 @@ export const NavigationButton = styled.button`
 
 export const Link = styled(NavLink)`
   & > p {
-    font-family: ${p => p.theme.fonts.secondaryFont};
-    font-style: normal;
-    font-weight: ${p => p.theme.fontWeights.regular};
-    font-size: ${p => p.theme.fontSizes[3]};
-    line-height: 27px;
-    color: ${p => p.theme.colors.black};
+    color: black;
+    display: none;
+    @media (min-width: ${p => p.theme.breakpoints[1]}) {
+      display: block;
+      margin-left: 23px;
+
+      font-family: ${p => p.theme.fonts.baseFont};
+      font-size: ${p => p.theme.fontSizes[2]};
+      color: ${p => p.theme.colors.black};
+
+      line-height: 27px;
+    }
   }
   & > svg {
     width: 24px;
@@ -98,11 +105,4 @@ export const Link = styled(NavLink)`
   }
 `;
 
-export const LinkName = styled.p`
-  display: none;
-
-  @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    display: block;
-    margin-left: 23px;
-  }
-`;
+// export const LinkName = styled.p``;

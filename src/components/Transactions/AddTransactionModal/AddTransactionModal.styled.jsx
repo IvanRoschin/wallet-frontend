@@ -8,7 +8,7 @@ export const Container = styled.div`
   // padding: 40px 20px;
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    padding: 40px 80px;
+    // padding: 40px 80px;
   }
 `;
 

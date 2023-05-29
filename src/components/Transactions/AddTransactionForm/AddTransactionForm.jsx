@@ -7,6 +7,7 @@ import { Ukrainian } from 'flatpickr/dist/l10n/uk.js';
 import { English } from 'flatpickr/dist/l10n/default.js';
 import { getCategoriesUk } from 'helpers/getCategories';
 import { useTranslation } from 'react-i18next';
+import Media from 'react-media';
 
 import {
   DataInputWrapp,
@@ -25,6 +26,7 @@ import {
   SwitcherButtonVert,
   SwitcherButtonGor,
   BtnAdd,
+  Wrapper,
 } from './AddTransactionForm.styled';
 import { useAuth } from 'hooks/useAuth';
 
@@ -168,7 +170,7 @@ export const AddTransactionForm = ({ closeModal }) => {
                 fontSize: '12px',
                 backgroundColor: 'transparent',
                 backdropFilter: 'blur(5px)',
-                borderRadius: '20px',
+                // borderRadius: '20px',
                 color: state.isFocused ? 'green' : 'grey',
               }),
             }}
@@ -183,39 +185,88 @@ export const AddTransactionForm = ({ closeModal }) => {
           )}
         </InputWrapper>
 
-        {/* Sum */}
-        <InputWrapper>
-          <Input
-            type="number"
-            placeholder="0.00"
-            name="sum"
-            value={values?.sum}
-            onChange={handleChange('sum')}
-            onBlur={handleBlur('sum')}
-          />
-          {touched.sum && errors.sum && (
-            <ErrorMessage>{errors.sum}</ErrorMessage>
-          )}
-        </InputWrapper>
+        <Media
+          query="(max-width: 767px)"
+          render={() => (
+            <>
+              {/* Sum */}
+              <InputWrapper>
+                <Input
+                  type="number"
+                  placeholder="0.00"
+                  name="sum"
+                  value={values?.sum}
+                  onChange={handleChange('sum')}
+                  onBlur={handleBlur('sum')}
+                />
+                {touched.sum && errors.sum && (
+                  <ErrorMessage>{errors.sum}</ErrorMessage>
+                )}
+              </InputWrapper>
 
-        {/* Date */}
-        <InputFlatpickrWrapp>
-          <FlatpickrStyled
-            data-enable-time
-            value={values?.date}
-            options={{
-              disableMobile: false,
-              defaultDate: 'today',
-              enableTime: false,
-              dateFormat: 'd.m.Y',
-              locale: locale,
-              maxDate: 'today',
-            }}
-            onChange={date => {
-              setFieldValue('date', date[0]);
-            }}
-          />
-        </InputFlatpickrWrapp>
+              {/* Date */}
+              <InputFlatpickrWrapp>
+                <FlatpickrStyled
+                  data-enable-time
+                  value={values?.date}
+                  options={{
+                    disableMobile: false,
+                    defaultDate: 'today',
+                    enableTime: false,
+                    dateFormat: 'd.m.Y',
+                    locale: locale,
+                    maxDate: 'today',
+                  }}
+                  onChange={date => {
+                    setFieldValue('date', date[0]);
+                  }}
+                />
+              </InputFlatpickrWrapp>
+            </>
+          )}
+        />
+
+        {/*Wrapper */}
+        <Media
+          query="(min-width: 768px)"
+          render={() => (
+            <Wrapper>
+              {/* Sum */}
+              <InputWrapper>
+                <Input
+                  type="number"
+                  placeholder="0.00"
+                  name="sum"
+                  value={values?.sum}
+                  onChange={handleChange('sum')}
+                  onBlur={handleBlur('sum')}
+                />
+                {touched.sum && errors.sum && (
+                  <ErrorMessage>{errors.sum}</ErrorMessage>
+                )}
+              </InputWrapper>
+
+              {/* Date */}
+              <InputFlatpickrWrapp>
+                <FlatpickrStyled
+                  data-enable-time
+                  value={values?.date}
+                  options={{
+                    disableMobile: false,
+                    defaultDate: 'today',
+                    enableTime: false,
+                    dateFormat: 'd.m.Y',
+                    locale: locale,
+                    maxDate: 'today',
+                  }}
+                  onChange={date => {
+                    setFieldValue('date', date[0]);
+                  }}
+                />
+              </InputFlatpickrWrapp>
+            </Wrapper>
+          )}
+        />
 
         {/* Comment */}
         <InputWrapper>

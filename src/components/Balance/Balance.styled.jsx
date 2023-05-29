@@ -13,6 +13,8 @@ export const Box = styled.div`
   background-color: ${p => p.theme.colors.white};
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    width: 336px;
+    margin-left: 0;
   }
 
   @media (min-width: ${p => p.theme.breakpoints[2]}) {
@@ -29,6 +31,10 @@ export const BoxText = styled.p`
   text-transform: uppercase;
 
   color: ${p => p.theme.colors.menuText};
+
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    margin-left: 0;
+  }
 `;
 
 export const BalanceText = styled.p`
@@ -38,4 +44,8 @@ export const BalanceText = styled.p`
   font-size: ${p => p.theme.fontSizes[4]};
 
   color: ${p => p.theme.colors.black};
+
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    margin-left: 0;
+  }
 `;

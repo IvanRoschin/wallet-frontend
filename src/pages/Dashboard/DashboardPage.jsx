@@ -7,16 +7,16 @@ import { Statistics } from 'pages/Statistics/Statistics';
 import Media from 'react-media';
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-// import { Container } from 'globalStyles/globalStyle';
+import { Container } from 'globalStyles/globalStyle';
 import {
-  // Wrapper,
-  // LeftSide,
-  // RightSide,
+  Wrapper,
+  LeftSide,
+  RightSide,
   PageContainer,
   Wrap,
   AddTransButton,
   SvgAddBtn,
-  DashboardSeparator,
+  // DashboardSeparator,
 } from './DashboardPage.styled';
 import AddTransactionModal from 'components/Transactions/AddTransactionModal/AddTransactionModal';
 
@@ -41,13 +41,42 @@ const Dashboard = () => {
           render={() => (
             <>
               <Navigation />
+              {pathname === '/statistic' && <Statistics />}
+              {pathname === '/home' && (
+                <>
+                  <Balance />
+                  <Transactions />
+                </>
+              )}
+              {pathname === '/currency' && <Currency />}
             </>
           )}
         />
-        <DashboardSeparator pathname={pathname}></DashboardSeparator>
-        {pathname === '/statistic' && <Statistics />}
-        {pathname === '/home' && (
-          <>
+        {open ? (
+          <AddTransactionModal handleButtonToggle={handleButtonToggle} />
+        ) : (
+          <Wrap>
+            <AddTransButton type="button" onClick={handleModalToggle}>
+              <SvgAddBtn />
+            </AddTransButton>
+          </Wrap>
+        )}
+      </PageContainer>
+
+      <Media
+        query="(min-width: 768px)"
+        render={() => (
+          <Container>
+            <Wrapper>
+              <LeftSide>
+                <Navigation />
+                <Balance />
+              </LeftSide>
+              <RightSide>
+                <Currency />
+              </RightSide>
+            </Wrapper>
+            <Transactions />
             {open ? (
               <AddTransactionModal handleButtonToggle={handleButtonToggle} />
             ) : (
@@ -57,26 +86,9 @@ const Dashboard = () => {
                 </AddTransButton>
               </Wrap>
             )}
-            <Balance />
-
-            <Transactions
-            // onDelete={handleDelete}
-            />
-          </>
+          </Container>
         )}
-        {pathname === '/currency' && <Currency />}
-
-        {/* <Wrapper>
-          <LeftSide>
-            <Navigation />
-            <Balance />
-            <Currency />
-          </LeftSide>
-          <RightSide>
-            <Transactions />
-          </RightSide>
-        </Wrapper> */}
-      </PageContainer>
+      />
     </>
   );
 };
