@@ -11,9 +11,9 @@ export const ModalButton = styled.button`
   align-items: center;
   justify-content: center;
 
-  color: ${p => (p.confirm ? p.theme.colors.accent : p.theme.colors.text)};
+  color: ${p => (p.confirm ? p.theme.colors.income : p.theme.colors.text)};
   background-color: ${p => p.theme.colors.white};
-  border: 2px solid ${p => p.theme.colors.accent};
+  border: 2px solid ${p => p.theme.colors.income};
   border-radius: 40px;
 
   font-size: ${p => p.theme.fontSizes[2]};
@@ -25,7 +25,7 @@ export const ModalButton = styled.button`
 
   &:hover {
     color: ${p => p.theme.colors.white};
-    background-color: ${p => p.theme.colors.accent};
+    background-color: ${p => p.theme.colors.income};
   }
 
   transition: ${p => p.theme.transition.main};

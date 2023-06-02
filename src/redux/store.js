@@ -16,6 +16,7 @@ import { authApi } from './auth/authApi';
 import { userApi } from './user/userApi';
 import { transApi } from './transactions/transactionsApi';
 import { currencyApi } from './currency/currencyApi';
+import { categoryApi } from './category/categoryApi';
 
 import { authReducer } from './auth/authSlice';
 
@@ -32,6 +33,7 @@ export const store = configureStore({
     [transApi.reducerPath]: transApi.reducer,
     [userApi.reducerPath]: userApi.reducer,
     [currencyApi.reducerPath]: currencyApi.reducer,
+    [categoryApi.reducerPath]: categoryApi.reducer,
   },
 
   middleware: getDefaultMiddleware => [
@@ -44,6 +46,7 @@ export const store = configureStore({
     userApi.middleware,
     transApi.middleware,
     currencyApi.middleware,
+    categoryApi.middleware,
   ],
 });
 

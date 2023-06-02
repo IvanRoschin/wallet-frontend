@@ -123,14 +123,14 @@ const Dashboard = () => {
                               handleButtonToggle={handleButtonToggle}
                             />
                           ) : (
-                            <Wrap>
-                              <AddTransButton
-                                type="button"
-                                onClick={handleModalToggle}
-                              >
-                                <SvgAddBtn />
-                              </AddTransButton>
-                            </Wrap>
+                            // <Wrap>
+                            <AddTransButton
+                              type="button"
+                              onClick={handleModalToggle}
+                            >
+                              <SvgAddBtn />
+                            </AddTransButton>
+                            // </Wrap>
                           )}
                         </>
                       )}

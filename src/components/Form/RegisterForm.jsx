@@ -1,6 +1,6 @@
 import { useFormik } from 'formik';
 import { RegisterSchema } from 'validationSchemas';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
@@ -31,8 +31,6 @@ export const RegisterForm = () => {
 
   const [passwordVisibility, setPasswordVisibility] = useState(false);
   const [confirmVisibility, setConfirmVisibility] = useState(false);
-
-  const navigate = useNavigate();
 
   const toggleShowPassword = () => {
     setPasswordVisibility(!passwordVisibility);
@@ -68,13 +66,11 @@ export const RegisterForm = () => {
   useEffect(() => {
     if (isSignupSuccess) {
       toast.success(t('registration.status.success'));
-
-      navigate('/login');
     }
     if (isSignupError) {
       toast.error(SignupError?.data.message);
     }
-  }, [isSignupSuccess, isSignupError, SignupError, navigate, t]);
+  }, [isSignupSuccess, isSignupError, SignupError, t]);
 
   const validateConfirmPassword = (pass, value) => {
     let error = '';

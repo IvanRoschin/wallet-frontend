@@ -1,19 +1,25 @@
 import { AppBar } from 'components/AppBar';
+import { Container } from 'globalStyles/globalStyle';
+import { UserData } from 'components/UserData';
 
-// import { Container } from 'globalStyles/globalStyle';
+import { CategoryList } from 'components/Category';
 
-import { Wrapper, LeftSide, RightSide, PageContainer } from './UserPage.styled';
+import { Wrapper, LeftSide, RightSide } from './UserPage.styled';
 
 const Dashboard = () => {
   return (
     <>
       <AppBar />
-      <PageContainer>
+      <Container>
         <Wrapper>
-          <LeftSide>Left Side</LeftSide>
-          <RightSide>Right Side </RightSide>
+          <LeftSide>
+            <UserData />
+          </LeftSide>
+          <RightSide>
+            <CategoryList />
+          </RightSide>
         </Wrapper>
-      </PageContainer>
+      </Container>
     </>
   );
 };

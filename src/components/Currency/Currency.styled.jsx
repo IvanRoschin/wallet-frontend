@@ -7,7 +7,6 @@ export const Table = styled.table`
   margin-left: auto;
   margin-right: auto;
   margin-top: 28px;
-  margin-bottom: 32px;
   overflow: hidden;
 
   color: ${p => p.theme.colors.white};

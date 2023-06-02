@@ -26,6 +26,7 @@ import {
   SwitcherButtonVert,
   SwitcherButtonGor,
   BtnAdd,
+  BtnAddWrapper,
   Wrapper,
 } from './AddTransactionForm.styled';
 import { useAuth } from 'hooks/useAuth';
@@ -92,7 +93,7 @@ export const AddTransactionForm = ({ closeModal }) => {
     initialValues: {
       type: 'income',
       category: '',
-      sum: '' || '0,00',
+      sum: '' || '0.00',
       date: new Date() || '00.00.0000',
       comment: '',
     },
@@ -297,8 +298,9 @@ export const AddTransactionForm = ({ closeModal }) => {
         </InputWrapper>
 
         {/* BtnAdd */}
-
-        <BtnAdd type="submit">{t('addtransaction.buttons.add')}</BtnAdd>
+        <BtnAddWrapper>
+          <BtnAdd type="submit">{t('addtransaction.buttons.add')}</BtnAdd>
+        </BtnAddWrapper>
       </Form>
     </DataInputWrapp>
   );

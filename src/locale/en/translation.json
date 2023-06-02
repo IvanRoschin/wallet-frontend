@@ -1,4 +1,17 @@
 {
+  "userData": {
+    "My_information": "My information",
+    "Want_leave": "Do you really want to leave?",
+    "Delete_user": "Delete user",
+    "Deleted_user": "Deleted user",
+    "Want_delete": "Do you really want to delete user? Your Transactions will be deleted too",
+    "Yes": "Yes",
+    "No": "No",
+    "Confirm": "User were deleted",
+    "Notify": "Photo selected",
+    "Edit_photo": "Edit photo",
+    "Photo_selected": "Photo selected"
+  },
   "wellcome": "Wellcome,",
   "noTransactionText": "You don't have any transactions. Please use add button below to get started.",
   "date": "Date",

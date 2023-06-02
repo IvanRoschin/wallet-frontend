@@ -104,5 +104,3 @@ export const Link = styled(NavLink)`
     align-items: center;
   }
 `;
-
-// export const LinkName = styled.p``;

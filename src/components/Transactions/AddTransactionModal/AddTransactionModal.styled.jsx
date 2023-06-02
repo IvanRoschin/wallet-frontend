@@ -1,4 +1,11 @@
 import styled from 'styled-components';
+import { ReactComponent as CloseSvg } from '../../../images/svg/close.svg';
+
+export const CloseModalSvg = styled(CloseSvg)`
+  text-align: center;
+  width: 16px;
+  height: 16px;
+`;
 
 export const Container = styled.div`
   display: flex;
@@ -12,14 +19,6 @@ export const Container = styled.div`
   }
 `;
 
-export const CloseButtonWrapper = styled.div`
-  display: flex;
-  justify-content: end;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-`;
-
 export const ModalName = styled.p`
   margin-top: 20px;
   margin-bottom: 40px;
@@ -27,7 +26,8 @@ export const ModalName = styled.p`
 
   font-size: ${p => p.theme.fontSizes[3]};
   line-height: 36px;
-  @media screen (min-width: ${p => p.theme.breakpoints[1]}) {
+
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
     margin-top: 40px;
     line-height: 45px;
     margin-bottom: 40px;
@@ -59,3 +59,31 @@ export const BtnClose = styled(Button)`
   color: ${p => p.theme.colors.backgroundBlue};
   margin-bottom: 60px;
 `;
+
+export const BtnCloseX = styled(Button)`
+  display: none;
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: none;
+    outline: none;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: ${p => p.theme.colors.white};
+  }
+`;
+
+export const BtnCloseWrapper = styled.div`
+  margin-right: auto;
+  margin-left: auto;
+`;
+
+// export const BtnCloseWrapper = styled.div`
+//   display: flex;
+//   justify-content: end;
+//   position: absolute;
+//   top: 20px;
+//   right: 20px;
+// `;

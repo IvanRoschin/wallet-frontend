@@ -24,14 +24,11 @@ export const BtnDelete = styled.button`
     width: ${p => p.theme.space[5] + 12}px;
     height: ${p => p.theme.space[5] + 12}px;
 
-    left: 427px;
-
     border-radius: ${p => p.theme.radii.circular};
     background-color: ${p => p.theme.colors.background};
   }
 
   @media (min-width: ${p => p.theme.breakpoints[2]}) {
-    left: 536px;
   }
 `;
 
@@ -55,9 +52,9 @@ export const Text = styled.p`
 
 export const TableHead = styled.table`
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    width: 94%;
-    margin-left: 0;
-    padding-left: 0;
+    width: 704px;
+    margin-left: auto;
+    margin-right: auto;
     border-left: none;
     box-shadow: none;
     border: 1px solid transparent;
@@ -84,10 +81,8 @@ export const Table = styled.table`
     ${({ type }) => (type === 'income' ? '#24CCA7' : '#FF6596')};
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    width: 94%;
-    margin-left: 0;
+    width: 704px;
 
-    padding-left: 0;
     border-left: none;
     box-shadow: none;
     background-color: transparent;

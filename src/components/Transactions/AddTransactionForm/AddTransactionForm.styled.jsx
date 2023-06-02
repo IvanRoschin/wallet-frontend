@@ -12,6 +12,13 @@ export const Wrapper = styled.div`
   margin-bottom: 40px;
   height: 44px;
   cursor: pointer;
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    width: 394px;
+    margin-left: auto;
+    margin-right: auto;
+
+    font-size: ${p => p.theme.fontSizes[2]};
+  }
 `;
 
 /*Switch*/
@@ -91,9 +98,11 @@ export const SelectInput = styled(Select)`
   }
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    width: 100%;
-    padding: 3px 12px 4px 12px;
-    font-size: ${p => p.theme.fontSizes[3]};
+    width: 394px;
+    margin-left: auto;
+    margin-right: auto;
+
+    font-size: ${p => p.theme.fontSizes[2]};
   }
   @media (min-width: ${p => p.theme.breakpoints[2]}) {
     width: 100%;
@@ -218,6 +227,14 @@ export const BtnAdd = styled(Button)`
   background: ${p => p.theme.colors.income};
   border-radius: ${p => p.theme.radii.button};
   color: ${p => p.theme.colors.white};
+`;
+
+export const BtnAddWrapper = styled.div`
+  margin-right: auto;
+  margin-left: auto;
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    margin-left: 45px;
+  }
 `;
 
 export const Form = styled.form`

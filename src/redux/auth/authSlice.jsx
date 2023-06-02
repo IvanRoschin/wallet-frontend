@@ -17,9 +17,8 @@ export const AuthSlice = createSlice({
     builder.addMatcher(
       authApi.endpoints.signup.matchFulfilled,
       (state, { payload }) => {
-        state.user = payload.user;
-        state.status = payload.status;
-        state.isLoggedIn = true;
+        state.user = payload;
+        state.isLoggedIn = false;
         state.isRefreshing = false;
         state.error = false;
       }
@@ -29,7 +28,7 @@ export const AuthSlice = createSlice({
       (state, { payload }) => {
         state.accessToken = payload.accessToken;
         state.refreshToken = payload.refreshToken;
-        state.user = payload.user;
+        state.user = payload;
         state.isLoggedIn = true;
         state.isRefreshing = false;
         state.error = false;
@@ -52,6 +51,17 @@ export const AuthSlice = createSlice({
         state.user = payload;
         state.isLoggedIn = true;
         state.status = payload.status;
+        state.error = false;
+      }
+    );
+    builder.addMatcher(
+      userApi.endpoints.delete.matchFulfilled,
+      (state, { payload }) => {
+        state.user = null;
+        state.status = null;
+        state.accessToken = null;
+        state.refreshToken = null;
+        state.isLoggedIn = false;
         state.error = false;
       }
     );

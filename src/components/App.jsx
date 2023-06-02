@@ -60,7 +60,7 @@ export const App = () => {
       <GlobalStyle />
       <FontStyles />
       <Toaster position="top-right" reverseOrder={false} />
-      <Suspense fallback={<Loader color="#4a56e2" size="100px" />}>
+      <Suspense fallback={<Loader color="#24CCA7" size="100px" />}>
         <Routes>
           <Route
             path="/register"

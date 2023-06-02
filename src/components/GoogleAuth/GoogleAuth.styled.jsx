@@ -9,11 +9,9 @@ export const GoogleLoginButton = styled.a`
 
   border-radius: ${p => p.theme.radii.button};
   border: 1px solid ${p => p.theme.colors.backgroundBlue};
-  height: 50px;
   font-family: ${p => p.theme.fonts.baseFont};
   font-weight: ${p => p.theme.fontWeights.regular};
-  font-size: ${p => p.theme.fontSizes[3]};
-  line-height: 1;
+  font-size: ${p => p.theme.fontSizes[2]};
   letter-spacing: ${p => p.theme.letterSpacing.button};
   text-transform: uppercase;
   transition: ${p => p.theme.transition.main};
@@ -31,7 +29,7 @@ export const GoogleLoginButton = styled.a`
 
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    font-size: ${p => p.theme.fontSizes[4]};
+  font-size: ${p => p.theme.fontSizes[2]};
     padding: 12px 0 12px 0;
       height: 30px;
 

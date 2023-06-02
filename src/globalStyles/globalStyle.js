@@ -8,17 +8,16 @@ body {
 
   font-family: 'Circle', sans-serif;
   margin: 0;
-    text-align: center;
-    height: 100vh;
+
 
     // backdrop-filter: blur(50px);
-  @media screen and (min-width: 768px) {
-    background: url(${BackTab});
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  // @media screen and (min-width: 768px) {
+  //   background: url(${BackTab});
+  //   background-position: center;
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
 
-  }
+  // }
   @media screen and (min-width: 1280px) {
     background: url(${BackDes});
     background-position: center;
@@ -72,29 +71,34 @@ table {
 
 export const Container = styled.div`
   width: 320px;
-
+  min-height: 100vh;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 60px;
-
+  padding: 32px 0;
   outline: 1px solid red;
 
-  background-color: ${p => p.theme.colors.backgroundMobile};
+  // background-color: ${p => p.theme.colors.backgroundMobile};
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
     width: 768px;
-    height: 994px;
-    background-color: transparent;
+
+    background: url(${BackTab});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
 
     outline: 1px solid red;
   }
 
   @media (min-width: ${p => p.theme.breakpoints[2]}) {
     width: 1280px;
-    background-color: transparent;
+
+    background: url(${BackDes});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     outline: 1px solid red;
-
-    padding: 0 ${p => p.theme.space[4]}px;
   }
 `;

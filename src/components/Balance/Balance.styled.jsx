@@ -33,7 +33,6 @@ export const BoxText = styled.p`
   color: ${p => p.theme.colors.menuText};
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    margin-left: 0;
   }
 `;
 
@@ -46,6 +45,5 @@ export const BalanceText = styled.p`
   color: ${p => p.theme.colors.black};
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    margin-left: 0;
   }
 `;

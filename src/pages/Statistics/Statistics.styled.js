@@ -7,9 +7,14 @@ export const Wrapper = styled.div`
   margin-top: 40px;
   margin-left: 20px;
   margin-bottom: 8px;
-
   font-family: ${p => p.theme.fonts.accentText};
-  // font-size: ${p => p.theme.fontSizes[4]};
+
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    margin-top: 0;
+  }
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
+    margin-top: 0;
+  }
 `;
 
 export const LeftSide = styled.div`
@@ -32,7 +37,8 @@ export const Title = styled.p`
   font-size: ${p => p.theme.fontSizes[4]};
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    margin-left: 0;
+    margin-left: 32px;
+    margin-top: 0;
   }
 `;
 

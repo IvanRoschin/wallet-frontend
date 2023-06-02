@@ -18,13 +18,13 @@ import {
 export const UserMenu = () => {
   const { t } = useTranslation();
   const { user } = useAuth();
-
   const [logout] = useLogoutMutation();
   const navigate = useNavigate();
-  const { name, photoURL, id } = user;
+
+  const { name, photoURL, _id } = user;
 
   function handleLogout() {
-    logout(id);
+    logout(_id);
     navigate('/login');
     localStorage.clear();
     toast.success(t('logout.status.success'));
@@ -56,7 +56,7 @@ export const UserMenu = () => {
                 <UserMenuText>
                   <img src={photoURL} alt="avatar" width="24px" height="24px" />
                 </UserMenuText>
-                {name ? name : 'user'}
+                {user.name ? name : 'user'}
               </NavLink>
               <LogoutButton type="button" onClick={handleLogout}>
                 <LogoutIcon />

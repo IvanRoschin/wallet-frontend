@@ -71,8 +71,6 @@ export const {
   useBalanceQuery,
   useAddMutation,
   useDeleteMutation,
-  // useEditMutation,
-  // useAvatarMutation,
 } = transApi;
 
 export const transApiReducer = transApi.reducer;

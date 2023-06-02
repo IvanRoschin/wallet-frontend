@@ -12,9 +12,9 @@ export const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  top: 0px;
+  top: 0;
   justify-content: center;
-  left: 0px;
+  left: 0;
   background-color: ${p => p.theme.colors.white};
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {

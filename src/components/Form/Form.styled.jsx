@@ -23,8 +23,12 @@ export const Form = styled.form`
   position: relative;
   margin: 10px 0px 10px;
   margin-top: 60px;
-
+  font-weight: ${p => p.theme.fontWeights.regular};
+  line-height: ${p => p.theme.lineHeights.text};
+  font-size: ${prop => prop.theme.fontSizes[0]};
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    font-size: ${prop => prop.theme.fontSizes[2]};
+
     margin-top: 60px;
   }
 `;
@@ -33,27 +37,21 @@ export const Label = styled.label`
   width: 180px;
   position: relative;
   display: inline-block;
-  font-weight: ${p => p.theme.fontWeights.regular};
-  font-size: ${p => p.theme.fontSizes[0]};
-  line-height: ${p => p.theme.lineHeights.text};
+
   color: ${p => p.theme.colors.black};
   min-width: ${p => p.theme.space[5]};
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    width: 280px;
-    font-size: ${prop => prop.theme.fontSizes[3]};
+    width: 410px;
   }
   @media (min-width: ${p => p.theme.breakpoints[2]}) {
   }
 `;
 
 export const InputContainer = styled.div`
-  
-
-  border-bottom: 1px solid ${p => p.theme.colors.icons};
-  outline: none;
-
   }
   &:not(:last-child) {
+      border-bottom: 1px solid ${p => p.theme.colors.icons};
+  outline: none;
     margin-bottom: 40px;
   }
 `;
@@ -61,7 +59,7 @@ export const InputContainer = styled.div`
 export const Input = styled.input`
   width: 190px;
   height: 30px;
-  margin-right: -10px;
+  margin-left: 50px;
   border: none;
   // border-right: none;
   // border-left: none;
@@ -69,40 +67,39 @@ export const Input = styled.input`
   outline: ${p => p.theme.colors.transparent};
 
   outline: none;
-  font-family: ${p => p.theme.fonts.baseFont};
-  font-weight: ${p => p.theme.fontWeights.regular};
-  font-size: ${p => p.theme.fontSizes[1]};
+  // font-family: ${p => p.theme.fonts.baseFont};
+  // font-weight: ${p => p.theme.fontWeights.regular};
 
   transition: border-bottom 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    width: 260px;
-    font-size: ${p => p.theme.fontSizes[1]};
+    width: 410px;
+    margin-left: 40px;
+    text-align: left;
   }
   ::placeholder {
     color: ${p => p.theme.colors.secondaryText};
-    font-family: ${p => p.theme.fonts.baseFont};
-    font-weight: ${p => p.theme.fontWeights.regular};
-    font-size: ${p => p.theme.fontSizes[1]};
-    line-height: 1;
+    // font-family: ${p => p.theme.fonts.baseFont};
+    // font-weight: ${p => p.theme.fontWeights.regular};
+    // font-size: ${p => p.theme.fontSizes[1]};
   }
 `;
 
 export const Errors = styled.p`
   color: ${p => p.theme.colors.expense};
-  font-family: ${p => p.theme.fonts.baseFont};
-  font-weight: ${p => p.theme.fontWeights.regular};
-  font-size: ${p => p.theme.fontSizes[2]};
+  // font-family: ${p => p.theme.fonts.baseFont};
+  // font-weight: ${p => p.theme.fontWeights.regular};
+  font-size: ${prop => prop.theme.fontSizes[0]};
 `;
 
 export const ErrorTextPassword = styled.p`
   margin-top: 5px;
   position: absolute;
   color: ${p => p.theme.colors.error};
-  font-family: ${p => p.theme.fonts.baseFont};
-  font-weight: ${p => p.theme.fontWeights.regular};
-  font-size: ${p => p.theme.fontSizes[2]};
+  // font-family: ${p => p.theme.fonts.baseFont};
+  // font-weight: ${p => p.theme.fontWeights.regular};
+  font-size: ${prop => prop.theme.fontSizes[0]};
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    font-size: 14px;
+    // font-size: 14px;
   }
 `;
 
@@ -115,8 +112,7 @@ export const RegisterBtnLp = styled.button`
   height: 50px;
   font-family: ${p => p.theme.fonts.baseFont};
   font-weight: ${p => p.theme.fontWeights.regular};
-  font-size: ${p => p.theme.fontSizes[3]};
-  line-height: 1;
+  font-size: ${prop => prop.theme.fontSizes[2]};
   letter-spacing: ${p => p.theme.letterSpacing.button};
   text-transform: uppercase;
   transition: ${p => p.theme.transition.main};
@@ -130,7 +126,7 @@ export const RegisterBtnLp = styled.button`
     border: none;
   }
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    font-size: ${p => p.theme.fontSizes[4]};
+    // font-size: ${p => p.theme.fontSizes[4]};
     padding: 12px 0 12px 0;
 `;
 
@@ -143,10 +139,9 @@ export const LoginBtnLp = styled.button`
   border-radius: ${p => p.theme.radii.button};
   border: none;
   border-color: ${p => p.theme.colors.transparent};
-  font-family: ${p => p.theme.fonts.baseFont};
+ font-family: ${p => p.theme.fonts.baseFont};
   font-weight: ${p => p.theme.fontWeights.regular};
-  font-size: ${p => p.theme.fontSizes[3]};
-  line-height: 1;
+  font-size: ${prop => prop.theme.fontSizes[2]};
   letter-spacing: ${p => p.theme.letterSpacing.button};
   text-transform: uppercase;
   transition: ${p => p.theme.transition.main};
@@ -160,7 +155,6 @@ export const LoginBtnLp = styled.button`
     border: 1px solid ${p => p.theme.colors.income};
   }
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    font-size: ${p => p.theme.fontSizes[3]};
     padding: 12px 0 12px 0;
     
 `;
@@ -174,8 +168,7 @@ export const LoginBtn = styled.button`
   height: 50px;
   font-family: ${p => p.theme.fonts.baseFont};
   font-weight: ${p => p.theme.fontWeights.regular};
-  font-size: ${p => p.theme.fontSizes[3]};
-  line-height: 1;
+  font-size: ${prop => prop.theme.fontSizes[2]};
   letter-spacing: ${p => p.theme.letterSpacing.button};
   text-transform: uppercase;
   transition: ${p => p.theme.transition.main};
@@ -188,7 +181,7 @@ export const LoginBtn = styled.button`
     border: none;
   }
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    font-size: ${p => p.theme.fontSizes[4]};
+    font-size: ${prop => prop.theme.fontSizes[2]};
     padding: 12px 0 12px 0;
   }
 `;
@@ -203,8 +196,7 @@ export const RegisterBtn = styled.button`
   height: 50px;
   font-family: ${p => p.theme.fonts.baseFont};
   font-weight: ${p => p.theme.fontWeights.regular};
-  font-size: ${p => p.theme.fontSizes[3]};
-  line-height: 1;
+  font-size: ${prop => prop.theme.fontSizes[2]};
   letter-spacing: ${p => p.theme.letterSpacing.button};
   text-transform: uppercase;
   transition: ${p => p.theme.transition.main};
@@ -218,7 +210,6 @@ export const RegisterBtn = styled.button`
     border: 1px solid ${p => p.theme.colors.income};
   }
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    font-size: ${p => p.theme.fontSizes[4]};
     padding: 12px 0 12px 0;
   }
 `;
@@ -226,7 +217,7 @@ export const RegisterBtn = styled.button`
 export const ButtonImg = styled.button`
   position: absolute;
   top: 0px;
-  left: 160px;
+  left: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -234,7 +225,7 @@ export const ButtonImg = styled.button`
   border: none;
   background-color: inherit;
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    left: 270px;
+    left: 380px;
   }
   @media (min-width: ${p => p.theme.breakpoints[2]}) {
     // left: 400px;
@@ -247,7 +238,7 @@ export const SvgPhone = styled(Phone)`
   fill: rgb(224, 224, 224);
   position: absolute;
   bottom: 6px;
-  right: 180px;
+  left: 5px;
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
     right: 280px;
   }
@@ -256,7 +247,7 @@ export const SvgPhone = styled(Phone)`
 export const SvgEnvelope = styled(Envelope)`
   position: absolute;
   bottom: 6px;
-  right: 180px;
+  left: 5px;
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
     right: 270px;
   }
@@ -265,7 +256,7 @@ export const SvgEnvelope = styled(Envelope)`
 export const SvgLock = styled(Lock)`
   position: absolute;
   bottom: 6px;
-  right: 180px;
+  left: 5px;
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
     right: 270px;
   }
@@ -274,7 +265,7 @@ export const SvgLock = styled(Lock)`
 export const SvgAccount = styled(Account)`
   position: absolute;
   bottom: 6px;
-  right: 180px;
+  left: 5px;
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
     right: 270px;
   }
@@ -286,8 +277,9 @@ export const GoogleLoginButton = styled.a`
   justify-content: center;
   padding: 7px 0 7px 0;
   /* margin-bottom: 40px; */
-  font-family: ${p => p.theme.fonts.text};
-  font-size: ${p => p.theme.fontSizes[4]};
+  // font-family: ${p => p.theme.fonts.text};
+
+  font-size: ${prop => prop.theme.fontSizes[2]};
   text-decoration: none;
 
   border: ${p => p.theme.borders.normal}${p => p.theme.colors.accent};
@@ -308,7 +300,6 @@ export const GoogleLoginButton = styled.a`
       background-color ${p => p.theme.colors.accent};
   }
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    font-size: ${p => p.theme.fontSizes[4]};
     padding: 9px 0 9px 0;
   }
 `;
