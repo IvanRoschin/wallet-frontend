@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/wallet-frontend/static/css/main.0b3f1241.css",
-    "main.js": "/wallet-frontend/static/js/main.746b4300.js",
+    "main.js": "/wallet-frontend/static/js/main.e582df9f.js",
     "PrivatRoute.js": "/wallet-frontend/static/js/PrivatRoute.7dd9ac20.chunk.js",
     "PublickRoute.js": "/wallet-frontend/static/js/PublickRoute.10e013b1.chunk.js",
     "RegistrationPage.css": "/wallet-frontend/static/css/RegistrationPage.b5e59f54.chunk.css",
@@ -9,15 +9,16 @@
     "LoginPage.css": "/wallet-frontend/static/css/LoginPage.b5e59f54.chunk.css",
     "LoginPage.js": "/wallet-frontend/static/js/LoginPage.261ed22d.chunk.js",
     "DashboardPage.css": "/wallet-frontend/static/css/DashboardPage.e5117cbe.chunk.css",
-    "DashboardPage.js": "/wallet-frontend/static/js/DashboardPage.4dcb47c0.chunk.js",
+    "DashboardPage.js": "/wallet-frontend/static/js/DashboardPage.6aeeeccd.chunk.js",
     "UserPage.css": "/wallet-frontend/static/css/UserPage.c4c524fb.chunk.css",
-    "UserPage.js": "/wallet-frontend/static/js/UserPage.51ca953c.chunk.js",
+    "UserPage.js": "/wallet-frontend/static/js/UserPage.886f4772.chunk.js",
     "static/js/118.16255142.chunk.js": "/wallet-frontend/static/js/118.16255142.chunk.js",
     "static/css/925.7d209919.chunk.css": "/wallet-frontend/static/css/925.7d209919.chunk.css",
     "static/js/925.3e90c268.chunk.js": "/wallet-frontend/static/js/925.3e90c268.chunk.js",
     "static/js/7.beada949.chunk.js": "/wallet-frontend/static/js/7.beada949.chunk.js",
     "static/js/135.efaa97fa.chunk.js": "/wallet-frontend/static/js/135.efaa97fa.chunk.js",
     "static/js/144.6642806d.chunk.js": "/wallet-frontend/static/js/144.6642806d.chunk.js",
+    "static/js/775.ba923034.chunk.js": "/wallet-frontend/static/js/775.ba923034.chunk.js",
     "static/media/Circe-Bold.woff": "/wallet-frontend/static/media/Circe-Bold.8a1c4d2d35cdd2d6704b.woff",
     "static/media/Circe-Regular.woff": "/wallet-frontend/static/media/Circe-Regular.b3583e41e063203a7e74.woff",
     "static/media/BackgrTablet-min.png": "/wallet-frontend/static/media/BackgrTablet-min.3712e11ea2169cc37e7b.png",
@@ -51,7 +52,7 @@
     "static/media/addAvatar.svg": "/wallet-frontend/static/media/addAvatar.deec2b9327a6f7e779ae3cbb9fa31798.svg",
     "static/media/close.svg": "/wallet-frontend/static/media/close.4ca60f1813426122dabf98a3268fb691.svg",
     "main.0b3f1241.css.map": "/wallet-frontend/static/css/main.0b3f1241.css.map",
-    "main.746b4300.js.map": "/wallet-frontend/static/js/main.746b4300.js.map",
+    "main.e582df9f.js.map": "/wallet-frontend/static/js/main.e582df9f.js.map",
     "PrivatRoute.7dd9ac20.chunk.js.map": "/wallet-frontend/static/js/PrivatRoute.7dd9ac20.chunk.js.map",
     "PublickRoute.10e013b1.chunk.js.map": "/wallet-frontend/static/js/PublickRoute.10e013b1.chunk.js.map",
     "RegistrationPage.b5e59f54.chunk.css.map": "/wallet-frontend/static/css/RegistrationPage.b5e59f54.chunk.css.map",
@@ -59,18 +60,19 @@
     "LoginPage.b5e59f54.chunk.css.map": "/wallet-frontend/static/css/LoginPage.b5e59f54.chunk.css.map",
     "LoginPage.261ed22d.chunk.js.map": "/wallet-frontend/static/js/LoginPage.261ed22d.chunk.js.map",
     "DashboardPage.e5117cbe.chunk.css.map": "/wallet-frontend/static/css/DashboardPage.e5117cbe.chunk.css.map",
-    "DashboardPage.4dcb47c0.chunk.js.map": "/wallet-frontend/static/js/DashboardPage.4dcb47c0.chunk.js.map",
+    "DashboardPage.6aeeeccd.chunk.js.map": "/wallet-frontend/static/js/DashboardPage.6aeeeccd.chunk.js.map",
     "UserPage.c4c524fb.chunk.css.map": "/wallet-frontend/static/css/UserPage.c4c524fb.chunk.css.map",
-    "UserPage.51ca953c.chunk.js.map": "/wallet-frontend/static/js/UserPage.51ca953c.chunk.js.map",
+    "UserPage.886f4772.chunk.js.map": "/wallet-frontend/static/js/UserPage.886f4772.chunk.js.map",
     "118.16255142.chunk.js.map": "/wallet-frontend/static/js/118.16255142.chunk.js.map",
     "925.7d209919.chunk.css.map": "/wallet-frontend/static/css/925.7d209919.chunk.css.map",
     "925.3e90c268.chunk.js.map": "/wallet-frontend/static/js/925.3e90c268.chunk.js.map",
     "7.beada949.chunk.js.map": "/wallet-frontend/static/js/7.beada949.chunk.js.map",
     "135.efaa97fa.chunk.js.map": "/wallet-frontend/static/js/135.efaa97fa.chunk.js.map",
-    "144.6642806d.chunk.js.map": "/wallet-frontend/static/js/144.6642806d.chunk.js.map"
+    "144.6642806d.chunk.js.map": "/wallet-frontend/static/js/144.6642806d.chunk.js.map",
+    "775.ba923034.chunk.js.map": "/wallet-frontend/static/js/775.ba923034.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0b3f1241.css",
-    "static/js/main.746b4300.js"
+    "static/js/main.e582df9f.js"
   ]
 }
