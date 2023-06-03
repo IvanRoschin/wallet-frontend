@@ -18,7 +18,13 @@ export const transApi = createApi({
   endpoints: builder => ({
     getAll: builder.query({
       query: id => '/',
-      providesTags: ['transactions'],
+      providesTags: result =>
+        result
+          ? [
+              ...result.map(({ id }) => ({ type: 'Transactions', id })),
+              { type: 'Transactions', id: 'LIST' },
+            ]
+          : [{ type: 'Transactions', id: 'LIST' }],
     }),
 
     getPeriod: builder.query({
@@ -29,7 +35,7 @@ export const transApi = createApi({
           params: credentials,
         };
       },
-      invalidatesTags: ['transactions'],
+      providesTags: (result, error, id) => [{ type: 'Transactions', id }],
     }),
 
     balance: builder.query({
@@ -40,7 +46,7 @@ export const transApi = createApi({
           params: credentials,
         };
       },
-      providesTags: ['transactions'],
+      providesTags: (result, error, id) => [{ type: 'Transactions', id }],
     }),
 
     add: builder.mutation({
@@ -51,7 +57,7 @@ export const transApi = createApi({
           body: credentials,
         };
       },
-      invalidatesTags: ['transactions'],
+      invalidatesTags: [{ type: 'Transactions', id: 'LIST' }],
     }),
     delete: builder.mutation({
       query(id) {
@@ -60,7 +66,7 @@ export const transApi = createApi({
           method: 'DELETE',
         };
       },
-      invalidatesTags: ['transactions'],
+      invalidatesTags: (result, error, id) => [{ type: 'Transactions', id }],
     }),
   }),
 });

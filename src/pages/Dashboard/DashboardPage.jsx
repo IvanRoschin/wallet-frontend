@@ -2,7 +2,7 @@ import { AppBar } from 'components/AppBar';
 import { Navigation } from 'components/Navigation';
 import { Balance } from 'components/Balance';
 import { Currency } from 'components/Currency';
-import { Transactions } from 'components/Transactions';
+import { TransactionsList } from 'components/Transactions';
 import { Statistics } from 'pages/Statistics/Statistics';
 import Media from 'react-media';
 import { useState } from 'react';
@@ -48,7 +48,7 @@ const Dashboard = () => {
                   <Navigation />
                   {pathname === '/home' && (
                     <>
-                      <Balance /> <Transactions />
+                      <Balance /> <TransactionsList />
                       {open ? (
                         <AddTransactionModal
                           handleButtonToggle={handleButtonToggle}
@@ -84,7 +84,7 @@ const Dashboard = () => {
                   </Wrapper>
                   {pathname === '/home' && (
                     <>
-                      <Transactions />
+                      <TransactionsList />
                       {open ? (
                         <AddTransactionModal
                           handleButtonToggle={handleButtonToggle}
@@ -117,7 +117,7 @@ const Dashboard = () => {
                     <RightSide>
                       {pathname === '/home' && (
                         <>
-                          <Transactions />
+                          <TransactionsList />
                           {open ? (
                             <AddTransactionModal
                               handleButtonToggle={handleButtonToggle}

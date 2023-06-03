@@ -1,7 +1,14 @@
-import { useGetAllQuery } from 'redux/category/categoryApi';
+import { CategoryList } from '.';
+import { useTranslation } from 'react-i18next';
+import { Title } from './Category.styled';
 
-export const CategoryList = () => {
-  const { data } = useGetAllQuery();
-  console.log('data', data);
-  return <div>Categories</div>;
+export const Category = () => {
+  const { t } = useTranslation();
+
+  return (
+    <>
+      <Title>{t('categoryData.title')}:</Title>
+      <CategoryList />
+    </>
+  );
 };

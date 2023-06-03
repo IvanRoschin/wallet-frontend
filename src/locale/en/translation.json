@@ -12,6 +12,13 @@
     "Edit_photo": "Edit photo",
     "Photo_selected": "Photo selected"
   },
+  "categoryData": {
+    "title": "Your Categories",
+    "color": "Color",
+    "name": "Name",
+    "type": "Type",
+    "delete": "Delete"
+  },
   "wellcome": "Wellcome,",
   "noTransactionText": "You don't have any transactions. Please use add button below to get started.",
   "date": "Date",

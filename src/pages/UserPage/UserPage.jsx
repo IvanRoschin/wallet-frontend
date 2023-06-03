@@ -2,7 +2,7 @@ import { AppBar } from 'components/AppBar';
 import { Container } from 'globalStyles/globalStyle';
 import { UserData } from 'components/UserData';
 
-import { CategoryList } from 'components/Category';
+import { Category } from 'components/Category';
 
 import { Wrapper, LeftSide, RightSide } from './UserPage.styled';
 
@@ -16,7 +16,7 @@ const Dashboard = () => {
             <UserData />
           </LeftSide>
           <RightSide>
-            <CategoryList />
+            <Category />
           </RightSide>
         </Wrapper>
       </Container>

@@ -33,9 +33,9 @@ export const categoryApi = createApi({
       invalidatesTags: ['category'],
     }),
     deleteCategory: builder.mutation({
-      query(id) {
+      query(categoryId) {
         return {
-          url: `/${id}`,
+          url: `/${categoryId}`,
           method: 'DELETE',
         };
       },

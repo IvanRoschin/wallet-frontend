@@ -17,7 +17,7 @@ import { useDeleteMutation } from 'redux/transactions/transactionsApi';
 
 import toast from 'react-hot-toast';
 
-export const Transactions = () => {
+export const TransactionsList = () => {
   const [transactions, setTransactions] = useState([]);
   const [deleteTransaction, { isError, error }] = useDeleteMutation();
   const { data } = useGetAllQuery();
@@ -42,13 +42,15 @@ export const Transactions = () => {
     } else setTransactions(data);
   }, [data, setTransactions]);
 
+  console.log('transactions?.length', transactions?.length);
+
   return (
     <>
       <Media
         query="(max-width: 767px)"
         render={() => (
           <>
-            {transactions?.length === 0 ? (
+            {transactions === 'undefined' ? (
               <Text>{t('noTransactionText')}</Text>
             ) : (
               <>
