@@ -22,12 +22,17 @@ export const Form = styled.form`
 export const DataInputWrapp = styled.div`
   display: flex;
   flex-direction: column;
-  font-size: ${p => p.theme.fontSizes[2]};
-  font-weight: ${p => p.theme.fontWeights.normal};
+  font-size: ${p => p.theme.fontSizes[0]};
+  font-weight: ${p => p.theme.fontWeights.regular};
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    font-size: ${p => p.theme.fontSizes[2]};
+  }
 `;
 
 export const Label = styled.label`
   display: inline-block;
+  font-weight: ${p => p.theme.fontWeights.bold};
+
   line-height: 1.39;
   color: ${prop => prop.theme.colors.black};
   min-width: 60px;
@@ -49,7 +54,7 @@ export const Input = styled.input`
 
   color: ${p => p.theme.colors.text};
   background-color: ${({ theme, disabled }) =>
-    disabled ? theme.colors.transparent : theme.colors.background};
+    disabled ? theme.colors.transparent : theme.colors.white};
 
   ::placeholder {
     color: ${({ theme, disabled }) => disabled && theme.colors.text};
@@ -76,18 +81,19 @@ export const InputWrapper = styled.div`
 `;
 
 export const EditBtn = styled.button`
+  margin-left: auto;
   width: 30px;
   height: 30px;
   padding: 5px;
-  background-color: ${prop => prop.theme.colors.background};
+  background-color: ${prop => prop.theme.colors.pageIconBg};
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  fill: ${prop => prop.theme.colors.income};
+  fill: ${prop => prop.theme.colors.white};
 
   &.btn-active:hover {
     scale: 1.1;
-    fill: ${prop => prop.theme.colors.income};
+    fill: ${prop => prop.theme.colors.white};
   
     @media (min-width: ${p => p.theme.breakpoints[1]}) {
     width: 32px;

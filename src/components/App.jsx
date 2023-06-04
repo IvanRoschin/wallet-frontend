@@ -31,9 +31,9 @@ const DashboardPage = lazy(() =>
   )
 );
 
-const UserPage = lazy(() =>
-  import('../pages/UserPage/UserPage' /* webpackChunkName: "UserPage" */)
-);
+// const UserPage = lazy(() =>
+//   import('../pages/UserPage/UserPage' /* webpackChunkName: "UserPage" */)
+// );
 
 const fetchData = async () => {
   try {
@@ -106,7 +106,7 @@ export const App = () => {
             path="/account"
             element={
               <PrivatRoute>
-                <UserPage />
+                <DashboardPage />
               </PrivatRoute>
             }
           />

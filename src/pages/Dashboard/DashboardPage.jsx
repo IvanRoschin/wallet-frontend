@@ -3,6 +3,8 @@ import { Navigation } from 'components/Navigation';
 import { Balance } from 'components/Balance';
 import { Currency } from 'components/Currency';
 import { TransactionsList } from 'components/Transactions';
+import { UserData } from 'components/UserData';
+import { Category } from 'components/Category';
 import { Statistics } from 'pages/Statistics/Statistics';
 import Media from 'react-media';
 import { useState } from 'react';
@@ -16,20 +18,28 @@ import {
   AddTransButton,
   SvgAddBtn,
 } from './DashboardPage.styled';
-import AddTransactionModal from 'components/Transactions/AddTransactionModal/AddTransactionModal';
+import { AddTransactionModal } from 'components/Transactions/AddTransactionModal';
+import { AddCategoryModal } from 'components/Category/AddCategoryModal';
 
 const Dashboard = () => {
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
 
-  const handleModalToggle = () => {
+  const handleModalTrans = () => {
     setOpen(true);
   };
 
-  const handleButtonToggle = () => {
+  const handleButtonTrans = () => {
     setOpen(false);
   };
 
+  const handleModalCategory = () => {
+    setOpen(true);
+  };
+
+  const handleButtonCategory = () => {
+    setOpen(false);
+  };
   return (
     <>
       <AppBar />
@@ -51,13 +61,13 @@ const Dashboard = () => {
                       <Balance /> <TransactionsList />
                       {open ? (
                         <AddTransactionModal
-                          handleButtonToggle={handleButtonToggle}
+                          handleButtonToggle={handleButtonTrans}
                         />
                       ) : (
                         <Wrap>
                           <AddTransButton
                             type="button"
-                            onClick={handleModalToggle}
+                            onClick={handleModalTrans}
                           >
                             <SvgAddBtn />
                           </AddTransButton>
@@ -67,6 +77,25 @@ const Dashboard = () => {
                   )}
                   {pathname === '/statistic' && <Statistics />}
                   {pathname === '/currency' && <Currency />}
+                  {pathname === '/account' && (
+                    <>
+                      <UserData /> <Category />
+                      {open ? (
+                        <AddCategoryModal
+                          handleButtonToggle={handleButtonCategory}
+                        />
+                      ) : (
+                        <Wrap>
+                          <AddTransButton
+                            type="button"
+                            onClick={handleModalCategory}
+                          >
+                            <SvgAddBtn />
+                          </AddTransButton>
+                        </Wrap>
+                      )}
+                    </>
+                  )}
                 </Container>
               </>
             )}
@@ -87,13 +116,13 @@ const Dashboard = () => {
                       <TransactionsList />
                       {open ? (
                         <AddTransactionModal
-                          handleButtonToggle={handleButtonToggle}
+                          handleButtonToggle={handleButtonTrans}
                         />
                       ) : (
                         <Wrap>
                           <AddTransButton
                             type="button"
-                            onClick={handleModalToggle}
+                            onClick={handleModalTrans}
                           >
                             <SvgAddBtn />
                           </AddTransButton>
@@ -102,6 +131,25 @@ const Dashboard = () => {
                     </>
                   )}
                   {pathname === '/statistic' && <Statistics />}
+                  {pathname === '/account' && (
+                    <>
+                      <UserData /> <Category />
+                      {open ? (
+                        <AddCategoryModal
+                          handleButtonToggle={handleButtonCategory}
+                        />
+                      ) : (
+                        <Wrap>
+                          <AddTransButton
+                            type="button"
+                            onClick={handleModalCategory}
+                          >
+                            <SvgAddBtn />
+                          </AddTransButton>
+                        </Wrap>
+                      )}
+                    </>
+                  )}
                 </Container>
               </>
             )}
@@ -120,13 +168,13 @@ const Dashboard = () => {
                           <TransactionsList />
                           {open ? (
                             <AddTransactionModal
-                              handleButtonToggle={handleButtonToggle}
+                              handleButtonToggle={handleButtonTrans}
                             />
                           ) : (
                             // <Wrap>
                             <AddTransButton
                               type="button"
-                              onClick={handleModalToggle}
+                              onClick={handleModalTrans}
                             >
                               <SvgAddBtn />
                             </AddTransButton>
@@ -135,6 +183,25 @@ const Dashboard = () => {
                         </>
                       )}
                       {pathname === '/statistic' && <Statistics />}
+                      {pathname === '/account' && (
+                        <>
+                          <UserData /> <Category />
+                          {open ? (
+                            <AddCategoryModal
+                              handleButtonToggle={handleButtonCategory}
+                            />
+                          ) : (
+                            <Wrap>
+                              <AddTransButton
+                                type="button"
+                                onClick={handleModalCategory}
+                              >
+                                <SvgAddBtn />
+                              </AddTransButton>
+                            </Wrap>
+                          )}
+                        </>
+                      )}
                     </RightSide>
                   </Wrapper>
                 </Container>

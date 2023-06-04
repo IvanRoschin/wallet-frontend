@@ -7,11 +7,11 @@ import {
   BtnCloseX,
   BtnCloseWrapper,
   CloseModalSvg,
-} from './AddTransactionModal.styled';
-import { AddTransactionForm } from '../AddTransactionForm/AddTransactionForm';
+} from './AddCategoryModal.styled';
+import { AddCategoryForm } from '../AddCategoryForm/AddCategoryForm';
 import { useTranslation } from 'react-i18next';
 
-export const AddTransactionModal = ({ handleButtonToggle }) => {
+export const AddCategoryModal = ({ handleButtonToggle }) => {
   const [showModal, setShowModal] = useState(true);
   const { t } = useTranslation();
 
@@ -23,15 +23,14 @@ export const AddTransactionModal = ({ handleButtonToggle }) => {
   return (
     <Modal onClose={handleModalToggle}>
       <Container>
-        <ModalName>{t('addtransaction.header.title')}</ModalName>
+        <ModalName>{t('categoryData.form.title')}</ModalName>
         {/* BtnClose */}
         <BtnCloseWrapper>
           <BtnCloseX onClick={handleButtonToggle}>
             <CloseModalSvg />
           </BtnCloseX>
         </BtnCloseWrapper>
-
-        <AddTransactionForm closeModal={handleModalToggle} />
+        <AddCategoryForm closeModal={handleModalToggle} />
         <BtnCloseWrapper>
           <BtnClose onClick={handleModalToggle}>
             {t('addtransaction.buttons.cancel')}

@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { ReactComponent as HomeLink } from 'images/svg/home.svg';
 import { ReactComponent as StatisticsLink } from 'images/svg/statistics.svg';
 import { ReactComponent as CurrencyLink } from 'images/svg/currency.svg';
+import { ReactComponent as AccountLink } from 'images/svg/account.svg';
 
 export const HomeIcon = styled(HomeLink)`
   fill: 6e78E8;
@@ -10,6 +11,13 @@ export const HomeIcon = styled(HomeLink)`
   width: 24px;
   height: 24px;
 `;
+export const AccountIcon = styled(AccountLink)`
+  fill: 6e78E8;
+  // stroke: currentColor;
+  width: 24px;
+  height: 24px;
+`;
+
 export const StatisticsIcon = styled(StatisticsLink)`
   fill: 6e78E8;
   // stroke: currentColor;
@@ -58,7 +66,7 @@ export const NavigationButton = styled.button`
     &:last-child {
       display: none;
     }
-    &:nth-child(1) {
+    &:nth-child(3) {
       margin-bottom: 12px;
     }
   }

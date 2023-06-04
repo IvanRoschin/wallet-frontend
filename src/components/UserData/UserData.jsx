@@ -25,7 +25,7 @@ export const UserData = () => {
 
   return (
     <>
-      <Title>{t('userData.My_information')}:</Title>
+      <Title>{t('userData.My_information')}</Title>
       <UserContainer>
         <UserSection>
           <UserPhoto />

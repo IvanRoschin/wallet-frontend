@@ -19,7 +19,13 @@ export const categoryApi = createApi({
   endpoints: builder => ({
     getAll: builder.query({
       query: id => '/',
-      providesTags: ['category'],
+      providesTags: result =>
+        result
+          ? [
+              ...result.map(({ id }) => ({ type: 'Category', id })),
+              { type: 'Category', id: 'LIST' },
+            ]
+          : [{ type: 'Category', id: 'LIST' }],
     }),
 
     addCategory: builder.mutation({
@@ -30,8 +36,9 @@ export const categoryApi = createApi({
           body: credentials,
         };
       },
-      invalidatesTags: ['category'],
+      invalidatesTags: [{ type: 'Category', id: 'LIST' }],
     }),
+
     deleteCategory: builder.mutation({
       query(categoryId) {
         return {
@@ -39,7 +46,7 @@ export const categoryApi = createApi({
           method: 'DELETE',
         };
       },
-      invalidatesTags: ['category'],
+      invalidatesTags: (result, error, id) => [{ type: 'Category', id }],
     }),
   }),
 });

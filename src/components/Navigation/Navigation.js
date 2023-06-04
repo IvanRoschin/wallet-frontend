@@ -7,6 +7,7 @@ import {
   StatisticsIcon,
   CurrencyIcon,
   NavigationButton,
+  AccountIcon,
 } from './Navigation.styled';
 
 const Navigation = () => {
@@ -24,6 +25,12 @@ const Navigation = () => {
         <Link to="/statistic">
           <StatisticsIcon alt="Link statistic page" />
           <p>{t('navigation.statistics')}</p>
+        </Link>
+      </NavigationButton>
+      <NavigationButton>
+        <Link to="/account">
+          <AccountIcon alt="Link account page" />
+          <p>{t('navigation.account')}</p>
         </Link>
       </NavigationButton>
       <NavigationButton>

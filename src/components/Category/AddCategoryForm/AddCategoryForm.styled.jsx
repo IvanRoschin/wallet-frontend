@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-import Flatpickr from 'react-flatpickr';
-import 'flatpickr/dist/themes/material_green.css';
-import Select from 'react-select';
-
 /*Wrapper*/
 export const Wrapper = styled.div`
   display: flex;
@@ -16,15 +12,35 @@ export const Wrapper = styled.div`
     width: 394px;
     margin-left: auto;
     margin-right: auto;
-    border-bottom: ${p => p.theme.borders.normal}
-      ${p => p.theme.colors.menuText};
 
     font-size: ${p => p.theme.fontSizes[2]};
   }
 `;
 
-/*Switch*/
+export const Form = styled.form`
+  gap: 9px;
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    gap: 24px;
+  }
+`;
 
+export const Label = styled.label`
+  display: inline-block;
+  font-weight: ${prop => prop.theme.fontWeights.normal};
+  font-size: 12px;
+  line-height: 1.39;
+  color: ${prop => prop.theme.colors.black};
+  min-width: 60px;
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    width: 119px;
+    font-size: 18px;
+  }
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
+    width: 96px;
+  }
+`;
+
+/*Switch*/
 export const SwitchBox = styled.div`
   display: flex;
   justify-content: center;
@@ -88,105 +104,22 @@ export const DataInputWrapp = styled.div`
   flex-direction: column;
 `;
 
-/*Select*/
-export const SelectInput = styled(Select)`
-  width: 100%;
-  margin-bottom: 40px;
-  border-bottom: ${p => p.theme.borders.normal} ${p => p.theme.colors.menuText};
-
-  font-size: ${p => p.theme.fontSizes[2]};
-  font-weight: ${p => p.theme.fonts.baseFont};
-
-  color: ${p => p.theme.colors.text};
-
-  ::placeholder {
-    color: ${({ theme, disabled }) => disabled && theme.colors.text};
-  }
+/*Input*/
+export const InputWrapper = styled.div`
+  // align-items: center;
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    width: 394px;
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
+    position: relative;
+    margin-top: 7px;
 
-    font-size: ${p => p.theme.fontSizes[2]};
+    align-items: center;
   }
   @media (min-width: ${p => p.theme.breakpoints[2]}) {
     width: 100%;
-    padding: 3px 12px 4px 12px;
-    font-size: $ ${p => p.theme.fontSizes[3]};
+    margin-right: 40px;
   }
 `;
-
-/*Sum*/
-export const Input = styled.input`
-  width: 100%;
-  margin-bottom: 40px;
-  padding-left: 8px;
-  border-bottom: ${p => p.theme.borders.normal} ${p => p.theme.colors.menuText};
-
-  font-size: ${p => p.theme.fontSizes[2]};
-
-  color: ${p => p.theme.colors.text};
-
-  ::placeholder {
-    font-size: ${p => p.theme.fontSizes[2]};
-
-    color: ${({ theme, disabled }) => disabled && theme.colors.text};
-  }
-
-  @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    width: 50%;
-    padding: 3px 12px 4px 12px;
-    margin-bottom: 0;
-    border-bottom: none;
-
-    font-size: ${p => p.theme.fontSizes[2]};
-  }
-  @media (min-width: ${p => p.theme.breakpoints[2]}) {
-    width: 100%;
-    padding: 3px 12px 4px 12px;
-    font-size: ${p => p.theme.fontSizes[2]};
-  }
-`;
-
-/*Date*/
-
-export const InputFlatpickrWrapp = styled.div`
-  width: 100%;
-
-  border-bottom: ${p => p.theme.borders.normal} ${p => p.theme.colors.menuText};
-
-  @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    border-bottom: none;
-    width: 50%;
-  }
-  @media (min-width: ${p => p.theme.breakpoints[2]}) {
-    width: 100%;
-  }
-`;
-
-export const FlatpickrStyled = styled(Flatpickr)`
-  width: 95%;
-  padding: 3px 12px 4px 12px;
-
-  color: ${p => p.theme.colors.text};
-
-  ::placeholder {
-    font-size: ${p => p.theme.fontSizes[2]};
-
-    color: ${p => p.theme.colors.menuText};
-  }
-
-  @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    padding: 3px 12px 4px 12px;
-  }
-
-  @media (min-width: ${p => p.theme.breakpoints[2]}) {
-  }
-`;
-
-/*Comment*/
-
 export const InputComment = styled.input`
   width: 100%;
 
@@ -200,6 +133,8 @@ export const InputComment = styled.input`
   color: ${p => p.theme.colors.text};
 
   ::placeholder {
+    font-size: ${p => p.theme.fontSizes[2]};
+
     color: ${p => p.theme.colors.menuText};
 
     padding-left: 20px;
@@ -210,13 +145,22 @@ export const InputComment = styled.input`
     margin-top: 0;
     height: 29px;
 
-    padding-left: 8px;
+    padding-left: 40px;
+    ::placeholder {
+      padding-left: 0px;
+    }
+  }
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
+    padding-left: 25px;
+    font-size: ${p => p.theme.fontSizes[2]};
+
     ::placeholder {
       padding-left: 0px;
     }
   }
 `;
 
+/*Button*/
 export const Button = styled.button`
   display: inline;
   font-size: ${p => p.theme.fontSizes[0]};
@@ -250,39 +194,6 @@ export const BtnAddWrapper = styled.div`
   }
 `;
 
-export const Form = styled.form`
-  gap: 9px;
-  @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    gap: 24px;
-  }
-`;
-
-export const InputWrapper = styled.div`
-  display: flex;
-  position: relative;
-  margin-top: 3px;
-  align-items: center;
-  @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    margin-top: 7px;
-  }
-`;
-
-export const Label = styled.label`
-  display: inline-block;
-  font-weight: ${prop => prop.theme.fontWeights.normal};
-  font-size: 12px;
-  line-height: 1.39;
-  color: ${prop => prop.theme.colors.black};
-  min-width: 60px;
-  @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    width: 119px;
-    font-size: 18px;
-  }
-  @media (min-width: ${p => p.theme.breakpoints[2]}) {
-    width: 96px;
-  }
-`;
-
 export const ErrorMessage = styled.div`
   position: absolute;
   transform: translate(0px, 0px);
@@ -295,4 +206,17 @@ export const ErrorMessage = styled.div`
     transform: translate(90px, 0px);
     margin-left: ${prop => (prop.isDateEdit ? '10px' : 0)};
   }
+`;
+
+export const HiddenInput = styled.input`
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
 `;

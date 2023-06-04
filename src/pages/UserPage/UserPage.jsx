@@ -1,27 +1,55 @@
-import { AppBar } from 'components/AppBar';
-import { Container } from 'globalStyles/globalStyle';
-import { UserData } from 'components/UserData';
+// import { AppBar } from 'components/AppBar';
+// import { useState } from 'react';
+// import { Navigation } from 'components/Navigation';
+// import { Container } from 'globalStyles/globalStyle';
+// import { UserData } from 'components/UserData';
+// import { Category } from 'components/Category';
 
-import { Category } from 'components/Category';
+// import {
+//   Wrapper,
+//   LeftSide,
+//   RightSide,
+//   Wrap,
+//   AddTransButton,
+//   SvgAddBtn,
+// } from './UserPage.styled';
+// import { AddCategoryModal } from 'components/Category/AddCategoryModal';
 
-import { Wrapper, LeftSide, RightSide } from './UserPage.styled';
+// const Dashboard = () => {
+//   const [open, setOpen] = useState(false);
+//   const handleModalToggle = () => {
+//     setOpen(true);
+//   };
 
-const Dashboard = () => {
-  return (
-    <>
-      <AppBar />
-      <Container>
-        <Wrapper>
-          <LeftSide>
-            <UserData />
-          </LeftSide>
-          <RightSide>
-            <Category />
-          </RightSide>
-        </Wrapper>
-      </Container>
-    </>
-  );
-};
+//   const handleButtonToggle = () => {
+//     setOpen(false);
+//   };
 
-export default Dashboard;
+//   return (
+//     <>
+//       <AppBar />
+//       <Container>
+//         <Navigation />
+//         <Wrapper>
+//           <LeftSide>
+//             <UserData />
+//           </LeftSide>
+//           <RightSide>
+//             <Category />
+//           </RightSide>
+//         </Wrapper>
+//       </Container>
+//       {open ? (
+//         <AddCategoryModal handleButtonToggle={handleButtonToggle} />
+//       ) : (
+//         <Wrap>
+//           <AddTransButton type="button" onClick={handleModalToggle}>
+//             <SvgAddBtn />
+//           </AddTransButton>
+//         </Wrap>
+//       )}
+//     </>
+//   );
+// };
+
+// export default Dashboard;

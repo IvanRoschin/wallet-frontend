@@ -93,7 +93,7 @@ export const AddTransactionForm = ({ closeModal }) => {
     initialValues: {
       type: 'income',
       category: '',
-      sum: '' || '0.00',
+      sum: '',
       date: new Date() || '00.00.0000',
       comment: '',
     },
@@ -101,6 +101,7 @@ export const AddTransactionForm = ({ closeModal }) => {
 
     onSubmit: async values => {
       await addTransaction(values);
+      closeModal();
     },
   });
 
@@ -166,6 +167,7 @@ export const AddTransactionForm = ({ closeModal }) => {
                 ...baseStyles,
                 borderColor: 'transparent',
                 color: state.isFocused ? 'blue' : 'red',
+                fontSize: '18px',
               }),
               option: (baseStyles, state) => {
                 let color = 'grey';
@@ -178,7 +180,7 @@ export const AddTransactionForm = ({ closeModal }) => {
 
                 return {
                   ...baseStyles,
-                  fontSize: '12px',
+                  fontSize: '14px',
                   textAlign: 'start',
                   borderRadius: '20px',
                   backgroundColor: 'transparent',
@@ -230,6 +232,7 @@ export const AddTransactionForm = ({ closeModal }) => {
                     dateFormat: 'd.m.Y',
                     locale: locale,
                     maxDate: 'today',
+                    fontSize: '18px',
                   }}
                   onChange={date => {
                     setFieldValue('date', date[0]);

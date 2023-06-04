@@ -10,14 +10,29 @@
     "Confirm": "User were deleted",
     "Notify": "Photo selected",
     "Edit_photo": "Edit photo",
-    "Photo_selected": "Photo selected"
+    "Photo_selected": "Photo selected",
+    "items": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone"
+    }
   },
   "categoryData": {
-    "title": "Your Categories",
+    "title": "Categories",
     "color": "Color",
     "name": "Name",
     "type": "Type",
-    "delete": "Delete"
+    "delete": "Delete",
+    "form": {
+      "title": "Add Category",
+      "nameUk": "Name in Uk",
+      "nameEn": "Name in En",
+      "color": "Choose category color"
+    },
+    "notify": {
+      "success": "Category successfuly added",
+      "delete": "Category deleted"
+    }
   },
   "wellcome": "Wellcome,",
   "noTransactionText": "You don't have any transactions. Please use add button below to get started.",
@@ -119,7 +134,8 @@
   },
   "navigation": {
     "home": "Home",
-    "statistics": "Statistics"
+    "statistics": "Statistics",
+    "account": "User Account"
   },
   "registration": {
     "Signup_with_Google": "Signup with Google",

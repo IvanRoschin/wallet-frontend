@@ -20,7 +20,7 @@ import toast from 'react-hot-toast';
 export const TransactionsList = () => {
   const [transactions, setTransactions] = useState([]);
   const [deleteTransaction, { isError, error }] = useDeleteMutation();
-  const { data } = useGetAllQuery();
+  const { data, error: getAllError } = useGetAllQuery();
 
   const { t } = useTranslation();
 
@@ -28,7 +28,7 @@ export const TransactionsList = () => {
     if (id && !isError) {
       await deleteTransaction(id);
       setTransactions(transactions =>
-        transactions.filter(transaction => transaction.id !== id)
+        transactions.filter(transaction => transaction._id !== id)
       );
       toast.success(t('deleteprompt.notify'));
     } else {
@@ -39,10 +39,11 @@ export const TransactionsList = () => {
   useEffect(() => {
     if (data === 'undefined' || data?.length === 0) {
       return;
-    } else setTransactions(data);
-  }, [data, setTransactions]);
-
-  console.log('transactions?.length', transactions?.length);
+    } else if (getAllError) {
+      toast.error(getAllError.data.message);
+    }
+    setTransactions(data);
+  }, [data, getAllError, setTransactions]);
 
   return (
     <>

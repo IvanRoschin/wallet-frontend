@@ -8,10 +8,10 @@ export const UserDeleteButton = styled.button`
   padding: 4px 10px;
   gap: 8px;
   border: inherit;
-  border-radius: ${p => p.theme.radii.small};
+  border-radius: ${p => p.theme.radii.button};
   cursor: pointer;
+  font-size: ${p => p.theme.fontSizes[0]};
 
-  font-size: ${p => p.theme.fontSizes[2]};
   font-weight: ${p => p.theme.fontWeights.normal};
 
   color: ${p => p.theme.colors.text};
@@ -27,16 +27,17 @@ export const UserDeleteButton = styled.button`
   &:hover,
   :active {
     background-color: ${p => p.theme.colors.white};
-    color: ${p => p.theme.colors.pinkShadow};
+    color: ${p => p.theme.colors.pageIconBg};
 
     span {
-      color: ${p => p.theme.colors.expense};
+      color: ${p => p.theme.colors.pageIconBg};
     }
   }
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    margin-left: 55%;
+    // margin-left: 55%;
     padding: 3px 9px;
+
     font-size: ${p => p.theme.fontSizes[2]};
   }
 `;

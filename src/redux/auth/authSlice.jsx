@@ -17,7 +17,7 @@ export const AuthSlice = createSlice({
     builder.addMatcher(
       authApi.endpoints.signup.matchFulfilled,
       (state, { payload }) => {
-        state.user = payload;
+        state.user = payload.user;
         state.isLoggedIn = false;
         state.isRefreshing = false;
         state.error = false;
@@ -28,7 +28,7 @@ export const AuthSlice = createSlice({
       (state, { payload }) => {
         state.accessToken = payload.accessToken;
         state.refreshToken = payload.refreshToken;
-        state.user = payload;
+        state.user = payload.user;
         state.isLoggedIn = true;
         state.isRefreshing = false;
         state.error = false;

@@ -34,7 +34,6 @@ export const UserPhoto = () => {
         filePicker.current.click();
         return;
       }
-
       const data = new FormData();
       data.append('photoURL', selectedFile);
       await updateAvatar(data);

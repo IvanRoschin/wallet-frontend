@@ -7,7 +7,7 @@ export const Category = () => {
 
   return (
     <>
-      <Title>{t('categoryData.title')}:</Title>
+      <Title>{t('categoryData.title')}</Title>
       <CategoryList />
     </>
   );

@@ -71,12 +71,12 @@ const UserDataItem = () => {
   });
 
   return (
-    <div>
+    <>
       <DataInputWrapp>
         <Form onSubmit={handleSubmit}>
           {/* Name */}
           <InputWrapper>
-            <Label>{t('Name')}:</Label>
+            <Label>{t('userData.items.name')}:</Label>
             <Input
               type="text"
               name="name"
@@ -115,7 +115,7 @@ const UserDataItem = () => {
 
           {/* Email */}
           <InputWrapper>
-            <Label>{t('Email')}:</Label>
+            <Label>{t('userData.items.email')}:</Label>
             <Input
               type="text"
               name="email"
@@ -152,7 +152,7 @@ const UserDataItem = () => {
 
           {/* Phone */}
           <InputWrapper>
-            <Label>{t('Phone')}:</Label>
+            <Label>{t('userData.items.phone')}:</Label>
             <PhoneInput
               name="phone"
               type="tel"
@@ -170,7 +170,7 @@ const UserDataItem = () => {
                 border: `${
                   isPhoneDisabled
                     ? '1px solid transparent'
-                    : '1px solid #24CCA7'
+                    : '1px solid #6E78E8'
                 }`,
                 borderRadius: 30,
                 backgroundColor: `${
@@ -203,7 +203,7 @@ const UserDataItem = () => {
           </InputWrapper>
         </Form>
       </DataInputWrapp>
-    </div>
+    </>
   );
 };
 

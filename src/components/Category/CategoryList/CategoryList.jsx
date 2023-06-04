@@ -3,33 +3,37 @@ import { useGetAllQuery } from 'redux/category/categoryApi';
 import { useDeleteCategoryMutation } from 'redux/category/categoryApi';
 import toast from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
-import {
-  Text,
-  Table,
-  Thead,
-  Tr,
-  ThTitle,
-  ThColor,
-  ThName,
-  ThType,
-  ThDelete,
-  BtnDelete,
-  DeleteIcon,
-} from './CategoryList.styled';
+import { CategoryItem } from '../CategoryItem';
+import { Text, Table, Thead, Tr, ThTitle } from './CategoryList.styled';
 
 export const CategoryList = () => {
   const [categories, setCategories] = useState();
   const { data, error: getAllError } = useGetAllQuery();
-  const [deleteCategory] = useDeleteCategoryMutation();
+  const [deleteCategory, { isError, error }] = useDeleteCategoryMutation();
+
   const { t } = useTranslation();
 
+  const handleDelete = async id => {
+    if (id && !isError) {
+      await deleteCategory(id);
+      setCategories(categories =>
+        categories.filter(category => category._id !== id)
+      );
+      toast.success(t('deleteprompt.notify'));
+    } else {
+      toast.error(error.data.message);
+    }
+  };
+
   useEffect(() => {
-    if (getAllError) {
+    if (data === 'undefined' || data?.length === 0) {
+      return;
+    } else if (getAllError) {
       toast.error(getAllError.data.message);
     }
     setCategories(data);
-  }, [data, getAllError]);
-  console.log('categories?.length', categories?.length);
+  }, [data, getAllError, setCategories]);
+
   return (
     <>
       {categories?.length === 0 ? (
@@ -44,20 +48,13 @@ export const CategoryList = () => {
               <ThTitle>{t('categoryData.delete')}</ThTitle>
             </Tr>
           </Thead>
-          <tbody>
-            {categories?.map(({ _id, color, nameEn, nameUk, type }) => (
-              <Tr key={color}>
-                <ThColor style={{ backgroundColor: color }}></ThColor>
-                <ThName>{nameUk}</ThName>
-                <ThType type={type}>{type}</ThType>
-                <ThDelete>
-                  <BtnDelete onClick={() => deleteCategory(_id)}>
-                    <DeleteIcon />
-                  </BtnDelete>
-                </ThDelete>
-              </Tr>
-            ))}
-          </tbody>
+          {categories?.map(category => (
+            <CategoryItem
+              key={category._id}
+              {...category}
+              onDelete={handleDelete}
+            />
+          ))}
         </Table>
       )}
     </>

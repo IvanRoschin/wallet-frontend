@@ -71,16 +71,17 @@ table {
 
 export const Container = styled.div`
   width: 320px;
-  min-height: 100vh;
+  // min-height: 100vh;
   margin-left: auto;
   margin-right: auto;
-  padding: 32px 0;
+  // padding: 32px 0;
   outline: 1px solid red;
 
   // background-color: ${p => p.theme.colors.backgroundMobile};
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
     width: 768px;
+    min-height: none;
 
     background: url(${BackTab});
     background-position: center;
@@ -93,6 +94,8 @@ export const Container = styled.div`
 
   @media (min-width: ${p => p.theme.breakpoints[2]}) {
     width: 1280px;
+
+    min-height: 0;
 
     background: url(${BackDes});
     background-position: center;

@@ -46,7 +46,7 @@ export const theme = {
     normal: '1px solid',
     bold: '4px solid',
     transparent: '1px solid transparent',
-    input: '1px solid rgba(245, 146, 86, 0.5)',
+    input: '1px solid rgba(110,120,232, 0.5)',
     inputError: '1px solid #E2001A',
     inputSuccess: '1px solid #3CBC81',
   },

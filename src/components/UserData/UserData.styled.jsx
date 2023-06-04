@@ -3,28 +3,10 @@ import { theme } from 'globalStyles/theme';
 import { Container } from 'globalStyles/globalStyle';
 import { slideRight } from 'keyframes';
 
-export const UserWrapper = styled.section`
-  padding-top: 61px;
-
-  @media (min-width: ${theme.breakpoints[1]}) {
-    padding-top: 88px;
-  }
-
-  @media (min-width: ${p => p.theme.breakpoints[2]}) {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    gap: 24px;
-
-    width: calc(100% - 821px - 32px);
-    padding-top: 58px;
-  }
-`;
-
 export const TitleContainer = styled(Container)`
   margin-bottom: 18px;
 
-  @media (min-width: ${theme.breakpoints[1]}) {
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
     margin-bottom: 40px;
 
     animation: ${slideRight} 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -37,32 +19,35 @@ export const TitleContainer = styled(Container)`
   }
 `;
 
-export const Title = styled.h2`
+export const Title = styled.p`
+  width: 280px;
+  margin-top: 40px;
+  margin-left: 20px;
+  margin-bottom: 8px;
+
+  font-family: ${p => p.theme.fonts.accentText};
   font-size: ${p => p.theme.fontSizes[4]};
-  font-weight: ${p => p.theme.fontWeights.medium};
 
-  color: ${p => p.theme.colors.black};
-
-  @media (min-width: ${theme.breakpoints[1]}) {
-    font-size: ${theme.fontSizes[6]};
-    color: ${theme.colors.text};
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    width: 100%;
+    margin-left: 32px;
+    margin-top: 0;
+  }
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
+    text-aling: center;
   }
 `;
 
 export const UserContainer = styled(Container)`
   @media (min-width: ${theme.breakpoints[1]}) {
     width: 100%;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    margin: 0;
-    padding: 0;
 
     animation: ${slideRight} 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
 
   @media (min-width: ${theme.breakpoints[2]}) {
     display: block;
+    background: transparent;
   }
 `;
 
@@ -72,7 +57,7 @@ export const UserSection = styled.div`
   border-radius: ${p => p.theme.radii.small};
   box-shadow: ${p => p.theme.shadows.section};
 
-  background-color: ${p => p.theme.colors.white};
+  // background-color: ${p => p.theme.colors.white};
 
   @media (min-width: ${theme.breakpoints[1]}) {
     display: flex;
@@ -88,7 +73,6 @@ export const UserSection = styled.div`
 
   @media (min-width: ${theme.breakpoints[2]}) {
     position: relative;
-    flex-direction: column;
     gap: 32px;
     flex: 0;
     padding: 20px 16px 18px 0;
@@ -98,12 +82,14 @@ export const UserSection = styled.div`
 
 export const UserThumb = styled.div`
   @media (min-width: ${theme.breakpoints[1]}) {
+    margin-left: 30px;
     width: 379px;
   }
 
   @media (min-width: ${theme.breakpoints[2]}) {
-    width: 520px;
-    margin-left: auto;
+    width: 50%;
+    margin-left: 20px;
+    margin-top: 50px;
   }
 `;
 
