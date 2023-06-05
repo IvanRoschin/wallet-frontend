@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 /*Wrapper*/
 export const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
   align-items: center;
   margin-bottom: 40px;
   height: 44px;
   cursor: pointer;
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    display: flex;
+    justify-content: center;
     width: 394px;
     margin-left: auto;
     margin-right: auto;
@@ -106,8 +106,6 @@ export const DataInputWrapp = styled.div`
 
 /*Input*/
 export const InputWrapper = styled.div`
-  // align-items: center;
-
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
     display: flex;
     position: relative;
@@ -124,7 +122,6 @@ export const InputComment = styled.input`
   width: 100%;
 
   height: 44px;
-  margin-top: 40px;
   margin-bottom: 40px;
 
   border-bottom: ${p => p.theme.borders.normal} ${p => p.theme.colors.menuText};
@@ -142,7 +139,7 @@ export const InputComment = styled.input`
     line-height: 27px;
   }
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    margin-top: 0;
+    margin-top: 40px;
     height: 29px;
 
     padding-left: 40px;

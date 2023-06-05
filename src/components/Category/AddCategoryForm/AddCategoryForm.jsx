@@ -119,8 +119,36 @@ export const AddCategoryForm = ({ closeModal }) => {
             {t('addtransaction.header.expense')}
           </SwitchExpence>
         </SwitchBox>
+        {/* NameEn */}
+        <InputWrapper>
+          <InputComment
+            name="nameEn"
+            type="text"
+            placeholder={t('categoryData.form.nameEn')}
+            value={values?.nameEn}
+            onChange={handleChange('nameEn')}
+            onBlur={handleBlur('nameEn')}
+          />
+          {touched.nameEn && errors.nameEn && (
+            <ErrorMessage>{errors.nameEn}</ErrorMessage>
+          )}
+        </InputWrapper>
 
-        {/*Wrapper */}
+        {/* NameUk */}
+        <InputWrapper>
+          <InputComment
+            name="nameUk"
+            type="text"
+            placeholder={t('categoryData.form.nameUk')}
+            value={values?.nameUk}
+            onChange={handleChange('nameUk')}
+            onBlur={handleBlur('nameUk')}
+          />
+          {touched.nameUk && errors.nameUk && (
+            <ErrorMessage>{errors.nameUk}</ErrorMessage>
+          )}
+        </InputWrapper>
+        {/*Wrapper tablet */}
         <Media
           query="(min-width: 768px)"
           render={() => (

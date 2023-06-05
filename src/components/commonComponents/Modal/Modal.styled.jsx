@@ -22,7 +22,7 @@ export const ModalWindow = styled.div`
   overflow: auto;
   min-width: 320px;
   position: absolute;
-  top: 75%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: ${p => p.theme.radii.small};
@@ -34,6 +34,10 @@ export const ModalWindow = styled.div`
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
     min-width: 540px;
     width: auto;
+    top: 50%;
+    border-radius: ${p => p.theme.radii.transaction};
+  }
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
     top: 50%;
     border-radius: ${p => p.theme.radii.transaction};
   }
