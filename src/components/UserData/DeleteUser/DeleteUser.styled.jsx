@@ -26,7 +26,7 @@ export const UserDeleteButton = styled.button`
 
   &:hover,
   :active {
-    background-color: ${p => p.theme.colors.white};
+    background-color: ${p => p.theme.colors.transparent};
     color: ${p => p.theme.colors.pageIconBg};
 
     span {

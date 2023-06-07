@@ -30,6 +30,7 @@
       "color": "Choose category color"
     },
     "notify": {
+      "noyet": "You don't have any Category. Please use add button below to get started.",
       "success": "Category successfuly added",
       "delete": "Category deleted"
     }

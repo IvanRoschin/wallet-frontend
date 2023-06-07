@@ -10,6 +10,7 @@ export const Balance = () => {
   const [balance, setBalance] = useState();
 
   const { data } = useBalanceQuery();
+
   useEffect(() => {
     if (data === 'undefind') {
       return;
@@ -18,7 +19,7 @@ export const Balance = () => {
     } else {
       setBalance(getFormatedSum(data[0].balance));
     }
-  }, [data, data?.length]);
+  }, [data, data?.length, balance]);
 
   return (
     <Box>

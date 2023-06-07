@@ -8,11 +8,11 @@ import {
   DeleteIcon,
 } from './CategoryItem.syled';
 
-// const language = localStorage.getItem('i18nextLng');
-// let lang = 'en';
-// if (language === 'uk' || language.includes('uk')) {
-//   lang = 'uk';
-// }
+const language = localStorage.getItem('i18nextLng');
+let lang = 'en';
+if (language === 'uk' || language.includes('uk')) {
+  lang = 'uk';
+}
 
 export const CategoryItem = ({
   _id,
@@ -30,8 +30,7 @@ export const CategoryItem = ({
     <tbody>
       <Tr>
         <ThColor style={{ backgroundColor: color }}></ThColor>
-        <ThName> {nameUk}</ThName>
-        {/* <ThName> {lang === 'uk' ? nameUk : nameEn}</ThName> */}
+        <ThName> {lang === 'uk' ? nameUk : nameEn}</ThName>
         <ThType type={type}>{type}</ThType>
         <ThDelete>
           <BtnDelete type="button" onClick={handleClick}>

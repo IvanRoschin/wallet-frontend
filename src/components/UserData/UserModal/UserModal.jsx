@@ -13,18 +13,14 @@ import { ModalWrapper, ModalButtonWrapper } from './UserModal.styled';
 
 export const UserDeleteModal = ({ onClose }) => {
   const [deleteUser] = useDeleteMutation();
-  // const [logout] = useLogoutMutation();
 
   const navigate = useNavigate();
-  // const { user } = useAuth();
-  // const { id } = user;
 
   const { t } = useTranslation();
 
   const handleDeleteUser = () => {
     onClose();
     deleteUser();
-    // logout(id);
     navigate('/login');
     localStorage.clear();
     toast.success(t('userData.Deleted_user'));

@@ -18,16 +18,12 @@ export const ModalText = styled.p`
 
 export const ModalWrapper = styled.div`
   border-radius: ${p => p.theme.radii.button};
-  @media (min-width: ${theme.breakpoints[2]}) {
-    text-aling: center;
-    padding: 32px 16px;
-  }
+  text-aling: center;
+  padding: 32px 16px;
 `;
 
 export const ModalButtonWrapper = styled.div`
-  @media (min-width: ${theme.breakpoints[2]}) {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-  }
+  display: flex;
+  justify-content: center;
+  gap: 24px;
 `;

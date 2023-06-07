@@ -93,8 +93,8 @@ export const Text = styled.p`
     margin-right: auto;
     color: ${p => p.theme.colors.black};
     font-family: ${p => p.theme.fonts.baseFont};
-    font-weight: ${p => p.theme.fontWeights.regular};
-    font-size: ${p => p.theme.fontSizes[2]};
+    font-weight: ${p => p.theme.fontWeights.bold};
+    font-size: ${p => p.theme.fontSizes[4]};
     line-height: 45px;
     margin-left: 40px;
     align-items: center;
@@ -102,6 +102,7 @@ export const Text = styled.p`
   @media (min-width: ${p => p.theme.breakpoints[2]}) {
     margin-left: auto;
     width: 187px;
+    font-size: ${p => p.theme.fontSizes[4]};
   }
 `;
 

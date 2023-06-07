@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { LOCALHOST_URL } from 'baseSettings/constants/urls';
+import { LOCALHOST_URL } from 'baseSettings/urls';
 // import { HOST_URL } from 'constants/urls';
 // import { useDispatch } from 'react-redux';
 // import { setToken } from 'redux/auth/slice';

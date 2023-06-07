@@ -1,12 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-
-const HOST_NAME = 'http://localhost:3030/api/transactions';
+import { HOST_URL } from '../../baseSettings/urls';
 
 export const transApi = createApi({
   reducerPath: 'transApi',
   tagTypes: ['transactions'],
   baseQuery: fetchBaseQuery({
-    baseUrl: HOST_NAME,
+    baseUrl: HOST_URL,
     prepareHeaders: (headers, { getState }) => {
       const token = getState().auth.accessToken;
       if (token) {
@@ -17,7 +16,7 @@ export const transApi = createApi({
   }),
   endpoints: builder => ({
     getAll: builder.query({
-      query: id => '/',
+      query: id => 'transactions',
       providesTags: result =>
         result
           ? [
@@ -30,7 +29,7 @@ export const transApi = createApi({
     getPeriod: builder.query({
       query(credentials) {
         return {
-          url: `/period`,
+          url: `transactions/period`,
           method: 'GET',
           params: credentials,
         };
@@ -41,7 +40,7 @@ export const transApi = createApi({
     balance: builder.query({
       query(credentials) {
         return {
-          url: `/balance`,
+          url: `transactions/balance`,
           method: 'GET',
           params: credentials,
         };
@@ -52,7 +51,7 @@ export const transApi = createApi({
     add: builder.mutation({
       query(credentials) {
         return {
-          url: `/`,
+          url: `transactions`,
           method: 'POST',
           body: credentials,
         };
@@ -62,7 +61,7 @@ export const transApi = createApi({
     delete: builder.mutation({
       query(id) {
         return {
-          url: `/${id}`,
+          url: `transactions/${id}`,
           method: 'DELETE',
         };
       },

@@ -17,6 +17,7 @@
   .react-tel-input .form-control {
     font-size: 12px;
     padding-left: 10px;
+    margin-left: 12px;
   }
   .react-tel-input .flag-dropdown {
     display: none;
@@ -29,11 +30,12 @@
 @media screen and (min-width: 768px) {
   .react-tel-input .form-control {
     font-size: 18px;
-    margin-left: 30px;
+    margin-left: 32px;
     width: 200px;
   }
   .react-tel-input .flag-dropdown {
     display: block;
+    margin-left: 0;
   }
   .react-tel-input {
     width: 100%;

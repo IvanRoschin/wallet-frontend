@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 import { theme } from 'globalStyles/theme';
-import { Container } from 'globalStyles/globalStyle';
 import { slideRight } from 'keyframes';
 
-export const TitleContainer = styled(Container)`
+export const TitleContainer = styled.div`
   margin-bottom: 18px;
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
@@ -38,7 +37,7 @@ export const Title = styled.p`
   }
 `;
 
-export const UserContainer = styled(Container)`
+export const UserContainer = styled.div`
   @media (min-width: ${theme.breakpoints[1]}) {
     width: 100%;
 

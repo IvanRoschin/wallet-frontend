@@ -8,11 +8,13 @@ import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import css from './UserPhoneInput.css';
 import { useSignupMutation } from 'redux/auth/authApi';
+import { useLoginMutation } from 'redux/auth/authApi';
+
 import {
   Input,
   Label,
   InputContainer,
-  SvgAccount,
+  SvgPerson,
   SvgEnvelope,
   SvgLock,
   SvgPhone,
@@ -25,9 +27,11 @@ import {
   ButtonImg,
 } from './Form.styled';
 import { GoogleAuth } from 'components/GoogleAuth';
+import { useNavigate } from 'react-router-dom';
 
 export const RegisterForm = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const [passwordVisibility, setPasswordVisibility] = useState(false);
   const [confirmVisibility, setConfirmVisibility] = useState(false);
@@ -45,23 +49,38 @@ export const RegisterForm = () => {
     { isSuccess: isSignupSuccess, isError: isSignupError, error: SignupError },
   ] = useSignupMutation();
 
-  const { values, errors, handleChange, handleSubmit, setFieldValue } =
-    useFormik({
-      initialValues: {
-        email: '',
-        phone: '',
-        password: '',
-        name: '',
-      },
-      validationSchema: RegisterSchema,
-      onSubmit: async ({ name, email, phone, password }) => {
-        if (name && email && phone && password) {
-          await signup({ name, email, phone, password });
-        } else {
-          toast.success(t('registration.status.error'));
-        }
-      },
-    });
+  const [
+    login,
+    { isSuccess: isLoginSuccess, isError: isLoginError, error: LoginError },
+  ] = useLoginMutation();
+
+  const {
+    values,
+    errors,
+    handleChange,
+    handleSubmit,
+    setFieldValue,
+    resetForm,
+  } = useFormik({
+    initialValues: {
+      email: '',
+      phone: '',
+      password: '',
+      name: '',
+    },
+    validationSchema: RegisterSchema,
+    onSubmit: async ({ name, email, phone, password }) => {
+      if (name && email && phone && password) {
+        await signup({ name, email, phone, password });
+      }
+      if (isSignupSuccess) {
+        await login(email, password);
+      } else {
+        toast.success(t('registration.status.error'));
+      }
+      resetForm();
+    },
+  });
 
   useEffect(() => {
     if (isSignupSuccess) {
@@ -71,6 +90,16 @@ export const RegisterForm = () => {
       toast.error(SignupError?.data.message);
     }
   }, [isSignupSuccess, isSignupError, SignupError, t]);
+
+  useEffect(() => {
+    if (isLoginSuccess) {
+      toast.success(t('login.status.success'));
+      navigate('/home');
+    }
+    if (isLoginError) {
+      toast.error(LoginError?.data.message);
+    }
+  }, [isLoginSuccess, isLoginError, LoginError, navigate, t]);
 
   const validateConfirmPassword = (pass, value) => {
     let error = '';
@@ -165,7 +194,7 @@ export const RegisterForm = () => {
 
         <InputContainer>
           <Label htmlFor="name">
-            <SvgAccount />
+            <SvgPerson />
             <Input
               id="name"
               type="text"

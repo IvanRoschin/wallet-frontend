@@ -19,7 +19,7 @@ export const CategoryList = () => {
       setCategories(categories =>
         categories.filter(category => category._id !== id)
       );
-      toast.success(t('deleteprompt.notify'));
+      toast.success(t('categoryData.notify.delete'));
     } else {
       toast.error(error.data.message);
     }
@@ -37,7 +37,7 @@ export const CategoryList = () => {
   return (
     <>
       {categories?.length === 0 ? (
-        <Text>{t('noTransactionText')}</Text>
+        <Text>{t('categoryData.notify.noyet')}</Text>
       ) : (
         <Table>
           <Thead>

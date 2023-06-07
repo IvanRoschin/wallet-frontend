@@ -33,7 +33,7 @@ export const BtnDelete = styled.button`
 `;
 
 export const DeleteIcon = styled(Icon)`
-  fill: currentColor;
+  fill: #6e78e8;
 `;
 
 export const Text = styled.p`
@@ -94,7 +94,7 @@ export const TableLine = styled.tr``;
 export const TableColumA = styled.th`
   width: 10%;
   padding: 10px;
-  text-align: start;
+  text-align: center;
 
   font-family: ${p => p.theme.fonts.baseFontBold};
   font-size: ${p => p.theme.fontSizes[2]};
@@ -106,8 +106,8 @@ export const TableColumA = styled.th`
 `;
 
 export const TableColumB = styled.th`
-  width: 20%;
-  text-align: end;
+  width: 10%;
+  text-align: center;
 
   border-bottom: 1px solid #ddd;
 
@@ -119,7 +119,7 @@ export const TableColumB = styled.th`
 `;
 
 export const TableColumSum = styled.th`
-  text-align: end;
+  text-align: center;
   border-bottom: 1px solid #ddd;
 
   color: ${({ type }) => (type === 'income' ? '#24CCA7' : '#FF6596')};

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Text = styled.p`
-  margin-top: 100px;
+  // margin-top: 100px;
   margin-bottom: 100px;
   text-align: center;
 
@@ -11,6 +11,7 @@ export const Text = styled.p`
   font-size: ${prop => prop.theme.fontSizes[1]};
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    margin-top: 100px;
   }
 `;
 

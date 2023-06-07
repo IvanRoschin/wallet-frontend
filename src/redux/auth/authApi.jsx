@@ -1,13 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-// import { privateRoutes } from 'baseSettings/baseSettings';
-
-const HOST_NAME = 'http://localhost:3030/api/auth';
+import { HOST_URL } from '../../baseSettings/urls';
 
 export const authApi = createApi({
   reducerPath: 'authApi',
   tagTypes: ['auth'],
   baseQuery: fetchBaseQuery({
-    baseUrl: HOST_NAME,
+    baseUrl: HOST_URL,
     prepareHeaders: (headers, { getState }) => {
       const token = getState().auth.accessToken;
       if (token) {
@@ -19,7 +17,7 @@ export const authApi = createApi({
   endpoints: builder => ({
     signup: builder.mutation({
       query: credentials => ({
-        url: `signup`,
+        url: `auth/signup`,
         method: 'POST',
         body: credentials,
       }),
@@ -28,7 +26,7 @@ export const authApi = createApi({
 
     google: builder.mutation({
       query: credentials => ({
-        url: `google`,
+        url: `auth/google`,
         method: 'POST',
         body: credentials,
       }),
@@ -37,7 +35,7 @@ export const authApi = createApi({
 
     login: builder.mutation({
       query: credentials => ({
-        url: `login`,
+        url: `auth/login`,
         method: 'POST',
         body: credentials,
       }),
@@ -46,7 +44,7 @@ export const authApi = createApi({
 
     logout: builder.mutation({
       query: credentials => ({
-        url: 'logout',
+        url: 'auth/logout',
         method: 'POST',
         body: credentials,
       }),
@@ -56,7 +54,7 @@ export const authApi = createApi({
     refresh: builder.mutation({
       query(id) {
         return {
-          url: `/refresh`,
+          url: `auth/refresh`,
           method: 'POST',
           id,
         };

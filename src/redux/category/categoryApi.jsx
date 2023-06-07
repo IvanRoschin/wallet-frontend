@@ -1,13 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-// import { privateRoutes } from 'baseSettings/baseSettings';
-
-const HOST_NAME = 'http://localhost:3030/api/category';
+import { HOST_URL } from '../../baseSettings/urls';
 
 export const categoryApi = createApi({
   reducerPath: 'categoryApi',
   tagTypes: ['category'],
   baseQuery: fetchBaseQuery({
-    baseUrl: HOST_NAME,
+    baseUrl: HOST_URL,
     prepareHeaders: (headers, { getState }) => {
       const token = getState().auth.accessToken;
       if (token) {
@@ -18,7 +16,7 @@ export const categoryApi = createApi({
   }),
   endpoints: builder => ({
     getAll: builder.query({
-      query: id => '/',
+      query: id => 'category',
       providesTags: result =>
         result
           ? [
@@ -31,7 +29,7 @@ export const categoryApi = createApi({
     addCategory: builder.mutation({
       query(credentials) {
         return {
-          url: `/`,
+          url: `category`,
           method: 'POST',
           body: credentials,
         };
@@ -42,7 +40,7 @@ export const categoryApi = createApi({
     deleteCategory: builder.mutation({
       query(categoryId) {
         return {
-          url: `/${categoryId}`,
+          url: `category/${categoryId}`,
           method: 'DELETE',
         };
       },

@@ -75,9 +75,9 @@ export const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
   // padding: 32px 0;
-  outline: 1px solid red;
+  // outline: 1px solid red;
 
-  // background-color: ${p => p.theme.colors.backgroundMobile};
+  background-color: ${p => p.theme.colors.backgroundMobile};
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
     width: 768px;
@@ -88,8 +88,9 @@ export const Container = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     padding: 0;
+    padding-top: 32px;
 
-    outline: 1px solid red;
+    // outline: 1px solid red;
   }
 
   @media (min-width: ${p => p.theme.breakpoints[2]}) {
@@ -102,6 +103,8 @@ export const Container = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
 
-    outline: 1px solid red;
+    padding-top: 40px;
+
+    // outline: 1px solid red;
   }
 `;

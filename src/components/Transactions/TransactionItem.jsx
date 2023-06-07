@@ -2,6 +2,8 @@ import { getFormatedDate } from 'helpers/getFormatedDate';
 import { getFormatedSum } from 'helpers/getFormatedSum';
 import { getPlusMinus } from 'helpers/getPlusMinus';
 import { useTranslation } from 'react-i18next';
+import { useBalanceQuery } from '../../redux/transactions/transactionsApi';
+
 import Media from 'react-media';
 
 import {
@@ -24,10 +26,13 @@ export const TransactionItem = ({
   balance,
   onDelete,
 }) => {
+  const { refetch } = useBalanceQuery();
+
   const { t } = useTranslation();
 
   const handleClick = () => {
     onDelete(_id);
+    refetch();
   };
 
   return (

@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react';
 import Switch from 'react-switch';
 import toast from 'react-hot-toast';
 import { useAddCategoryMutation } from 'redux/category/categoryApi';
-
 import { useTranslation } from 'react-i18next';
 import Media from 'react-media';
+import { AddCategory } from 'validationSchemas';
 
 import {
   DataInputWrapp,
@@ -62,16 +62,17 @@ export const AddCategoryForm = ({ closeModal }) => {
       type: '' || 'income',
       color: getRandomColor(),
     },
-    // validationSchema: userUpdateSchema,
+    validationSchema: AddCategory,
 
     onSubmit: async values => {
       await addCategory(values);
+      closeModal();
     },
   });
 
   useEffect(() => {
     if (isError) {
-      toast.error(`${error.data.message}`);
+      toast.error(`${error.data.error}`);
     }
     if (isSuccess) {
       toast.success(t('categoryData.notify.success'));
@@ -119,35 +120,42 @@ export const AddCategoryForm = ({ closeModal }) => {
             {t('addtransaction.header.expense')}
           </SwitchExpence>
         </SwitchBox>
-        {/* NameEn */}
-        <InputWrapper>
-          <InputComment
-            name="nameEn"
-            type="text"
-            placeholder={t('categoryData.form.nameEn')}
-            value={values?.nameEn}
-            onChange={handleChange('nameEn')}
-            onBlur={handleBlur('nameEn')}
-          />
-          {touched.nameEn && errors.nameEn && (
-            <ErrorMessage>{errors.nameEn}</ErrorMessage>
-          )}
-        </InputWrapper>
 
-        {/* NameUk */}
-        <InputWrapper>
-          <InputComment
-            name="nameUk"
-            type="text"
-            placeholder={t('categoryData.form.nameUk')}
-            value={values?.nameUk}
-            onChange={handleChange('nameUk')}
-            onBlur={handleBlur('nameUk')}
-          />
-          {touched.nameUk && errors.nameUk && (
-            <ErrorMessage>{errors.nameUk}</ErrorMessage>
+        <Media
+          query="(max-width: 767px)"
+          render={() => (
+            <>
+              {/* NameEn */}
+              <InputWrapper>
+                <InputComment
+                  name="nameEn"
+                  type="text"
+                  placeholder={t('categoryData.form.nameEn')}
+                  value={values?.nameEn}
+                  onChange={handleChange('nameEn')}
+                  onBlur={handleBlur('nameEn')}
+                />
+                {touched.nameEn && errors.nameEn && (
+                  <ErrorMessage>{errors.nameEn}</ErrorMessage>
+                )}
+              </InputWrapper>
+              {/* NameUk */}
+              <InputWrapper>
+                <InputComment
+                  name="nameUk"
+                  type="text"
+                  placeholder={t('categoryData.form.nameUk')}
+                  value={values?.nameUk}
+                  onChange={handleChange('nameUk')}
+                  onBlur={handleBlur('nameUk')}
+                />
+                {touched.nameUk && errors.nameUk && (
+                  <ErrorMessage>{errors.nameUk}</ErrorMessage>
+                )}
+              </InputWrapper>
+            </>
           )}
-        </InputWrapper>
+        />
         {/*Wrapper tablet */}
         <Media
           query="(min-width: 768px)"

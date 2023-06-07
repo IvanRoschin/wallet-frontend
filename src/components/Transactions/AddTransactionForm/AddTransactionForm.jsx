@@ -8,6 +8,7 @@ import { English } from 'flatpickr/dist/l10n/default.js';
 import { getCategoriesUk } from 'helpers/getCategories';
 import { useTranslation } from 'react-i18next';
 import Media from 'react-media';
+import { AddTransaction } from '../../../validationSchemas';
 
 import {
   DataInputWrapp,
@@ -97,7 +98,7 @@ export const AddTransactionForm = ({ closeModal }) => {
       date: new Date() || '00.00.0000',
       comment: '',
     },
-    // validationSchema: userUpdateSchema,
+    validationSchema: AddTransaction,
 
     onSubmit: async values => {
       await addTransaction(values);

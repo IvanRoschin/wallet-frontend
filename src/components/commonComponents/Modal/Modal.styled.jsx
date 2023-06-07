@@ -22,7 +22,7 @@ export const ModalWindow = styled.div`
   overflow: auto;
   min-width: 320px;
   position: absolute;
-  top: 70%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: ${p => p.theme.radii.small};

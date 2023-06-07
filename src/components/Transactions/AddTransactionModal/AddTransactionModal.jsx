@@ -10,14 +10,17 @@ import {
 } from './AddTransactionModal.styled';
 import { AddTransactionForm } from '../AddTransactionForm/AddTransactionForm';
 import { useTranslation } from 'react-i18next';
+import { useBalanceQuery } from '../../../redux/transactions/transactionsApi';
 
 export const AddTransactionModal = ({ handleButtonToggle }) => {
   const [showModal, setShowModal] = useState(true);
   const { t } = useTranslation();
+  const { refetch } = useBalanceQuery();
 
   const handleModalToggle = () => {
     setShowModal(!showModal);
     handleButtonToggle();
+    refetch();
   };
 
   return (

@@ -1,12 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-
-const HOST_NAME = 'http://localhost:3030/api/users';
+import { HOST_URL } from '../../baseSettings/urls';
 
 export const userApi = createApi({
   reducerPath: 'userApi',
   tagTypes: ['user'],
   baseQuery: fetchBaseQuery({
-    baseUrl: HOST_NAME,
+    baseUrl: HOST_URL,
     prepareHeaders: (headers, { getState }) => {
       const token = getState().auth.accessToken;
       if (token) {
@@ -17,14 +16,14 @@ export const userApi = createApi({
   }),
   endpoints: builder => ({
     current: builder.query({
-      query: () => '/',
+      query: () => 'users',
       providesTags: ['user'],
     }),
 
     delete: builder.mutation({
       query(id) {
         return {
-          url: `/`,
+          url: `users`,
           method: 'DELETE',
           id,
         };
@@ -35,7 +34,7 @@ export const userApi = createApi({
     edit: builder.mutation({
       query(body) {
         return {
-          url: `/`,
+          url: `users`,
           method: 'PATCH',
           body,
         };
@@ -46,7 +45,7 @@ export const userApi = createApi({
     avatar: builder.mutation({
       query(body) {
         return {
-          url: `/`,
+          url: `users`,
           method: 'PUT',
           body,
         };

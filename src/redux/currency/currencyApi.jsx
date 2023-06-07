@@ -1,12 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-
-const HOST_NAME = 'http://localhost:3030/api/currency';
+import { HOST_URL } from '../../baseSettings/urls';
 
 export const currencyApi = createApi({
   reducerPath: 'currencyApi',
   tagTypes: ['currency'],
   baseQuery: fetchBaseQuery({
-    baseUrl: HOST_NAME,
+    baseUrl: HOST_URL,
     prepareHeaders: (headers, { getState }) => {
       const token = getState().auth.accessToken;
       if (token) {
@@ -17,7 +16,7 @@ export const currencyApi = createApi({
   }),
   endpoints: builder => ({
     getCurrency: builder.query({
-      query: () => '/',
+      query: () => 'currency',
       providesTags: ['currency'],
     }),
   }),

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { ReactComponent as Envelope } from 'images/svg/email.svg';
 import { ReactComponent as Lock } from 'images/svg/lock.svg';
-import { ReactComponent as Account } from 'images/svg/account.svg';
+import { ReactComponent as Person } from 'images/svg/person.svg';
 import { ReactComponent as Open } from 'images/svg/eye-password-show.svg';
 import { ReactComponent as Closed } from 'images/svg/eye-password-hide.svg';
 import { ReactComponent as Phone } from 'images/svg/phone.svg';
@@ -26,9 +26,9 @@ export const Form = styled.form`
   font-weight: ${p => p.theme.fontWeights.regular};
   line-height: ${p => p.theme.lineHeights.text};
   font-size: ${prop => prop.theme.fontSizes[0]};
+
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
     font-size: ${prop => prop.theme.fontSizes[2]};
-
     margin-top: 60px;
   }
 `;
@@ -61,26 +61,25 @@ export const Input = styled.input`
   height: 30px;
   margin-left: 50px;
   border: none;
-  // border-right: none;
-  // border-left: none;
   background-color: ${p => p.theme.colors.transparent};
   outline: ${p => p.theme.colors.transparent};
 
-  outline: none;
-  // font-family: ${p => p.theme.fonts.baseFont};
-  // font-weight: ${p => p.theme.fontWeights.regular};
+  font-size: ${prop => prop.theme.fontSizes[0]};
 
   transition: border-bottom 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
     width: 410px;
     margin-left: 40px;
     text-align: left;
+    font-size: ${prop => prop.theme.fontSizes[2]};
+  }
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
+    font-size: ${prop => prop.theme.fontSizes[2]};
   }
   ::placeholder {
     color: ${p => p.theme.colors.secondaryText};
-    // font-family: ${p => p.theme.fonts.baseFont};
-    // font-weight: ${p => p.theme.fontWeights.regular};
-    // font-size: ${p => p.theme.fontSizes[1]};
+    font-size: ${prop => prop.theme.fontSizes[0]};
   }
 `;
 
@@ -262,7 +261,7 @@ export const SvgLock = styled(Lock)`
   }
 `;
 
-export const SvgAccount = styled(Account)`
+export const SvgPerson = styled(Person)`
   position: absolute;
   bottom: 6px;
   left: 5px;
