@@ -57,7 +57,6 @@ export const AddTransactionForm = ({ closeModal }) => {
     async function getCategoies() {
       try {
         const data = categories;
-        console.log('data', data);
         const expense = data.filter(item => item.type === 'expense');
         const income = data.filter(item => item.type === 'income');
         if (!isChecked && lang === 'uk') {
