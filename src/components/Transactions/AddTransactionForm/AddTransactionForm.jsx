@@ -5,7 +5,8 @@ import toast from 'react-hot-toast';
 import { useAddMutation } from 'redux/transactions/transactionsApi';
 import { Ukrainian } from 'flatpickr/dist/l10n/uk.js';
 import { English } from 'flatpickr/dist/l10n/default.js';
-import { getCategoriesUk } from 'helpers/getCategories';
+import { useGetAllQuery } from 'redux/category/categoryApi';
+import { getCategoriesUk, getCategoriesEn } from 'helpers/getCategories';
 import { useTranslation } from 'react-i18next';
 import Media from 'react-media';
 import { AddTransaction } from '../../../validationSchemas';
@@ -30,9 +31,10 @@ import {
   BtnAddWrapper,
   Wrapper,
 } from './AddTransactionForm.styled';
-import { useAuth } from 'hooks/useAuth';
+// import { useAuth } from 'hooks/useAuth';
 
 export const AddTransactionForm = ({ closeModal }) => {
+  const { data: categories } = useGetAllQuery();
   const { t } = useTranslation();
 
   const [addTransaction, { isError, isSuccess, error }] = useAddMutation();
@@ -49,12 +51,13 @@ export const AddTransactionForm = ({ closeModal }) => {
     lang = 'uk';
   }
 
-  const { user } = useAuth();
+  // const { user } = useAuth();
 
   useEffect(() => {
     async function getCategoies() {
       try {
-        const data = user.categories;
+        const data = categories;
+        console.log('data', data);
         const expense = data.filter(item => item.type === 'expense');
         const income = data.filter(item => item.type === 'income');
         if (!isChecked && lang === 'uk') {
@@ -63,19 +66,19 @@ export const AddTransactionForm = ({ closeModal }) => {
         if (isChecked && lang === 'uk') {
           setResults(getCategoriesUk(expense));
         }
-        // if (type === 'income' && lang === 'en') {
-        //   setResults(getCategories(income));
-        // }
-        // if (type === 'expense' && lang === 'uk') {
-        // setResults(getCategoriesUk(income));
-        // }
+        if (!isChecked && lang === 'en') {
+          setResults(getCategoriesEn(income));
+        }
+        if (isChecked && lang === 'en') {
+          setResults(getCategoriesEn(expense));
+        }
       } catch (error) {
         console.log(error.message);
-        // toast.error(i18n.t('Try_again'));
+        toast.error(t('Try_again'));
       }
     }
     getCategoies();
-  }, [user.categories, isChecked, lang]);
+  }, [categories, isChecked, lang, t, type]);
 
   const handleSwitchChange = nextChecked => {
     setIsChecked(nextChecked);

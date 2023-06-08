@@ -4,7 +4,7 @@ import { ReactComponent as Icon } from 'images/svg/exit.svg';
 
 export const Wrapper = styled.div`
   display: flex;
-  align-items: center;
+  align-items: right;
   justify-content: space-between;
   margin-right: 5px;
 `;

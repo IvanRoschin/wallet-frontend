@@ -8,16 +8,22 @@ export const getCategories = array => {
 };
 
 export const getCategoriesUk = array => {
-  return array.map(({ nameUk, nameEn, type, color }) => ({
+  return array.map(({ nameUk, type, color }) => ({
     label: nameUk,
     value: nameUk,
-    nameUk,
-    nameEn,
     type,
     color,
   }));
 };
 
+export const getCategoriesEn = array => {
+  return array.map(({ nameEn, type, color }) => ({
+    label: nameEn,
+    value: nameEn,
+    type,
+    color,
+  }));
+};
 // export const getRegionsOfCities = array => {
 //   return array.map(({ useCounty, stateEn, cityEn, countyEn }) => {
 //     return Number(useCounty)

@@ -43,6 +43,6 @@ export const UserDeleteButton = styled.button`
 `;
 
 export const UserDeleteIcon = styled(Icon)`
-  fill: currentColor;
+  fill: #4a56e2;
   stroke: currentColor;
 `;

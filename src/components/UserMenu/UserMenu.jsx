@@ -4,6 +4,7 @@ import { useLogoutMutation } from 'redux/auth/authApi';
 import toast from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
 import { useAuth } from 'hooks/useAuth';
+import { LangSwitcher } from '../../components/LangSwitcher';
 
 import {
   Container,
@@ -38,8 +39,9 @@ export const UserMenu = () => {
             <>
               <NavLink to={'/account'}>
                 <Wrapper>
-                  <img src={photoURL} alt="avatar" width="24px" height="24px" />
-                  <MenuText>{t('exitprompt.accaunt')}</MenuText>
+                  <LangSwitcher />
+                  {/* <img src={photoURL} alt="avatar" width="24px" height="24px" />
+                  <MenuText>{t('exitprompt.accaunt')}</MenuText> */}
                 </Wrapper>
                 |
               </NavLink>
@@ -51,7 +53,7 @@ export const UserMenu = () => {
           ) : (
             <>
               <UserMenuText>{t('wellcome')}</UserMenuText>
-
+              <LangSwitcher />
               <NavLink to={'/account'}>
                 <UserMenuText>
                   <img src={photoURL} alt="avatar" width="24px" height="24px" />

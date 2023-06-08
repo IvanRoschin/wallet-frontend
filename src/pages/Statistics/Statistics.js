@@ -191,6 +191,10 @@ export const Statistics = () => {
               <HeadItem>{t('sum')}</HeadItem>
             </Head>
             {periodCategory?.map(({ _id, summ, color }) => {
+              console.log('color', color);
+              console.log('_id', _id);
+              console.log('summ', summ);
+
               return (
                 <Body key={uuidv4()}>
                   <BodyItemColor color={color}></BodyItemColor>

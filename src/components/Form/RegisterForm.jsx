@@ -74,6 +74,8 @@ export const RegisterForm = () => {
         await signup({ name, email, phone, password });
       }
       if (isSignupSuccess) {
+        navigate('/login');
+
         await login(email, password);
       } else {
         toast.success(t('registration.status.error'));

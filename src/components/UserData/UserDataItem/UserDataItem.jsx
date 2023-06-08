@@ -156,7 +156,7 @@ const UserDataItem = () => {
             <PhoneInput
               name="phone"
               type="tel"
-              // disabled={isPhoneDisabled}
+              disabled={isPhoneDisabled}
               className={css}
               onlyCountries={['ua']}
               country={'ua'}

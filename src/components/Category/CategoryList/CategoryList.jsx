@@ -33,7 +33,6 @@ export const CategoryList = () => {
     }
     setCategories(data);
   }, [data, getAllError, setCategories]);
-
   return (
     <>
       {categories?.length === 0 ? (
