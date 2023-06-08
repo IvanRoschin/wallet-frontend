@@ -17,7 +17,7 @@ export const CategoryList = () => {
     if (id && !isError) {
       await deleteCategory(id);
       setCategories(categories =>
-        categories.filter(category => category._id !== id)
+        categories?.filter(category => category._id !== id)
       );
       toast.success(t('categoryData.notify.delete'));
     } else {

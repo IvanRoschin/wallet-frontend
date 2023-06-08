@@ -103,6 +103,7 @@ export const Container = styled.div`
     padding-left: 16px;
     padding-right: 16px;
     padding-bottom: 80px;
+    padding-top: 46px;
 
     // background: #e7eaf2;
 

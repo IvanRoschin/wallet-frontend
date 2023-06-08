@@ -1,5 +1,5 @@
 export const getCategoriesUk = array => {
-  return array.map(({ nameUk, type, color }) => ({
+  return array?.map(({ nameUk, type, color }) => ({
     label: nameUk,
     value: nameUk,
     type,
@@ -8,7 +8,7 @@ export const getCategoriesUk = array => {
 };
 
 export const getCategoriesEn = array => {
-  return array.map(({ nameEn, type, color }) => ({
+  return array?.map(({ nameEn, type, color }) => ({
     label: nameEn,
     value: nameEn,
     type,

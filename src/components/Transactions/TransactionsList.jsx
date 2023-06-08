@@ -7,9 +7,16 @@ import Media from 'react-media';
 import {
   Text,
   Table,
-  TableHead,
   TableLine,
   TableColumA,
+  TableColumDate,
+  TableColumType,
+  TableColumCategory,
+  TableColumComment,
+  TableColumBalance,
+  TableColumDelete,
+  TableColumSum,
+  Th,
 } from './TransactionItem.styled';
 
 import { useGetAllQuery } from 'redux/transactions/transactionsApi';
@@ -70,40 +77,34 @@ export const TransactionsList = () => {
       <Media
         query="(min-width: 768px)"
         render={() => (
-          <>
-            <TableHead>
-              <thead>
+          <Table>
+            <Th>
+              <TableColumDate>{t('date')}</TableColumDate>
+              <TableColumType>{t('type')}</TableColumType>
+              <TableColumCategory>{t('category')}</TableColumCategory>
+              <TableColumComment>{t('comment')}</TableColumComment>
+              <TableColumSum>{t('sum')}</TableColumSum>
+              <TableColumBalance>{t('balance')}</TableColumBalance>
+              <TableColumDelete>{t('deleteprompt.delete')}</TableColumDelete>
+            </Th>
+            <tbody>
+              {transactions?.length === 0 ? (
                 <TableLine>
-                  <TableColumA>{t('date')}</TableColumA>
-                  <TableColumA>{t('type')}</TableColumA>
-                  <TableColumA>{t('category')}</TableColumA>
-                  <TableColumA>{t('comment')}</TableColumA>
-                  <TableColumA>{t('sum')}</TableColumA>
-                  <TableColumA>{t('balance')}</TableColumA>
-                  <TableColumA>{t('deleteprompt.delete')}</TableColumA>
+                  <TableColumA>{t('noTransactionText')}</TableColumA>
                 </TableLine>
-              </thead>
-            </TableHead>
-            <Table>
-              <tbody>
-                {transactions?.length === 0 ? (
-                  <TableLine>
-                    <TableColumA>{t('noTransactionText')}</TableColumA>
-                  </TableLine>
-                ) : (
-                  <>
-                    {transactions?.map(transaction => (
-                      <TransactionItem
-                        key={transaction._id}
-                        {...transaction}
-                        onDelete={handleDelete}
-                      />
-                    ))}
-                  </>
-                )}
-              </tbody>
-            </Table>
-          </>
+              ) : (
+                <>
+                  {transactions?.map(transaction => (
+                    <TransactionItem
+                      key={transaction._id}
+                      {...transaction}
+                      onDelete={handleDelete}
+                    />
+                  ))}
+                </>
+              )}
+            </tbody>
+          </Table>
         )}
       />
     </>

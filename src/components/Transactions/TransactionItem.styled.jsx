@@ -52,7 +52,7 @@ export const Text = styled.p`
 
 export const TableHead = styled.table`
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    width: 704px;
+    width: 715px;
     margin-left: auto;
     margin-right: auto;
     border-left: none;
@@ -81,15 +81,37 @@ export const Table = styled.table`
     ${({ type }) => (type === 'income' ? '#24CCA7' : '#FF6596')};
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    width: 704px;
+    width: 715px;
 
     border-left: none;
     box-shadow: none;
     background-color: transparent;
   }
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+    margin: auto;
+  }
 `;
 
-export const TableLine = styled.tr``;
+export const TableLine = styled.tr`
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+  }
+`;
+
+export const Th = styled.thead`
+  @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    color: #000;
+    width: 715px;
+
+    font-family: ${p => p.theme.fonts.baseFontBold};
+    font-size: 18px;
+
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+  }
+`;
 
 export const TableColumA = styled.th`
   width: 10%;
@@ -123,7 +145,43 @@ export const TableColumSum = styled.th`
   border-bottom: 1px solid #ddd;
 
   color: ${({ type }) => (type === 'income' ? '#24CCA7' : '#FF6596')};
+
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    text-align: end;
+    width: 100px;
+    border-bottom: 0;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+`;
+
+export const TableColumDate = styled.th`
+  width: 110px;
+  border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+  }
+`;
+export const TableColumType = styled.th`
+  width: 100px;
+  }
+`;
+export const TableColumCategory = styled.th`
+  width: 140px;
+  }
+`;
+export const TableColumComment = styled.th`
+  width: 200px;
+  }
+`;
+export const TableColumBalance = styled.th`
+    width: 150px;
+
+  }
+`;
+export const TableColumDelete = styled.th`
+  width: 160px;
+   border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+
   }
 `;

@@ -57,8 +57,8 @@ export const AddTransactionForm = ({ closeModal }) => {
     async function getCategoies() {
       try {
         const data = categories;
-        const expense = data.filter(item => item.type === 'expense');
-        const income = data.filter(item => item.type === 'income');
+        const expense = data?.filter(item => item.type === 'expense');
+        const income = data?.filter(item => item.type === 'income');
         if (!isChecked && lang === 'uk') {
           setResults(getCategoriesUk(income));
         }
@@ -72,8 +72,7 @@ export const AddTransactionForm = ({ closeModal }) => {
           setResults(getCategoriesEn(expense));
         }
       } catch (error) {
-        console.log(error.message);
-        toast.error(t('Try_again'));
+        toast.error(error.message);
       }
     }
     getCategoies();

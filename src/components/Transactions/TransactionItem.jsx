@@ -14,6 +14,12 @@ import {
   TableColumSum,
   DeleteIcon,
   BtnDelete,
+  TableColumDate,
+  TableColumType,
+  TableColumCategory,
+  TableColumComment,
+  TableColumBalance,
+  TableColumDelete,
 } from './TransactionItem.styled';
 
 export const TransactionItem = ({
@@ -86,17 +92,17 @@ export const TransactionItem = ({
         query="(min-width: 768px)"
         render={() => (
           <TableLine>
-            <TableColumB>{getFormatedDate(date)}</TableColumB>
-            <TableColumB>{getPlusMinus(type)}</TableColumB>
-            <TableColumB>{category.label}</TableColumB>
-            <TableColumB>{comment}</TableColumB>
+            <TableColumDate>{getFormatedDate(date)}</TableColumDate>
+            <TableColumType>{getPlusMinus(type)}</TableColumType>
+            <TableColumCategory>{category.label}</TableColumCategory>
+            <TableColumComment>{comment}</TableColumComment>
             <TableColumSum type={type}>{getFormatedSum(sum)}</TableColumSum>
-            <TableColumB>{getFormatedSum(balance)}</TableColumB>
-            <TableColumB>
+            <TableColumBalance>{getFormatedSum(balance)}</TableColumBalance>
+            <TableColumDelete>
               <BtnDelete type="button" onClick={handleClick}>
                 <DeleteIcon width={20} height={20} />
               </BtnDelete>
-            </TableColumB>
+            </TableColumDelete>
           </TableLine>
         )}
       />

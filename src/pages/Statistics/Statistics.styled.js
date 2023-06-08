@@ -57,6 +57,9 @@ export const Text = styled.p`
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
     top: 43%;
   }
+  @media (min-width: ${p => p.theme.breakpoints[2]}) {
+    top: 50%;
+  }
 `;
 
 export const ChartWrapper = styled.div`
