@@ -12,16 +12,20 @@ export const ThColor = styled.th`
   display: block;
   margin-left: auto;
   margin-right: auto;
+  border-bottom: 1px solid #ddd;
 `;
 
 export const ThName = styled.th`
   background-color: '#fff';
+  border-bottom: 1px solid #ddd;
 `;
 export const ThType = styled.th`
   color: ${({ type }) => (type === 'income' ? '#24CCA7' : '#FF6596')};
+  border-bottom: 1px solid #ddd;
 `;
 export const ThDelete = styled.th`
   background-color: '#fff';
+  border-bottom: 1px solid #ddd;
 `;
 export const BtnDelete = styled.button`
   top: ${p => p.theme.space[4] + 4}px;

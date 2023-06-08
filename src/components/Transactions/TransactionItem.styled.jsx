@@ -101,7 +101,7 @@ export const TableColumA = styled.th`
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
     width: 15%;
-    text-align: center;
+    text-align: right;
   }
 `;
 
