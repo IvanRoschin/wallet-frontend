@@ -70,7 +70,7 @@ table {
 `;
 
 export const Container = styled.div`
-  width: 320px;
+  width: 300px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
@@ -83,7 +83,7 @@ export const Container = styled.div`
   background-color: ${p => p.theme.colors.backgroundMobile};
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    width: 768px;
+    width: 736px;
     padding-left: 32px;
     padding-right: 32px;
 
@@ -98,7 +98,7 @@ export const Container = styled.div`
   }
 
   @media (min-width: ${p => p.theme.breakpoints[2]}) {
-    width: 1280px;
+    width: 1264px;
 
     padding-left: 16px;
     padding-right: 16px;
