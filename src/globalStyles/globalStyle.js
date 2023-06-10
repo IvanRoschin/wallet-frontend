@@ -86,6 +86,7 @@ export const Container = styled.div`
     width: 736px;
     padding-left: 32px;
     padding-right: 32px;
+    padding-top: 46px;
 
     background-color: #e7eaf2;
 
