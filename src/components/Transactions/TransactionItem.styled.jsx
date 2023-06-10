@@ -97,6 +97,7 @@ export const Table = styled.table`
 
 export const TableLine = styled.tr`
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    border-bottom: 1px solid #ddd;
   }
 `;
 
@@ -123,7 +124,7 @@ export const TableColumA = styled.th`
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
     width: 15%;
-    text-align: right;
+    // text-align: right;
   }
 `;
 

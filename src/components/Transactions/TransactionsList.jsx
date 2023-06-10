@@ -17,6 +17,7 @@ import {
   TableColumDelete,
   TableColumSum,
   Th,
+  TableColumB,
 } from './TransactionItem.styled';
 
 import { useGetAllQuery } from 'redux/transactions/transactionsApi';
@@ -83,7 +84,7 @@ export const TransactionsList = () => {
               <TableColumType>{t('type')}</TableColumType>
               <TableColumCategory>{t('category')}</TableColumCategory>
               <TableColumComment>{t('comment')}</TableColumComment>
-              <TableColumSum>{t('sum')}</TableColumSum>
+              <TableColumA>{t('sum')}</TableColumA>
               <TableColumBalance>{t('balance')}</TableColumBalance>
               <TableColumDelete>{t('deleteprompt.delete')}</TableColumDelete>
             </Th>
