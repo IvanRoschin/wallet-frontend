@@ -15,9 +15,7 @@ import {
   TableColumComment,
   TableColumBalance,
   TableColumDelete,
-  TableColumSum,
   Th,
-  TableColumB,
 } from './TransactionItem.styled';
 
 import { useGetAllQuery } from 'redux/transactions/transactionsApi';
