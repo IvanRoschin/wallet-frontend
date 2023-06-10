@@ -13,24 +13,24 @@ Let me pleased to present you a web finance application 🤑!
 
 📌 Complete a short registration (or just log in if you have an account) to have
 an access to all the functionality of the app:
-![Registration](https://i.postimg.cc/5XnM9231/01-register.jpg)
+![Registration](https://i.postimg.cc/0Nq5f6K6/01-register.jpg)
 
 📌 In your personal account you can you can fill in your profile information and
 add your own income and expense categories:
-![User page](https://i.postimg.cc/McL2R3NF/04-user.jpg)
+![User page](https://i.postimg.cc/C1hF3WNS/04-user.jpg)
 
 **💡 A little hint**: _you can choose your preferred language - English or
 Ukrainian at the top of the site_
 
 📌 If you wanna to add or remove some transaction:
-![Transaction page](https://i.postimg.cc/JHwfYD13/02-current.jpg)
+![Transaction page](https://i.postimg.cc/yxW7dctG/02-current.jpg)
 
 📌 There is a page of Statistic for period:
-![Statistic page](https://i.postimg.cc/ft04vjhT/03-statistic.jpg)
+![Statistic page](https://i.postimg.cc/tTBXp2SP/03-statistic.jpg)
 
 📌 And of course resposnsible design:
 
-![Partners page](https://i.postimg.cc/McHJnJPB/My-Collages.jpg)
+![Partners page](https://i.postimg.cc/pdYW12Ks/My-Collages.jpg)
 
 ## 🔗 Links
 
