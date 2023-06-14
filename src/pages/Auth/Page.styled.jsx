@@ -7,6 +7,8 @@ import LoginImage from 'images/hero/loginPageImage_desktop.png';
 import LoginImageTab from 'images/hero/loginPageImage_tablet.png';
 
 export const PageContainer = styled.div`
+  width: 320px;
+
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -18,11 +20,15 @@ export const PageContainer = styled.div`
   background-color: ${p => p.theme.colors.white};
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
+    width: 768px;
+
     background-color: ${p => p.theme.colors.backgroundTablet};
     background-image: url(${eclipseGray}), url(${eclipsePink});
     background-repeat: no-repeat, no-repeat;
     background-position: 0px 100%, right 0px top 0px;
-    padding: 60px 114px 48px;
+    padding-top: 60px;
+
+    // padding: 60px 114px 48px;
     text-align: center;
   }
 

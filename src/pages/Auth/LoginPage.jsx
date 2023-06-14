@@ -1,6 +1,6 @@
 import Media from 'react-media';
 import { Logo } from 'components/Logo';
-import { Container } from 'globalStyles/globalStyle';
+// import { Container } from 'globalStyles/globalStyle';
 import {
   ImageContainerLog,
   Text,
@@ -14,27 +14,27 @@ import { LoginForm } from 'components/Form';
 
 const LoginPage = () => {
   return (
-    <Container>
-      <PageContainer>
-        <LeftSide>
-          <Media
-            query="(min-width: 768px)"
-            render={() => (
-              <ImageSection>
-                <ImageContainerLog />
-                <Text>Finance App</Text>
-              </ImageSection>
-            )}
-          />
-        </LeftSide>
-        <RightSide>
-          <FormContainer>
-            <Logo />
-            <LoginForm />
-          </FormContainer>
-        </RightSide>
-      </PageContainer>
-    </Container>
+    // <Container>
+    <PageContainer>
+      <LeftSide>
+        <Media
+          query="(min-width: 768px)"
+          render={() => (
+            <ImageSection>
+              <ImageContainerLog />
+              <Text>Finance App</Text>
+            </ImageSection>
+          )}
+        />
+      </LeftSide>
+      <RightSide>
+        <FormContainer>
+          <Logo />
+          <LoginForm />
+        </FormContainer>
+      </RightSide>
+    </PageContainer>
+    // </Container>
   );
 };
 
