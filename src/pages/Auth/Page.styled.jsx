@@ -33,8 +33,7 @@ export const PageContainer = styled.div`
   }
 
   @media (min-width: ${p => p.theme.breakpoints[2]}) {
-    min-width: 1280px;
-
+    width: 100%;
     // padding-left: 16px;
     // padding-right: 16px;
     // padding: 0;
