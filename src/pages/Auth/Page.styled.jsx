@@ -20,7 +20,7 @@ export const PageContainer = styled.div`
   background-color: ${p => p.theme.colors.white};
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    width: 768px;
+    min-width: 768px;
 
     background-color: ${p => p.theme.colors.backgroundTablet};
     background-image: url(${eclipseGray}), url(${eclipsePink});
@@ -33,7 +33,11 @@ export const PageContainer = styled.div`
   }
 
   @media (min-width: ${p => p.theme.breakpoints[2]}) {
-    padding: 0;
+    min-width: 1280px;
+
+    // padding-left: 16px;
+    // padding-right: 16px;
+    // padding: 0;
     flex-direction: row;
     background-image: url(${eclipseGray}), url(${eclipsePink});
   }

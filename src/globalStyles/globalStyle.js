@@ -83,7 +83,7 @@ export const Container = styled.div`
   background-color: ${p => p.theme.colors.backgroundMobile};
 
   @media (min-width: ${p => p.theme.breakpoints[1]}) {
-    width: 736px;
+    min-width: 736px;
     padding-left: 32px;
     padding-right: 32px;
     padding-top: 46px;
@@ -99,7 +99,7 @@ export const Container = styled.div`
   }
 
   @media (min-width: ${p => p.theme.breakpoints[2]}) {
-    width: 1264px;
+    min-width: 1264px;
 
     padding-left: 16px;
     padding-right: 16px;
