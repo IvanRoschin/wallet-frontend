@@ -52,8 +52,9 @@ export const UserMenu = () => {
             </>
           ) : (
             <>
-              <UserMenuText>{t('wellcome')}</UserMenuText>
               <LangSwitcher />
+
+              <UserMenuText>{t('wellcome')}</UserMenuText>
               <NavLink to={'/account'}>
                 <UserMenuText>
                   <img src={photoURL} alt="avatar" width="24px" height="24px" />
