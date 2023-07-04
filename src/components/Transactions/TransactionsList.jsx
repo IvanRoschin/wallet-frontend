@@ -78,18 +78,22 @@ export const TransactionsList = () => {
         render={() => (
           <Table>
             <Th>
-              <TableColumDate>{t('date')}</TableColumDate>
-              <TableColumType>{t('type')}</TableColumType>
-              <TableColumCategory>{t('category')}</TableColumCategory>
-              <TableColumComment>{t('comment')}</TableColumComment>
-              <TableColumA>{t('sum')}</TableColumA>
-              <TableColumBalance>{t('balance')}</TableColumBalance>
-              <TableColumDelete>{t('deleteprompt.delete')}</TableColumDelete>
+              <tr>
+                <TableColumDate>{t('date')}</TableColumDate>
+                <TableColumType>{t('type')}</TableColumType>
+                <TableColumCategory>{t('category')}</TableColumCategory>
+                <TableColumComment>{t('comment')}</TableColumComment>
+                <TableColumA>{t('sum')}</TableColumA>
+                <TableColumBalance>{t('balance')}</TableColumBalance>
+                <TableColumDelete>{t('deleteprompt.delete')}</TableColumDelete>
+              </tr>
             </Th>
             <tbody>
               {transactions?.length === 0 ? (
                 <TableLine>
-                  <TableColumA>{t('noTransactionText')}</TableColumA>
+                  <TableColumA colSpan="7">
+                    {t('noTransactionText')}
+                  </TableColumA>
                 </TableLine>
               ) : (
                 <>

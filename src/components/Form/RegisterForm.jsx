@@ -72,10 +72,8 @@ export const RegisterForm = () => {
     onSubmit: async ({ name, email, phone, password }) => {
       if (name && email && phone && password) {
         await signup({ name, email, phone, password });
-      }
-      if (isSignupSuccess) {
+      } else if (isSignupSuccess) {
         navigate('/login');
-
         await login(email, password);
       } else {
         toast.success(t('registration.status.error'));
@@ -115,7 +113,7 @@ export const RegisterForm = () => {
 
   return (
     <>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit} autoComplete="none">
         <InputContainer>
           <Label htmlFor="email">
             <SvgEnvelope />
