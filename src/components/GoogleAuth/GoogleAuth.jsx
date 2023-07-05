@@ -1,34 +1,9 @@
 import GooglePic from 'images/svg/google.svg';
 import { GoogleLoginButton, GoogleImg } from './GoogleAuth.styled';
-import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 
 export const GoogleAuth = () => {
-  const navigate = useNavigate();
-  const { t } = useTranslation();
-
-  const handleGoogleSignIn = async () => {
-    try {
-      // Perform any necessary sign-in logic here
-      // For example, you can make an API request to initiate the sign-in process
-
-      // Display success toast
-      toast.success(t('login.status.success'));
-
-      // Perform navigation
-      navigate('/home');
-    } catch (error) {
-      console.error('An error occurred:', error);
-      toast.error('Oops! Something went wrong.');
-    }
-  };
-
   return (
-    <GoogleLoginButton
-      href="https://wallet-backend-mu.vercel.app/api/auth/google"
-      onClick={handleGoogleSignIn}
-    >
+    <GoogleLoginButton href="https://wallet-backend-mu.vercel.app/api/auth/google">
       <GoogleImg src={GooglePic} alt="Google" />
       Google
     </GoogleLoginButton>
