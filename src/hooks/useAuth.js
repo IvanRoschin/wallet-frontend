@@ -13,6 +13,7 @@ export const useAuth = () => {
   const user = useSelector(selectUser);
   const error = useSelector(selectError);
   const token = useSelector(selectToken);
+  console.log('token', token);
   return {
     isLoggedIn,
     status,
