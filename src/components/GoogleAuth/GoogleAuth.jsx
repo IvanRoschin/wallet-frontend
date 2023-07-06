@@ -1,9 +1,9 @@
 import GooglePic from 'images/svg/google.svg';
 import { GoogleLoginButton, GoogleImg } from './GoogleAuth.styled';
-
+import { HOST_URL } from 'baseSettings/urls';
 export const GoogleAuth = () => {
   return (
-    <GoogleLoginButton href="https://wallet-backend-mu.vercel.app/api/auth/google">
+    <GoogleLoginButton href={`${HOST_URL}auth/google`}>
       <GoogleImg src={GooglePic} alt="Google" />
       Google
     </GoogleLoginButton>

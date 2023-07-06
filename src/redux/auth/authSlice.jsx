@@ -12,7 +12,12 @@ export const AuthSlice = createSlice({
     isLoggedIn: false,
     isRefreshing: false,
   },
-
+  reducers: {
+    setToken(state, action) {
+      state.accessToken = action.payload;
+      state.isLoggedIn = true;
+    },
+  },
   extraReducers: builder => {
     builder.addMatcher(
       authApi.endpoints.signup.matchFulfilled,
@@ -74,3 +79,4 @@ export const AuthSlice = createSlice({
 
 // Reducer
 export const authReducer = AuthSlice.reducer;
+export const { setToken } = AuthSlice.actions;
