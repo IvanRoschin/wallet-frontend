@@ -33,11 +33,10 @@ const Dashboard = () => {
   const refreshToken = searchParams.get('refreshToken');
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    document.title = `Home`;
+  console.log('accessToken', accessToken);
 
+  useEffect(() => {
     if (accessToken && refreshToken) {
-      // token.set(accessToken);
       dispatch(setToken(accessToken));
       localStorage.setItem('refreshToken', refreshToken);
     }
