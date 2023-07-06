@@ -11,8 +11,26 @@ import {
   RightSide,
 } from './Page.styled';
 import { LoginForm } from 'components/Form';
+import { useDispatch } from 'react-redux';
+import { setToken } from 'redux/auth/authSlice';
+import { useSearchParams } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const LoginPage = () => {
+  const [searchParams] = useSearchParams();
+  const accessToken = searchParams.get('accessToken');
+  const refreshToken = searchParams.get('refreshToken');
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    // document.title = `Home`;
+
+    if (accessToken && refreshToken) {
+      dispatch(setToken(accessToken));
+      localStorage.setItem('refreshToken', refreshToken);
+    }
+  }, [accessToken, dispatch, refreshToken]);
+
   return (
     // <Container>
     <PageContainer>

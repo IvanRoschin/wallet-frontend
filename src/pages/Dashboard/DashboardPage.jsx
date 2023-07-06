@@ -7,7 +7,7 @@ import { UserData } from 'components/UserData';
 import { Category } from 'components/Category';
 import { Statistics } from 'pages/Statistics/Statistics';
 import Media from 'react-media';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Container } from 'globalStyles/globalStyle';
 import {
@@ -20,27 +20,10 @@ import {
 } from './DashboardPage.styled';
 import { AddTransactionModal } from 'components/Transactions/AddTransactionModal';
 import { AddCategoryModal } from 'components/Category/AddCategoryModal';
-import { useSearchParams } from 'react-router-dom';
-import { setToken } from 'redux/auth/authSlice';
-import { useDispatch } from 'react-redux';
 
 const Dashboard = () => {
-  const [searchParams] = useSearchParams();
   const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
-
-  const accessToken = searchParams.get('accessToken');
-  const refreshToken = searchParams.get('refreshToken');
-  const dispatch = useDispatch();
-
-  console.log('accessToken', accessToken);
-
-  useEffect(() => {
-    if (accessToken && refreshToken) {
-      dispatch(setToken(accessToken));
-      localStorage.setItem('refreshToken', refreshToken);
-    }
-  }, [accessToken, dispatch, refreshToken]);
 
   const handleModalTrans = () => {
     setOpen(true);
