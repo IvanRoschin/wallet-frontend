@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/wallet-frontend/static/css/main.0b3f1241.css",
-    "main.js": "/wallet-frontend/static/js/main.3e132498.js",
+    "main.js": "/wallet-frontend/static/js/main.bf5c855c.js",
     "PrivatRoute.js": "/wallet-frontend/static/js/PrivatRoute.7dd9ac20.chunk.js",
     "PublickRoute.js": "/wallet-frontend/static/js/PublickRoute.10e013b1.chunk.js",
     "RegistrationPage.css": "/wallet-frontend/static/css/RegistrationPage.639f2cc0.chunk.css",
@@ -48,7 +48,7 @@
     "static/media/addAvatar.svg": "/wallet-frontend/static/media/addAvatar.deec2b9327a6f7e779ae3cbb9fa31798.svg",
     "static/media/close.svg": "/wallet-frontend/static/media/close.4ca60f1813426122dabf98a3268fb691.svg",
     "main.0b3f1241.css.map": "/wallet-frontend/static/css/main.0b3f1241.css.map",
-    "main.3e132498.js.map": "/wallet-frontend/static/js/main.3e132498.js.map",
+    "main.bf5c855c.js.map": "/wallet-frontend/static/js/main.bf5c855c.js.map",
     "PrivatRoute.7dd9ac20.chunk.js.map": "/wallet-frontend/static/js/PrivatRoute.7dd9ac20.chunk.js.map",
     "PublickRoute.10e013b1.chunk.js.map": "/wallet-frontend/static/js/PublickRoute.10e013b1.chunk.js.map",
     "RegistrationPage.639f2cc0.chunk.css.map": "/wallet-frontend/static/css/RegistrationPage.639f2cc0.chunk.css.map",
@@ -64,6 +64,6 @@
   },
   "entrypoints": [
     "static/css/main.0b3f1241.css",
-    "static/js/main.3e132498.js"
+    "static/js/main.bf5c855c.js"
   ]
 }
