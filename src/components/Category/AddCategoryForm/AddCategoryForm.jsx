@@ -131,7 +131,7 @@ export const AddCategoryForm = ({ closeModal }) => {
                   name="nameEn"
                   type="text"
                   placeholder={t('categoryData.form.nameEn')}
-                  value={values?.nameEn}
+                  value={values?.nameEn.toLocaleLowerCase()}
                   onChange={handleChange('nameEn')}
                   onBlur={handleBlur('nameEn')}
                 />
@@ -145,7 +145,7 @@ export const AddCategoryForm = ({ closeModal }) => {
                   name="nameUk"
                   type="text"
                   placeholder={t('categoryData.form.nameUk')}
-                  value={values?.nameUk}
+                  value={values?.nameUk.toLocaleLowerCase()}
                   onChange={handleChange('nameUk')}
                   onBlur={handleBlur('nameUk')}
                 />

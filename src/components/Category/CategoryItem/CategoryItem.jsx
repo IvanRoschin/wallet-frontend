@@ -30,7 +30,12 @@ export const CategoryItem = ({
     <tbody>
       <Tr>
         <ThColor style={{ backgroundColor: color }}></ThColor>
-        <ThName> {lang === 'uk' ? nameUk : nameEn}</ThName>
+        <ThName>
+          {' '}
+          {lang === 'uk'
+            ? nameUk.toLocaleLowerCase()
+            : nameEn.toLocaleLowerCase()}
+        </ThName>
         <ThType type={type}>{type}</ThType>
         <ThDelete>
           <BtnDelete type="button" onClick={handleClick}>
