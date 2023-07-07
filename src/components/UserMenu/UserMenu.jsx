@@ -40,8 +40,6 @@ export const UserMenu = () => {
               <NavLink to={'/account'}>
                 <Wrapper>
                   <LangSwitcher />
-                  {/* <img src={photoURL} alt="avatar" width="24px" height="24px" />
-                  <MenuText>{t('exitprompt.accaunt')}</MenuText> */}
                 </Wrapper>
                 |
               </NavLink>
@@ -59,7 +57,7 @@ export const UserMenu = () => {
                 <UserMenuText>
                   <img src={photoURL} alt="avatar" width="24px" height="24px" />
                 </UserMenuText>
-                {user.name ? name : 'user'}
+                {user?.name ? name : 'user'}
               </NavLink>
               <LogoutButton type="button" onClick={handleLogout}>
                 <LogoutIcon />

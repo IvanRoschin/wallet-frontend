@@ -28,14 +28,14 @@ export const UserDeleteModal = ({ onClose }) => {
 
   return (
     <ModalWrapper>
-      <ModalText>🐾 {t('userData.Want_delete')}</ModalText>
+      <ModalText> {t('userData.Want_delete')}</ModalText>
 
       <ModalButtonWrapper>
         <ModalButton type="button" onClick={onClose}>
           {t('userData.No')}
         </ModalButton>
         <ModalButton type="button" onClick={handleDeleteUser}>
-          {t('userData.Yes')} 🐾
+          {t('userData.Yes')}
         </ModalButton>
       </ModalButtonWrapper>
     </ModalWrapper>

@@ -70,7 +70,7 @@ table {
 `;
 
 export const Container = styled.div`
-  width: 300px;
+  min-width: 300px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
