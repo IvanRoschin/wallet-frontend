@@ -20,21 +20,14 @@ const LoginPage = () => {
   const [searchParams] = useSearchParams();
   const accessToken = searchParams.get('accessToken');
   const refreshToken = searchParams.get('refreshToken');
-  console.log('accessToken', accessToken);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setToken(accessToken));
-  }, [accessToken, dispatch]);
-
-  // useEffect(() => {
-  //   // document.title = `Home`;
-
-  //   if (accessToken && refreshToken) {
-  //     dispatch(setToken(accessToken));
-  //     localStorage.setItem('refreshToken', refreshToken);
-  //   }
-  // }, [accessToken, dispatch, refreshToken]);
+    if (accessToken && refreshToken) {
+      dispatch(setToken(accessToken));
+      localStorage.setItem('refreshToken', refreshToken);
+    }
+  }, [accessToken, dispatch, refreshToken]);
 
   return (
     // <Container>
